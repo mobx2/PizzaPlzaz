@@ -3,6 +3,7 @@ import { StoreContext } from "../../context/StoreContext";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Navbar = ({ setShowLogin }) => {
   const { getTotalQuantity } = useContext(StoreContext);
@@ -46,6 +47,7 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
+        <ThemeToggle />
         <img src={assets.search_icon} alt="search_icon" />
         <div className="navbar-basket-icon">
           <Link to="/cart">
@@ -55,7 +57,7 @@ const Navbar = ({ setShowLogin }) => {
             <p>{totalQuantity}</p>
           </div>
         </div>
-        <button onClick={() => setShowLogin(true)}>Sign in</button>
+        {/* <button onClick={() => setShowLogin(true)}>Sign in</button> */}
       </div>
     </div>
   );

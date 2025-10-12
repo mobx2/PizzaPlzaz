@@ -1,0 +1,96 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.scroll-to-top-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px var(--shadow-hover);
+  background-color: #ff4726;
+}
+
+.scroll-to-top-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.scroll-icon {
+  font-size: 20px;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .scroll-to-top-button {
+  box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
+}
+
+[data-theme="dark"] .scroll-to-top-button:hover {
+  box-shadow: 0 6px 16px rgba(255, 99, 71, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .scroll-to-top-button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .scroll-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .scroll-to-top-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-icon {
+    font-size: 16px;
+  }
+}
+
+/* Smooth animations for better UX */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top,
+  .scroll-to-top-button {
+    transition: none;
+  }
+}

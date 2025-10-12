@@ -1,9 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* Light Theme (Default) */
 :root {
   --primary: #ff6347;
   --dark: #262626;
   --gray: #676767;
+  
+  /* Theme-specific colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #fff4f2;
+  --text-primary: #262626;
+  --text-secondary: #676767;
+  --text-inverse: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --toggle-bg: #f0f0f0;
+  --toggle-hover-bg: #e0e0e0;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --hover-bg: #fff4f2;
+  --footer-bg: #262626;
+  --footer-text: #ffffff;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary: #ff6347;
+  --dark: #e0e0e0;
+  --gray: #b0b0b0;
+  
+  /* Theme-specific colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-inverse: #1a1a1a;
+  --border-color: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+  --toggle-bg: #2d2d2d;
+  --toggle-hover-bg: #3a3a3a;
+  --card-bg: #2d2d2d;
+  --input-bg: #2d2d2d;
+  --hover-bg: #3a3a3a;
+  --footer-bg: #0d0d0d;
+  --footer-text: #e0e0e0;
 }
 
 * {
@@ -16,6 +60,9 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app {

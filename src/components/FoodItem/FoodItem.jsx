@@ -10,27 +10,27 @@ const FoodItem = ({ id, name, price, description, image }) => {
     <div className="food-item">
       <div className="food-item-img-container">
         <img src={image} alt="image" className="food-item-img" />
-        {!cartItems[id] ? (
+       {!cartItems[id] ? (
           <img
-            src={assets.add_icon_white}
-            alt="add_icon_white"
+            src={assets.add_icon_green}
+            alt="add_icon_green"
             className="add"
             onClick={() => addToCart(id)}
           />
-        ) : (
-          <div className="food-item-counter">
-            <img
-              src={assets.remove_icon_red}
-              alt="remove_icon_red"
-              onClick={() => removeFromCart(id)}
-            />
-            <p>{cartItems[id]}</p>
-            <img
-              src={assets.add_icon_green}
-              alt="add_icon_green"
-              onClick={() => addToCart(id)}
-            />
-          </div>
+        ) : ( 
+        <div className="food-item-counter">
+          <img
+            src={assets.remove_icon_red}
+            alt="remove_icon_red"
+            onClick={() => removeFromCart(id)}
+          />
+          <p>{cartItems[id]}</p>
+           <img
+            src={assets.add_icon_green}
+            alt="add_icon_green"
+            onClick={() => addToCart(id)}
+          /> 
+        </div>
         )}
       </div>
       <div className="food-item-info">
