@@ -4,6 +4,8 @@ import { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const date = new Date();
+
   const navigate = useNavigate();
   return (
     <footer id="footer">
@@ -46,7 +48,9 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">Copyright 2024 © Tomato.com</p>
+      <p className="footer-copyright">
+        Copyright &copy; {new Date().getFullYear()} Pizzaplaza.com
+      </p>
     </footer>
   );
 };
