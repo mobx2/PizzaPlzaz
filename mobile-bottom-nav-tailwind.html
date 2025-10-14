@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Bottom Nav - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Custom animations */
+    @keyframes ripple {
+      to {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .btn-ripple:active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #ff6347;
+      opacity: 0.3;
+      animation: ripple 0.4s ease-out;
+    }
+
+    /* Hide footer on mobile using custom media query */
+    @media (max-width: 768px) {
+      .desktop-footer {
+        display: none !important;
+      }
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff6347',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 min-h-screen p-4 transition-colors duration-300">
+  <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 md:p-10 min-h-[90vh] mb-20 md:mb-0">
+    <h1 class="text-3xl md:text-4xl font-bold text-primary text-center mb-6">
+      🍕 Mobile Bottom Nav - Tailwind
+    </h1>
+
+    <!-- Info Section -->
+    <div class="bg-blue-50 dark:bg-gray-700 rounded-xl p-5 mb-6">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">📱 How to Test:</h2>
+      <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span><strong>Desktop:</strong> Regular footer visible at the bottom</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span><strong>Mobile:</strong> Footer hidden, bottom nav bar appears</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-primary font-bold">•</span>
+          <span><strong>Try it:</strong> Press F12 → Device toolbar → Select iPhone</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-6 text-gray-800 dark:text-gray-200">
+      <section>
+        <h2 class="text-2xl font-bold text-primary mb-3 flex items-center gap-2">
+          Features
+          <span class="text-xs bg-primary text-white px-3 py-1 rounded-full">New!</span>
+        </h2>
+        
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-lg font-semibold mb-2">✨ Three Action Buttons:</h3>
+            <ul class="space-y-2 ml-4">
+              <li class="flex items-start gap-2">
+                <span>🌙</span>
+                <span><strong>Dark Mode Toggle:</strong> Switch between themes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>🔍</span>
+                <span><strong>Search:</strong> Quick access to search</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span>☰</span>
+                <span><strong>Menu:</strong> Open navigation</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-2">🎯 Tailwind Classes Used:</h3>
+            <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 overflow-x-auto">
+              <code class="text-sm text-purple-600 dark:text-purple-400">
+                fixed bottom-0 left-0 right-0 z-50 <br>
+                flex justify-center items-center gap-10 <br>
+                bg-white/95 backdrop-blur-lg <br>
+                shadow-[0_-4px_20px_rgba(0,0,0,0.1)] <br>
+                md:hidden
+              </code>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-2">📱 Responsive Features:</h3>
+            <ul class="space-y-2 ml-4">
+              <li>✓ <strong>Mobile (≤768px):</strong> Bottom nav visible</li>
+              <li>✓ <strong>Desktop (>768px):</strong> Footer visible</li>
+              <li>✓ Touch-friendly 50px buttons</li>
+              <li>✓ Smooth animations</li>
+              <li>✓ Backdrop blur effect</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        <div class="bg-gradient-to-br from-pink-100 to-red-100 dark:from-pink-900 dark:to-red-900 p-5 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">🎨 Design</h3>
+          <p class="text-sm">Clean, centered, with proper spacing and shadows</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 p-5 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">⚡ Performance</h3>
+          <p class="text-sm">Lightweight, no JavaScript required for layout</p>
+        </div>
+      </div>
+
+      <!-- Scroll test content -->
+      <div class="mt-10 space-y-4">
+        <h3 class="text-xl font-semibold">📄 Scroll Test</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>The bottom navigation bar stays fixed at the bottom while you scroll through this content.</p>
+      </div>
+    </div>
+
+    <!-- Desktop Footer -->
+    <footer class="desktop-footer bg-gray-800 dark:bg-gray-900 text-white rounded-2xl p-8 mt-10">
+      <h3 class="text-xl font-bold text-primary mb-4">Company Information</h3>
+      <p class="mb-4">© 2024 PizzaPlaza. All rights reserved.</p>
+      <div class="flex justify-center gap-6 flex-wrap">
+        <a href="#home" class="hover:text-primary transition-colors">Home</a>
+        <a href="#about" class="hover:text-primary transition-colors">About</a>
+        <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+        <a href="#privacy" class="hover:text-primary transition-colors">Privacy</a>
+      </div>
+      <p class="text-center text-sm opacity-70 mt-6">
+        This footer is hidden on mobile (≤768px)
+      </p>
+    </footer>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <div class="
+    fixed bottom-0 left-0 right-0 z-50
+    flex justify-center items-center gap-10
+    bg-white/95 dark:bg-gray-900/95
+    backdrop-blur-lg
+    px-5 py-4
+    shadow-[0_-4px_20px_rgba(0,0,0,0.1)]
+    border-t border-gray-200 dark:border-gray-700
+    md:hidden
+  ">
+    <!-- Dark Mode Toggle -->
+    <button 
+      id="darkModeBtn"
+      class="
+        btn-ripple
+        relative
+        bg-transparent hover:bg-primary active:scale-95
+        p-3 rounded-full
+        transition-all duration-300
+        group
+        w-12 h-12
+        flex items-center justify-center
+      "
+      title="Toggle Dark Mode"
+    >
+      <i class="fas fa-moon text-xl text-gray-800 dark:text-gray-200 group-hover:text-white transition-colors duration-300"></i>
+    </button>
+
+    <!-- Search Button -->
+    <button 
+      id="searchBtn"
+      class="
+        btn-ripple
+        relative
+        bg-transparent hover:bg-primary active:scale-95
+        p-3 rounded-full
+        transition-all duration-300
+        group
+        w-12 h-12
+        flex items-center justify-center
+      "
+      title="Search"
+    >
+      <i class="fas fa-search text-xl text-gray-800 dark:text-gray-200 group-hover:text-white transition-colors duration-300"></i>
+    </button>
+
+    <!-- Menu Button -->
+    <button 
+      id="menuBtn"
+      class="
+        btn-ripple
+        relative
+        bg-transparent hover:bg-primary active:scale-95
+        p-3 rounded-full
+        transition-all duration-300
+        group
+        w-12 h-12
+        flex items-center justify-center
+      "
+      title="Menu"
+    >
+      <i class="fas fa-bars text-xl text-gray-800 dark:text-gray-200 group-hover:text-white transition-colors duration-300"></i>
+    </button>
+  </div>
+
+  <script>
+    // Dark mode toggle functionality
+    const darkModeBtn = document.getElementById('darkModeBtn');
+    const html = document.documentElement;
+    const darkModeIcon = darkModeBtn.querySelector('i');
+
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      html.classList.add('dark');
+      darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    darkModeBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      
+      if (html.classList.contains('dark')) {
+        darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Search button
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      alert('🔍 Search clicked!');
+    });
+
+    // Menu button
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      alert('☰ Menu clicked!');
+    });
+  </script>
+</body>
+</html>

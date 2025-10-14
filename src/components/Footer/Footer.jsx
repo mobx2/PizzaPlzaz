@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
       <hr />
       <p className="footer-copyright">
-        Copyright &copy; {new Date().getFullYear()} Pizzaplaza.com
+        Copyright &copy; {new Date().getFullYear()} Pizza Plaza
       </p>
     </footer>
   );

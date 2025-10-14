@@ -7,6 +7,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import MobileBottomNav from "./components/MobileBottomNav/MobileBottomNav";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -22,6 +23,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
+      <MobileBottomNav />
       <ScrollToTop />
     </>
   );

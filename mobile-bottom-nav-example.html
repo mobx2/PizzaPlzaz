@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Bottom Navigation Bar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #ff6347;
+      --bg-light: #ffffff;
+      --bg-dark: #1a1a1a;
+      --text-light: #333333;
+      --text-dark: #f5f5f5;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --shadow-dark: rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      transition: background 0.3s ease;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(135deg, #2d3561 0%, #3f2850 100%);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      min-height: 90vh;
+    }
+
+    body.dark-mode .container {
+      background: #2a2a2a;
+      color: var(--text-dark);
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .content {
+      line-height: 1.8;
+      margin-bottom: 100px;
+    }
+
+    .demo-section {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    body.dark-mode .demo-section {
+      background: #333;
+    }
+
+    /* ========================================
+       FOOTER - Hidden on Mobile
+       ======================================== */
+    footer {
+      background: #333;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 40px;
+      border-radius: 12px;
+    }
+
+    body.dark-mode footer {
+      background: #1a1a1a;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    footer p {
+      margin: 10px 0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hide footer on mobile */
+    @media (max-width: 768px) {
+      footer {
+        display: none;
+      }
+    }
+
+    /* ========================================
+       MOBILE BOTTOM NAVIGATION BAR
+       ======================================== */
+    .mobile-bottom-nav {
+      display: none; /* Hidden by default on desktop */
+    }
+
+    @media (max-width: 768px) {
+      .mobile-bottom-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 16px 20px;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      /* Dark mode */
+      body.dark-mode .mobile-bottom-nav {
+        background-color: rgba(26, 26, 26, 0.95);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Navigation Button */
+      .mobile-nav-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 12px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        position: relative;
+        width: 50px;
+        height: 50px;
+      }
+
+      /* Icon styling */
+      .mobile-nav-icon {
+        font-size: 22px;
+        color: #333;
+        transition: all 0.3s ease;
+      }
+
+      body.dark-mode .mobile-nav-icon {
+        color: #f5f5f5;
+      }
+
+      /* Hover/Active states */
+      .mobile-nav-btn:hover,
+      .mobile-nav-btn:active {
+        background-color: var(--primary);
+        transform: scale(1.1);
+      }
+
+      .mobile-nav-btn:hover .mobile-nav-icon,
+      .mobile-nav-btn:active .mobile-nav-icon {
+        color: white;
+      }
+
+      .mobile-nav-btn:active {
+        transform: scale(0.95);
+      }
+
+      /* Tap animation effect */
+      .mobile-nav-btn::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: var(--primary);
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.4s ease;
+      }
+
+      .mobile-nav-btn:active::after {
+        opacity: 0.3;
+        transform: scale(1.5);
+      }
+
+      /* Add padding to body for fixed nav */
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    /* Extra small devices */
+    @media (max-width: 375px) {
+      .mobile-bottom-nav {
+        gap: 25px;
+        padding: 12px 15px;
+      }
+
+      .mobile-nav-icon {
+        font-size: 20px;
+      }
+
+      .mobile-nav-btn {
+        padding: 10px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    /* Large mobile devices */
+    @media (min-width: 576px) and (max-width: 768px) {
+      .mobile-bottom-nav {
+        gap: 50px;
+        padding: 18px 30px;
+      }
+
+      .mobile-nav-icon {
+        font-size: 24px;
+      }
+    }
+
+    /* Info badge */
+    .info-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍕 Mobile Bottom Navigation Bar</h1>
+    
+    <div class="demo-section">
+      <h2>📱 How to Test:</h2>
+      <ul>
+        <li><strong>Desktop:</strong> You'll see the footer at the bottom ⬇️</li>
+        <li><strong>Mobile:</strong> Footer is hidden, bottom nav bar appears instead ⬆️</li>
+        <li><strong>Try it:</strong> Press F12 → Toggle device toolbar → Select a phone</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h2>Features <span class="info-badge">New!</span></h2>
+      
+      <h3>✨ Three Action Buttons:</h3>
+      <ul>
+        <li><strong>🌙 Dark Mode Toggle:</strong> Switch between light and dark themes</li>
+        <li><strong>🔍 Search:</strong> Quick access to search functionality</li>
+        <li><strong>☰ Menu:</strong> Open navigation menu</li>
+      </ul>
+
+      <h3>🎯 Design Features:</h3>
+      <ul>
+        <li>Fixed at bottom of screen</li>
+        <li>Centered horizontally with equal spacing</li>
+        <li>Smooth hover and tap animations</li>
+        <li>Backdrop blur effect for modern look</li>
+        <li>Dark mode support</li>
+        <li>Touch-friendly button sizes (50px)</li>
+      </ul>
+
+      <h3>📱 Responsive Behavior:</h3>
+      <ul>
+        <li><strong>Mobile (≤768px):</strong> Bottom nav visible, footer hidden</li>
+        <li><strong>Desktop (>768px):</strong> Footer visible, bottom nav hidden</li>
+      </ul>
+
+      <h3>🎨 Technical Details:</h3>
+      <ul>
+        <li>Z-index: 1000 (stays on top)</li>
+        <li>Backdrop filter: blur(10px)</li>
+        <li>Position: fixed (always visible)</li>
+        <li>Gap: 40px between buttons</li>
+        <li>Button size: 50px × 50px</li>
+        <li>Icon size: 22px</li>
+      </ul>
+
+      <p style="margin-top: 30px;">
+        <strong>💡 Pro Tip:</strong> Resize your browser window to see the navigation 
+        switch between footer (desktop) and bottom bar (mobile). The transition is 
+        seamless at the 768px breakpoint!
+      </p>
+
+      <div class="demo-section">
+        <h3>🚀 Try the Actions:</h3>
+        <p>On mobile view, tap each icon to see:</p>
+        <ul>
+          <li>Smooth scale animation</li>
+          <li>Color change on tap</li>
+          <li>Ripple effect</li>
+        </ul>
+      </div>
+
+      <!-- Filler content to enable scrolling -->
+      <div style="margin-top: 40px;">
+        <h3>📄 Scroll Test Content</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+
+    <!-- Regular Footer (visible only on desktop) -->
+    <footer>
+      <h3>Company Information</h3>
+      <p>© 2024 PizzaPlaza. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+      <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">
+        This footer is hidden on mobile devices (≤768px)
+      </p>
+    </footer>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (visible only on mobile) -->
+  <div class="mobile-bottom-nav">
+    <!-- Dark Mode Toggle -->
+    <button class="mobile-nav-btn" id="darkModeBtn" title="Toggle Dark Mode">
+      <i class="fas fa-moon mobile-nav-icon"></i>
+    </button>
+
+    <!-- Search Button -->
+    <button class="mobile-nav-btn" id="searchBtn" title="Search">
+      <i class="fas fa-search mobile-nav-icon"></i>
+    </button>
+
+    <!-- Menu Button -->
+    <button class="mobile-nav-btn" id="menuBtn" title="Menu">
+      <i class="fas fa-bars mobile-nav-icon"></i>
+    </button>
+  </div>
+
+  <script>
+    // Dark mode toggle functionality
+    const darkModeBtn = document.getElementById('darkModeBtn');
+    const body = document.body;
+    const darkModeIcon = darkModeBtn.querySelector('i');
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    darkModeBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Search button functionality
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      alert('🔍 Search clicked! Add your search functionality here.');
+    });
+
+    // Menu button functionality
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      alert('☰ Menu clicked! Add your menu/navigation functionality here.');
+    });
+  </script>
+</body>
+</html>

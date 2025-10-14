@@ -58,7 +58,15 @@ footer hr {
   color: var(--primary);
 }
 
-@media (max-width: 750px) {
+/* Hide footer on mobile - replaced by mobile bottom nav */
+@media (max-width: 768px) {
+  footer {
+    display: none;
+  }
+}
+
+/* Tablet view - keep footer visible but adjust layout */
+@media (min-width: 769px) and (max-width: 1024px) {
   .footer-content {
     display: flex;
     flex-direction: column;
