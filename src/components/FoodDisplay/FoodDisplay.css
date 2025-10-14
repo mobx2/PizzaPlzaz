@@ -8,9 +8,60 @@
 }
 
 .food-display-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* Flexbox fallback for older browsers */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-top: 30px;
-  gap: 30px;
-  row-gap: 50px;
+}
+
+/* CSS Grid for modern browsers */
+@supports (display: grid) {
+  .food-display-list {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  /* Mobile: 2 columns (2x2 grid) */
+  @media (max-width: 767px) {
+    .food-display-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+
+  /* Tablet: 3 columns */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .food-display-list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+
+  /* Desktop: 4 columns */
+  @media (min-width: 1024px) {
+    .food-display-list {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+  }
+}
+
+/* Flexbox fallback: ensure cards take equal width */
+.food-display-list > * {
+  flex: 1 1 calc(50% - 20px); /* Mobile: 2 per row */
+  min-width: 0; /* Prevent overflow */
+}
+
+@media (min-width: 768px) {
+  .food-display-list > * {
+    flex: 1 1 calc(33.333% - 20px); /* Tablet: 3 per row */
+  }
+}
+
+@media (min-width: 1024px) {
+  .food-display-list > * {
+    flex: 1 1 calc(25% - 30px); /* Desktop: 4 per row */
+  }
 }
