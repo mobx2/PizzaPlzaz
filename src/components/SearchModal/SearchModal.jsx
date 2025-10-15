@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState, useCallback } from "react";
 import "./SearchModal.css";
 import { StoreContext } from "../../context/StoreContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +8,27 @@ const SearchModal = ({ isOpen, onClose }) => {
   const { searchTerm, setSearchTerm } = useContext(StoreContext);
   const inputRef = useRef(null);
   const modalRef = useRef(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  // Handle smooth closing with animation
+  const handleClose = useCallback(() => {
+    setIsClosing(true);
+    // Wait for animation to complete before actually closing
+    setTimeout(() => {
+      setIsAnimating(false);
+      setIsClosing(false);
+      onClose();
+    }, 400); // Match animation duration (0.4s)
+  }, [onClose]);
+
+  // Handle opening animation
+  useEffect(() => {
+    if (isOpen) {
+      setIsAnimating(true);
+      setIsClosing(false);
+    }
+  }, [isOpen]);
 
   // Focus input when modal opens
   useEffect(() => {
@@ -16,24 +37,16 @@ const SearchModal = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  // Handle click outside to close
+  // Close on escape key
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose();
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && isOpen) {
+        handleClose();
       }
     };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("touchstart", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
-    };
-  }, [isOpen, onClose]);
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, handleClose]);
 
   const handleClear = () => {
     setSearchTerm("");
@@ -42,11 +55,27 @@ const SearchModal = ({ isOpen, onClose }) => {
     }
   };
 
-  if (!isOpen) return null;
+  // Prevent clicks inside modal from closing it
+  const handleContentClick = (e) => {
+    e.stopPropagation();
+  };
+
+  if (!isOpen && !isAnimating) return null;
 
   return (
-    <div className={`search-modal-overlay ${isOpen ? "open" : ""}`}>
-      <div className="search-modal-content" ref={modalRef}>
+    <div className={`search-modal-overlay ${isClosing ? "closing" : ""}`}>
+      {/* Backdrop */}
+      <div 
+        className={`search-modal-backdrop ${isClosing ? "closing" : ""}`}
+        onClick={handleClose}
+      ></div>
+
+      {/* Search Content */}
+      <div 
+        className={`search-modal-content ${isClosing ? "closing" : ""}`}
+        ref={modalRef}
+        onClick={handleContentClick}
+      >
         <div className="search-modal-header">
           <input
             ref={inputRef}

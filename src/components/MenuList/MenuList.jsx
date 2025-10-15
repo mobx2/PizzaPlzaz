@@ -1,15 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./MenuList.css";
 import { menu_list } from "../../assets/assets";
-import { StoreContext } from "../../context/StoreContext";
 
 const MenuList = ({ category, setCategory, onItemClick }) => {
-  const { setSearchTerm } = useContext(StoreContext);
-
   const handleClick = (item) => {
     setCategory((prev) => (prev === item.menu_name ? "All" : item.menu_name));
-    // Clear search term when selecting a category
-    setSearchTerm("");
     if (onItemClick) {
       onItemClick();
     }

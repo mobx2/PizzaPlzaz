@@ -1,41 +1,105 @@
 /* Search Modal Overlay */
 .search-modal-overlay {
   position: fixed;
-  bottom: 70px; /* Above the bottom nav */
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  bottom: 0;
+  z-index: 9999; /* Below menu modal (10000) but above bottom nav */
+  display: none;
   pointer-events: none;
 }
 
-.search-modal-overlay.open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .search-modal-overlay {
+    display: flex;
+    align-items: flex-end;
+    pointer-events: auto;
+  }
 
-/* Search Modal Content */
-.search-modal-content {
-  background-color: var(--card-bg);
-  border-radius: 16px 16px 0 0;
-  padding: 20px;
-  box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.15);
-  margin: 0 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--shadow);
-  border-bottom: none;
-}
+  /* Backdrop - matches burger menu style */
+  .search-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+    z-index: 1;
+  }
 
-/* Dark mode adjustments */
-[data-theme="dark"] .search-modal-content {
-  background-color: rgba(26, 26, 26, 0.98);
-  box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: none;
+  /* Search Modal Content */
+  .search-modal-content {
+    position: relative;
+    width: 100%;
+    background-color: var(--card-bg);
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+  }
+
+  /* Dark mode adjustments */
+  [data-theme="dark"] .search-modal-content {
+    background-color: rgba(26, 26, 26, 0.98);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Opening Animations - matches burger menu */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Closing Animations - matches burger menu */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  /* Apply closing animations when modal is closing */
+  .search-modal-backdrop.closing {
+    animation: fadeOut 0.3s ease-out forwards;
+  }
+
+  .search-modal-content.closing {
+    animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 }
 
 /* Search Modal Header */
@@ -117,13 +181,8 @@
 
 /* Extra small devices */
 @media (max-width: 375px) {
-  .search-modal-overlay {
-    bottom: 60px;
-  }
-
   .search-modal-content {
     padding: 16px;
-    margin: 0 8px;
   }
 
   .search-input {
@@ -141,18 +200,10 @@
 @media (min-width: 576px) and (max-width: 768px) {
   .search-modal-content {
     padding: 24px;
-    margin: 0 16px;
   }
 
   .search-input {
     padding: 16px 18px;
     font-size: 17px;
-  }
-}
-
-/* Desktop - hide on desktop as this is mobile-only */
-@media (min-width: 769px) {
-  .search-modal-overlay {
-    display: none;
   }
 }
