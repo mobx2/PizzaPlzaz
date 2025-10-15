@@ -1,0 +1,140 @@
+/* Mobile Menu Modal Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .mobile-menu-overlay {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  /* Backdrop */
+  .mobile-menu-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  /* Menu Content Container */
+  .mobile-menu-content {
+    position: relative;
+    width: 100%;
+    max-height: 80vh;
+    background-color: var(--card-bg);
+    border-radius: 20px 20px 0 0;
+    padding: 24px 20px;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 70px; /* Account for bottom nav bar */
+    
+    /* Hide scrollbar for all browsers */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+  }
+
+  /* Dark mode adjustments */
+  [data-theme="dark"] .mobile-menu-content {
+    background-color: rgba(26, 26, 26, 0.98);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Menu Header */
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--shadow);
+  }
+
+  .mobile-menu-header h2 {
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Close Button */
+  .mobile-menu-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    font-size: 24px;
+  }
+
+  .mobile-menu-close:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: rotate(90deg);
+  }
+
+  .mobile-menu-close:active {
+    transform: rotate(90deg) scale(0.9);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  .mobile-menu-content::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 375px) {
+  .mobile-menu-content {
+    padding: 20px 15px;
+    max-height: 75vh;
+  }
+
+  .mobile-menu-header h2 {
+    font-size: 20px;
+  }
+
+  .mobile-menu-close {
+    font-size: 20px;
+  }
+}
