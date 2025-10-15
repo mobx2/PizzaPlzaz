@@ -64,9 +64,9 @@ const SearchModal = ({ isOpen, onClose }) => {
 
   return (
     <div className={`search-modal-overlay ${isClosing ? "closing" : ""}`}>
-      {/* Backdrop */}
+      {/* Transparent overlay for click-outside detection */}
       <div 
-        className={`search-modal-backdrop ${isClosing ? "closing" : ""}`}
+        className="search-modal-click-overlay"
         onClick={handleClose}
       ></div>
 

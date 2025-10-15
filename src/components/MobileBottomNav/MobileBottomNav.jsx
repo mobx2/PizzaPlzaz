@@ -1,25 +1,39 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import "./MobileBottomNav.css";
 import { useTheme } from "../../hooks/useTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import MobileMenuModal from "../MobileMenuModal/MobileMenuModal";
-import SearchModal from "../SearchModal/SearchModal";
 import { StoreContext } from "../../context/StoreContext";
 
 const MobileBottomNav = () => {
   const { theme, toggleTheme } = useTheme();
-  const { category, setCategory } = useContext(StoreContext);
+  const { category, setCategory, searchTerm, setSearchTerm } = useContext(StoreContext);
   const [showSearch, setShowSearch] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const searchInputRef = useRef(null);
+
+  // Focus input when search expands
+  useEffect(() => {
+    if (showSearch && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [showSearch]);
 
   const handleSearchClick = () => {
-    setShowSearch(!showSearch);
+    setShowSearch(true);
   };
 
   const handleCloseSearch = () => {
     setShowSearch(false);
     // Don't clear search term - keep filtered products displayed
+  };
+
+  const handleClearSearch = () => {
+    setSearchTerm("");
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
   };
 
   const handleMenuClick = () => {
@@ -29,42 +43,70 @@ const MobileBottomNav = () => {
   return (
     <>
       <div className="mobile-bottom-nav">
-        {/* Dark Mode Toggle */}
-        <button
-          className="mobile-nav-btn"
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-          title="Toggle Dark Mode"
-        >
-          <FontAwesomeIcon
-            icon={theme === "light" ? faMoon : faSun}
-            className="mobile-nav-icon"
+        {/* Inline Search Input - Expands when active */}
+        <div className={`inline-search-container ${showSearch ? "active" : ""}`}>
+          <input
+            ref={searchInputRef}
+            type="text"
+            className="inline-search-input"
+            placeholder="Search for dishes..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </button>
+          {searchTerm && (
+            <button
+              className="inline-search-clear-btn"
+              onClick={handleClearSearch}
+              aria-label="Clear search"
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+          )}
+          <button
+            className="inline-search-close-btn"
+            onClick={handleCloseSearch}
+            aria-label="Close search"
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+        </div>
 
-        {/* Search Button */}
-        <button
-          className="mobile-nav-btn"
-          onClick={handleSearchClick}
-          aria-label="Search"
-          title="Search"
-        >
-          <FontAwesomeIcon icon={faSearch} className="mobile-nav-icon" />
-        </button>
+        {/* Navigation Buttons - Hidden when search is active */}
+        <div className={`nav-buttons-container ${showSearch ? "hidden" : ""}`}>
+          {/* Dark Mode Toggle */}
+          <button
+            className="mobile-nav-btn"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            title="Toggle Dark Mode"
+          >
+            <FontAwesomeIcon
+              icon={theme === "light" ? faMoon : faSun}
+              className="mobile-nav-icon"
+            />
+          </button>
 
-        {/* Menu Button */}
-        <button
-          className="mobile-nav-btn"
-          onClick={handleMenuClick}
-          aria-label="Menu"
-          title="Menu"
-        >
-          <FontAwesomeIcon icon={faBars} className="mobile-nav-icon" />
-        </button>
+          {/* Search Button */}
+          <button
+            className="mobile-nav-btn"
+            onClick={handleSearchClick}
+            aria-label="Search"
+            title="Search"
+          >
+            <FontAwesomeIcon icon={faSearch} className="mobile-nav-icon" />
+          </button>
+
+          {/* Menu Button */}
+          <button
+            className="mobile-nav-btn"
+            onClick={handleMenuClick}
+            aria-label="Menu"
+            title="Menu"
+          >
+            <FontAwesomeIcon icon={faBars} className="mobile-nav-icon" />
+          </button>
+        </div>
       </div>
-
-      {/* Search Modal */}
-      <SearchModal isOpen={showSearch} onClose={handleCloseSearch} />
 
       {/* Mobile Menu Modal */}
       <MobileMenuModal

@@ -3,7 +3,8 @@ import { StoreContext } from "../../context/StoreContext";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
-import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = ({ setShowLogin }) => {
   const { getTotalQuantity } = useContext(StoreContext);
@@ -47,7 +48,11 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
-        <ThemeToggle />
+        {/* Hotline Number */}
+        <a href="tel:17485" className="navbar-hotline">
+          <FontAwesomeIcon icon={faPhone} className="hotline-icon" />
+          <span className="hotline-number">17485</span>
+        </a>
         {/* <img src={assets.search_icon} alt="search_icon" /> */}
         <div className="navbar-basket-icon">
           {/* <Link to="/cart">
