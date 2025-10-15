@@ -6,6 +6,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [category, setCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -55,6 +56,8 @@ const StoreContextProvider = (props) => {
     getTotalQuantity,
     category,
     setCategory,
+    searchTerm,
+    setSearchTerm,
   };
 
   return (

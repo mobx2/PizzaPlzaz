@@ -4,6 +4,7 @@ import { useTheme } from "../../hooks/useTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun, faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import MobileMenuModal from "../MobileMenuModal/MobileMenuModal";
+import SearchModal from "../SearchModal/SearchModal";
 import { StoreContext } from "../../context/StoreContext";
 
 const MobileBottomNav = () => {
@@ -14,8 +15,11 @@ const MobileBottomNav = () => {
 
   const handleSearchClick = () => {
     setShowSearch(!showSearch);
-    // Add your search functionality here
-    console.log("Search clicked");
+  };
+
+  const handleCloseSearch = () => {
+    setShowSearch(false);
+    // Don't clear search term - keep filtered products displayed
   };
 
   const handleMenuClick = () => {
@@ -58,6 +62,9 @@ const MobileBottomNav = () => {
           <FontAwesomeIcon icon={faBars} className="mobile-nav-icon" />
         </button>
       </div>
+
+      {/* Search Modal */}
+      <SearchModal isOpen={showSearch} onClose={handleCloseSearch} />
 
       {/* Mobile Menu Modal */}
       <MobileMenuModal
