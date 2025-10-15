@@ -31,13 +31,13 @@ const Navbar = ({ setShowLogin }) => {
         >
           Menu
         </a>
-        <a
+        {/* <a
           href="#app-download"
           onClick={() => setMenu("mobile-app")}
           className={menu === "mobile-app" ? "active" : ""}
         >
           Mobile App
-        </a>
+        </a> */}
         <a
           href="#footer"
           onClick={() => setMenu("contact-us")}
@@ -48,14 +48,14 @@ const Navbar = ({ setShowLogin }) => {
       </ul>
       <div className="navbar-right">
         <ThemeToggle />
-        <img src={assets.search_icon} alt="search_icon" />
+        {/* <img src={assets.search_icon} alt="search_icon" /> */}
         <div className="navbar-basket-icon">
-          <Link to="/cart">
+          {/* <Link to="/cart">
             <img src={assets.basket_icon} alt="basket_icon" />
-          </Link>
-          <div className={totalQuantity === 0 ? "dotHidden" : "dot"}>
+          </Link> */}
+          {/* <div className={totalQuantity === 0 ? "dotHidden" : "dot"}>
             <p>{totalQuantity}</p>
-          </div>
+          </div> */}
         </div>
         {/* <button onClick={() => setShowLogin(true)}>Sign in</button> */}
       </div>

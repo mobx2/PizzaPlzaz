@@ -165,53 +165,67 @@
   margin-top: 10px;
 }
 
+/* Price and Button Container */
+.food-item-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
 .food-item-price {
   color: var(--primary);
-  font-size: clamp(16px, 4vw, 22px);
+  font-size: clamp(18px, 4vw, 22px);
   font-weight: 600;
-  margin-top: auto;
-  margin-bottom: 12px;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 /* Mobile: adjusted price size */
 @media (max-width: 767px) {
   .food-item-price {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px;
   }
 }
 
 /* Show Details Button */
 .food-item-details-btn {
-  width: 100%;
   background: var(--primary);
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 99, 71, 0.25);
-  margin-top: auto;
+  box-shadow: 0 2px 6px rgba(255, 99, 71, 0.15);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .food-item-details-btn:hover {
   background: #e55a4f;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 99, 71, 0.35);
+  box-shadow: 0 4px 12px rgba(255, 99, 71, 0.35);
 }
 
 .food-item-details-btn:active {
   transform: translateY(0);
-  box-shadow: 0 3px 8px rgba(255, 99, 71, 0.3);
+  box-shadow: 0 2px 6px rgba(255, 99, 71, 0.25);
 }
 
 /* Mobile: adjusted button size */
 @media (max-width: 767px) {
+  .food-item-price-row {
+    gap: 8px;
+    padding-top: 6px;
+  }
+
   .food-item-details-btn {
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 5px 10px;
+    font-size: 10px;
   }
 }

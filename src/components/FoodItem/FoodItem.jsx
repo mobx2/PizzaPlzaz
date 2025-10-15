@@ -31,15 +31,17 @@ const FoodItem = ({ id, name, price, description, image }) => {
           <div className="food-item-name-rating">
             <p>{name}</p>
           </div>
-          <p className="food-item-price">${price}</p>
           
-          {/* Show Details Button */}
-          <button 
-            className="food-item-details-btn"
-            onClick={handleShowDetails}
-          >
-            Show Details
-          </button>
+          {/* Price and Show Details Button on same line */}
+          <div className="food-item-price-row">
+            <p className="food-item-price">${price}</p>
+            <button 
+              className="food-item-details-btn"
+              onClick={handleShowDetails}
+            >
+              Show Details
+            </button>
+          </div>
         </div>
       </div>
 
