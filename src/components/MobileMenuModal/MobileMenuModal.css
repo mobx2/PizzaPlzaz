@@ -5,8 +5,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9999;
+  z-index: 10000; /* Above bottom nav bar (z-index: 1000) */
   display: none;
+  pointer-events: none; /* Allow clicks to pass through when closed */
 }
 
 /* Show only on mobile */
@@ -14,33 +15,35 @@
   .mobile-menu-overlay {
     display: flex;
     align-items: flex-end;
+    pointer-events: auto; /* Re-enable clicks when open */
   }
 
   /* Backdrop */
   .mobile-menu-backdrop {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; /* Full screen backdrop covering everything */
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     animation: fadeIn 0.3s ease-out;
+    z-index: 1; /* Behind menu content, above bottom nav */
   }
 
   /* Menu Content Container */
   .mobile-menu-content {
     position: relative;
     width: 100%;
-    max-height: 80vh;
+    max-height: 85vh; /* Take up most of the screen */
     background-color: var(--card-bg);
     border-radius: 20px 20px 0 0;
-    padding: 24px 20px;
+    padding: 24px 20px 36px 20px; /* Extra bottom padding */
     box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    margin-bottom: 70px; /* Account for bottom nav bar */
+    z-index: 2; /* Above backdrop and bottom nav */
     
     /* Hide scrollbar for all browsers */
     -ms-overflow-style: none;  /* IE and Edge */
@@ -96,7 +99,7 @@
     transform: rotate(90deg) scale(0.9);
   }
 
-  /* Animations */
+  /* Opening Animations */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -117,6 +120,37 @@
     }
   }
 
+  /* Closing Animations */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  /* Apply closing animations when menu is closing */
+  /* The 'closing' class triggers reverse animations with same timing as opening */
+  .mobile-menu-backdrop.closing {
+    animation: fadeOut 0.3s ease-out forwards;
+  }
+
+  .mobile-menu-content.closing {
+    animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
   .mobile-menu-content::-webkit-scrollbar {
     display: none;
@@ -126,8 +160,8 @@
 /* Small mobile adjustments */
 @media (max-width: 375px) {
   .mobile-menu-content {
-    padding: 20px 15px;
-    max-height: 75vh;
+    padding: 20px 15px 32px 15px;
+    max-height: 80vh; /* Slightly smaller for compact screens */
   }
 
   .mobile-menu-header h2 {
@@ -136,5 +170,13 @@
 
   .mobile-menu-close {
     font-size: 20px;
+  }
+}
+
+/* Large mobile devices */
+@media (min-width: 576px) and (max-width: 768px) {
+  .mobile-menu-content {
+    max-height: 75vh; /* More comfortable height on larger phones */
+    padding: 28px 24px 40px 24px;
   }
 }

@@ -1,10 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./MobileMenuModal.css";
 import MenuList from "../MenuList/MenuList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const MobileMenuModal = ({ isOpen, onClose, category, setCategory }) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  // Handle smooth closing with animation
+  const handleClose = useCallback(() => {
+    setIsClosing(true);
+    // Wait for animation to complete before actually closing
+    setTimeout(() => {
+      setIsAnimating(false);
+      setIsClosing(false);
+      onClose();
+    }, 400); // Match animation duration (0.4s)
+  }, [onClose]);
+
+  // Handle opening animation
+  useEffect(() => {
+    if (isOpen) {
+      setIsAnimating(true);
+      setIsClosing(false);
+    }
+  }, [isOpen]);
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -21,27 +43,38 @@ const MobileMenuModal = ({ isOpen, onClose, category, setCategory }) => {
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape" && isOpen) {
-        onClose();
+        handleClose();
       }
     };
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
-  }, [isOpen, onClose]);
+  }, [isOpen, handleClose]);
 
-  if (!isOpen) return null;
+  // Prevent clicks inside menu from closing it
+  const handleContentClick = (e) => {
+    e.stopPropagation();
+  };
+
+  if (!isOpen && !isAnimating) return null;
 
   return (
-    <div className="mobile-menu-overlay">
+    <div className={`mobile-menu-overlay ${isClosing ? "closing" : ""}`}>
       {/* Backdrop */}
-      <div className="mobile-menu-backdrop" onClick={onClose}></div>
+      <div 
+        className={`mobile-menu-backdrop ${isClosing ? "closing" : ""}`}
+        onClick={handleClose}
+      ></div>
 
       {/* Menu Content */}
-      <div className="mobile-menu-content">
+      <div 
+        className={`mobile-menu-content ${isClosing ? "closing" : ""}`}
+        onClick={handleContentClick}
+      >
         <div className="mobile-menu-header">
           <h2>Explore Our Menu</h2>
           <button
             className="mobile-menu-close"
-            onClick={onClose}
+            onClick={handleClose}
             aria-label="Close menu"
           >
             <FontAwesomeIcon icon={faTimes} />
@@ -50,7 +83,7 @@ const MobileMenuModal = ({ isOpen, onClose, category, setCategory }) => {
         <MenuList
           category={category}
           setCategory={setCategory}
-          onItemClick={onClose}
+          onItemClick={handleClose}
         />
       </div>
     </div>
