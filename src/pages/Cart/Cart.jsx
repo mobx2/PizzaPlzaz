@@ -98,8 +98,18 @@ const Cart = () => {
           <div>
             <p>If you have a promocode, Enter it here</p>
             <div className="cart-promocode-input">
-              <input type="text" placeholder="Promo Code" />
-              <button>Submit</button>
+              <input 
+                type="text" 
+                placeholder="Promo Code" 
+                aria-label="Enter promo code"
+                className="promocode-text-input"
+              />
+              <button 
+                aria-label="Apply promo code"
+                className="promocode-submit-button"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>
