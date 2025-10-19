@@ -7,6 +7,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import FloatingActionButton from "./components/FloatingActionButton/FloatingActionButton";
 // import NavExtras from "./components/NavExtras/NavExtras";
 
 const App = () => {
@@ -24,7 +25,8 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
+      <FloatingActionButton />
     </>
   );
 };
