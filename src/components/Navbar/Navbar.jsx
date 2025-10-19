@@ -13,13 +13,21 @@ const Navbar = ({ setShowLogin }) => {
   const totalQuantity = getTotalQuantity();
   const [menu, setMenu] = useState("home");
   const [showSearch, setShowSearch] = useState(false);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
   const searchInputRef = useRef(null);
+  const mobileSearchInputRef = useRef(null);
 
   useEffect(() => {
     if (showSearch && searchInputRef.current) {
       searchInputRef.current.focus();
     }
   }, [showSearch]);
+
+  useEffect(() => {
+    if (showMobileSearch && mobileSearchInputRef.current) {
+      mobileSearchInputRef.current.focus();
+    }
+  }, [showMobileSearch]);
 
   const handleSearchClick = () => {
     setShowSearch(true);
@@ -30,9 +38,42 @@ const Navbar = ({ setShowLogin }) => {
     setShowSearch(false);
   };
 
+  const handleMobileSearchClick = () => {
+    setShowMobileSearch(true);
+  };
+
+  const handleMobileSearchClose = () => {
+    setSearchTerm("");
+    setShowMobileSearch(false);
+  };
+
   return (
     <div className="navbar">
-      <Link to="/">
+      {/* Mobile Search Container */}
+      <div
+        className={`mobile-search-overlay ${showMobileSearch ? "active" : ""}`}
+      >
+        <div className="mobile-search-input-container">
+          <input
+            ref={mobileSearchInputRef}
+            type="text"
+            className="mobile-search-input"
+            placeholder="Search for dishes..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button
+            className="mobile-search-close-btn"
+            onClick={handleMobileSearchClose}
+            aria-label="Close search"
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+        </div>
+      </div>
+
+      {/* Regular Navbar Content */}
+      <Link to="/" className={showMobileSearch ? "hidden-mobile" : ""}>
         <img src={assets.logo} alt="logo" className="logo" />
       </Link>
       <ul className="navbar-menu">
@@ -66,6 +107,7 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
+        {/* Desktop Search */}
         <div
           className={`desktop-search-container ${showSearch ? "active" : ""}`}
         >
@@ -95,7 +137,20 @@ const Navbar = ({ setShowLogin }) => {
             </button>
           )}
         </div>
-        <ThemeToggle />
+
+        {/* Mobile Search Button */}
+        <button
+          className="mobile-search-toggle"
+          onClick={handleMobileSearchClick}
+          aria-label="Open search"
+        >
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
+
+        {/* Theme Toggle */}
+        <div className={showMobileSearch ? "hidden-mobile" : ""}>
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   );
