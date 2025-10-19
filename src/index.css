@@ -58,6 +58,12 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  direction: rtl;
+  text-align: right;
+}
+
 body {
   min-height: 100vh;
   background-color: var(--bg-primary);
@@ -68,6 +74,16 @@ body {
 .app {
   width: 80%;
   margin: auto;
+  min-height: calc(100vh - 300px); /* Account for footer height */
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .app {
+    width: 95%;
+    min-height: calc(100vh - 400px); /* Adjust for mobile footer height */
+  }
 }
 
 a {

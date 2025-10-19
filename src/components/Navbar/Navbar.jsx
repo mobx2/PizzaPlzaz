@@ -50,10 +50,12 @@ const Navbar = ({ setShowLogin }) => {
       </ul>
       <div className="navbar-right">
         {/* Hotline Number */}
-        <a href="tel:17485" className="navbar-hotline">
+
+        {/* <a href="tel:17485" className="navbar-hotline">
           <FontAwesomeIcon icon={faPhone} className="hotline-icon" />
           <span className="hotline-number">17485</span>
-        </a>
+        </a> */}
+
         {/* <img src={assets.search_icon} alt="search_icon" /> */}
         <div className="navbar-basket-icon">
           {/* <Link to="/cart">

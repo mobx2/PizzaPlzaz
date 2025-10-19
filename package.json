@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
@@ -19,7 +20,9 @@
     "@mui/material": "^7.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "stylis": "^4.3.6",
+    "stylis-plugin-rtl": "^2.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
