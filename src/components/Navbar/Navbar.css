@@ -19,7 +19,71 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
+}
+
+/* Desktop Search Styles */
+.desktop-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border-radius: 24px;
+  width: 44px;
+  height: 44px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.desktop-search-container.active {
+  width: 280px;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.desktop-search-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 44px 0 16px;
+  font-size: 15px;
+  color: var(--text-primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.desktop-search-container.active .desktop-search-input {
+  opacity: 1;
+}
+
+.desktop-search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.desktop-search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.desktop-search-btn:hover {
+  color: var(--primary);
+}
+
+.desktop-search-btn.clear {
+  color: var(--text-secondary);
 }
 
 /* Hotline Number - Visible on all screen sizes */
@@ -201,18 +265,19 @@
     display: none;
   }
 
-  /* Mobile hotline adjustments */
-  .navbar-hotline {
-    font-size: 14px;
-    padding: 7px 12px;
-    gap: 7px;
-  }
-
-  .hotline-icon {
-    font-size: 12px;
-  }
-
   .navbar-right {
     gap: 15px;
+  }
+
+  /* Hide desktop search on mobile */
+  .desktop-search-container {
+    display: none;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 751px) {
+  .desktop-search-container.active {
+    width: 220px;
   }
 }

@@ -1,17 +1,34 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Navbar = ({ setShowLogin }) => {
-  const { getTotalQuantity } = useContext(StoreContext);
+  const { getTotalQuantity, searchTerm, setSearchTerm } =
+    useContext(StoreContext);
   const totalQuantity = getTotalQuantity();
-
   const [menu, setMenu] = useState("home");
+  const [showSearch, setShowSearch] = useState(false);
+  const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    if (showSearch && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [showSearch]);
+
+  const handleSearchClick = () => {
+    setShowSearch(true);
+  };
+
+  const handleClearSearch = () => {
+    setSearchTerm("");
+    setShowSearch(false);
+  };
 
   return (
     <div className="navbar">
@@ -49,24 +66,35 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
-        {/* Hotline Number */}
-
-        {/* <a href="tel:17485" className="navbar-hotline">
-          <FontAwesomeIcon icon={faPhone} className="hotline-icon" />
-          <span className="hotline-number">17485</span>
-        </a> */}
-
-        {/* <img src={assets.search_icon} alt="search_icon" /> */}
-        <div className="navbar-basket-icon">
-          {/* <Link to="/cart">
-            <img src={assets.basket_icon} alt="basket_icon" />
-          </Link> */}
-          {/* <div className={totalQuantity === 0 ? "dotHidden" : "dot"}>
-            <p>{totalQuantity}</p>
-          </div> */}
+        <div
+          className={`desktop-search-container ${showSearch ? "active" : ""}`}
+        >
+          <input
+            ref={searchInputRef}
+            type="text"
+            className="desktop-search-input"
+            placeholder="Search for dishes..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          {showSearch ? (
+            <button
+              className="desktop-search-btn clear"
+              onClick={handleClearSearch}
+              aria-label="Clear search"
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+          ) : (
+            <button
+              className="desktop-search-btn"
+              onClick={handleSearchClick}
+              aria-label="Search"
+            >
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          )}
         </div>
-        {/* <button onClick={() => setShowLogin(true)}>Sign in</button> */}
-
         <ThemeToggle />
       </div>
     </div>
