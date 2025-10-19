@@ -1,16 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FoodItem.css";
 import ProductDetailsModal from "../ProductDetailsModal/ProductDetailsModal";
 
 const FoodItem = ({ id, name, price, description, image }) => {
   const [showModal, setShowModal] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width:768px)").matches
+  );
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia("(max-width:768px)");
+    const handler = (e) => setIsMobile(e.matches);
+    // initialize
+    setIsMobile(mq.matches);
+    if (mq.addEventListener) {
+      mq.addEventListener("change", handler);
+      return () => mq.removeEventListener("change", handler);
+    } else {
+      mq.addListener(handler);
+      return () => mq.removeListener(handler);
+    }
+  }, []);
+
   const product = {
     id,
     name,
     price,
     description,
-    image
+    image,
   };
 
   const handleShowDetails = () => {
@@ -31,15 +52,15 @@ const FoodItem = ({ id, name, price, description, image }) => {
           <div className="food-item-name-rating">
             <p>{name}</p>
           </div>
-          
+
           {/* Price and Show Details Button on same line */}
           <div className="food-item-price-row">
             <p className="food-item-price">${price}</p>
-            <button 
+            <button
               className="food-item-details-btn"
               onClick={handleShowDetails}
             >
-              Show Details
+              {isMobile ? "Show" : "Show Details"}
             </button>
           </div>
         </div>

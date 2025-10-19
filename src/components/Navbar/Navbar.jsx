@@ -5,6 +5,7 @@ import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Navbar = ({ setShowLogin }) => {
   const { getTotalQuantity } = useContext(StoreContext);
@@ -63,6 +64,8 @@ const Navbar = ({ setShowLogin }) => {
           </div> */}
         </div>
         {/* <button onClick={() => setShowLogin(true)}>Sign in</button> */}
+
+        <ThemeToggle />
       </div>
     </div>
   );
