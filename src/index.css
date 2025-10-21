@@ -25,6 +25,39 @@
   --footer-text: #ffffff;
 }
 
+/* Prevent mobile zoom on input focus */
+input,
+select,
+textarea,
+button {
+  font-size: 16px !important; /* Prevent iOS zoom on focus */
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+  -ms-text-size-adjust: 100%; /* IE and Edge */
+  -moz-text-size-adjust: 100%; /* Firefox */
+}
+
+/* Ensure inputs are large enough to prevent zoom on focus */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  select:focus,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
 /* Dark Theme */
 [data-theme="dark"] {
   --primary: #ff6347;
