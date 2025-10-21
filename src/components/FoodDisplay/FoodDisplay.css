@@ -2,13 +2,183 @@
   margin-top: 30px;
 }
 
+.food-display-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  min-height: 44px;
+  width: 100%;
+}
+
 .food-display h2 {
   font-size: max(2vw, 24px);
   font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  padding-right: 60px; /* Space for search icon */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.food-display h2.hidden {
+  opacity: 0;
+  transform: translateX(-20px);
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Search Styles */
+.food-display-search {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border-radius: 22px;
+  height: 44px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  width: 44px;
+  z-index: 2;
+}
+
+.food-display-search.active {
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.search-input-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 44px; /* Space for the close button */
+}
+
+.food-display-search-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  caret-color: var(--primary);
+}
+
+.food-display-search:not(.active) .food-display-search-input {
+  cursor: pointer;
+}
+
+.food-display-search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.food-display-search.active .food-display-search-input::placeholder {
+  opacity: 1;
+}
+
+.food-display-search-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  padding: 0 12px; /* Added padding around the icon */
+  box-sizing: border-box;
+}
+
+/* Ensure the close button has proper spacing when active */
+.food-display-search.active .food-display-search-btn {
+  right: 0;
+  padding: 0 12px;
+}
+
+/* Add hover effect for better interaction */
+.food-display-search-btn:hover {
+  color: var(--primary);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+}
+
+/* Adjust the icon size and positioning */
+.food-display-search-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.food-display-search-btn:hover {
+  color: var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .food-display h2 {
+    font-size: 24px;
+    padding-right: 50px;
+  }
+  
+  .food-display-search {
+    height: 40px;
+  }
+  
+  .food-display-search-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Animation for search expansion */
+@keyframes expandSearch {
+  from {
+    width: 44px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes collapseSearch {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 44px;
+  }
+}
+
+.food-display-search:not(.active) {
+  animation: collapseSearch 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.food-display-search.active {
+  animation: expandSearch 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Flexbox fallback for older browsers */
 .food-display-list {
-  /* Flexbox fallback for older browsers */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
