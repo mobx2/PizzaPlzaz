@@ -108,6 +108,14 @@
   flex-shrink: 0;
   padding: 0 12px; /* Added padding around the icon */
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  -webkit-touch-callout: none; /* Prevent callout on iOS */
+  -webkit-user-select: none; /* Prevent text selection on iOS */
+  user-select: none;
+}
+
+.food-display-search-btn:focus {
+  outline: none;
 }
 
 /* Ensure the close button has proper spacing when active */
@@ -207,6 +215,14 @@
   white-space: nowrap;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  -webkit-touch-callout: none; /* Prevent callout on iOS */
+  -webkit-user-select: none; /* Prevent text selection on iOS */
+  user-select: none;
+}
+
+.food-display-sub-filter-btn:focus {
+  outline: none;
 }
 
 .food-display-sub-filter-btn:hover {

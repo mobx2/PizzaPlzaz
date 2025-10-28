@@ -18,6 +18,18 @@
   cursor: pointer;
   border-radius: 50%;
   transition: 0.2s ease;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+.menu-list-item {
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  -webkit-touch-callout: none; /* Prevent callout on iOS */
+  -webkit-user-select: none; /* Prevent text selection on iOS */
+  user-select: none;
+}
+
+.menu-list-item:focus {
+  outline: none;
 }
 
 .menu-list-item p {
