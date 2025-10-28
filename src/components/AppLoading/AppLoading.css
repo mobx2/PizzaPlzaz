@@ -4,12 +4,36 @@
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--bg-primary);
-  z-index: 9999;
-  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  z-index: 99999;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.app-loading.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .loading-content {
@@ -25,7 +49,8 @@
   width: 120px;
   height: 120px;
   object-fit: contain;
-  animation: pulse 2s infinite ease-in-out;
+  animation: logoAnimation 2s ease-in-out;
+  filter: drop-shadow(0 4px 12px rgba(255, 99, 71, 0.4));
 }
 
 .loading-spinner {
@@ -38,13 +63,23 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  50% {
+    transform: scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* Responsive adjustments */
@@ -53,7 +88,7 @@
     width: 100px;
     height: 100px;
   }
-  
+
   .loading-spinner {
     width: 40px;
     height: 40px;

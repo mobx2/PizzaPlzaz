@@ -6,6 +6,7 @@ import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import AppLoading from "./components/AppLoading/AppLoading";
 // import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
 import FloatingActionButton from "./components/FloatingActionButton/FloatingActionButton";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -26,23 +27,25 @@ const App = () => {
   });
 
   return (
-    <CacheProvider value={rtlCache}>
-      <ThemeProvider theme={theme}>
-        {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
-        <div className="app">
-          <Navbar setShowLogin={setShowLogin} />
-          {/* <NavExtras /> */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/order" element={<PlaceOrder />} />
-          </Routes>
-        </div>
-        <Footer />
-        {/* <ScrollToTop /> */}
-        <FloatingActionButton />
-      </ThemeProvider>
-    </CacheProvider>
+    <AppLoading>
+      <CacheProvider value={rtlCache}>
+        <ThemeProvider theme={theme}>
+          {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
+          <div className="app">
+            <Navbar setShowLogin={setShowLogin} />
+            {/* <NavExtras /> */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/order" element={<PlaceOrder />} />
+            </Routes>
+          </div>
+          <Footer />
+          {/* <ScrollToTop /> */}
+          <FloatingActionButton />
+        </ThemeProvider>
+      </CacheProvider>
+    </AppLoading>
   );
 };
 
