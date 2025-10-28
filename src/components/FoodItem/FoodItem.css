@@ -98,11 +98,11 @@
     gap: 6px;
     padding: 4px;
   }
-  
+
   .food-item-counter img {
     width: 24px;
   }
-  
+
   .food-item-counter p {
     font-size: 12px;
   }
@@ -148,11 +148,11 @@
   .food-item-name-rating {
     margin-bottom: 6px;
   }
-  
+
   .food-item-name-rating p {
     font-size: 14px;
   }
-  
+
   .food-item-name-rating img {
     width: 50px;
   }

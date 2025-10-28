@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./FoodItem.css";
 import ProductDetailsModal from "../ProductDetailsModal/ProductDetailsModal";
 
-const FoodItem = ({ id, name, price, description, image }) => {
+const FoodItem = ({ id, name, price, description, image, sizes }) => {
   const [showModal, setShowModal] = useState(false);
 
   const [isMobile, setIsMobile] = useState(
@@ -32,6 +32,18 @@ const FoodItem = ({ id, name, price, description, image }) => {
     price,
     description,
     image,
+    sizes,
+  };
+
+  // Calculate display price: show "md" size if available, otherwise show base price
+  const getDisplayPrice = () => {
+    if (sizes && Array.isArray(sizes) && sizes.length > 0) {
+      const mdSize = sizes.find((s) => s.size === "md");
+      if (mdSize) {
+        return price + mdSize.price;
+      }
+    }
+    return price;
   };
 
   const handleShowDetails = () => {
@@ -55,7 +67,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
 
           {/* Price and Show Details Button on same line */}
           <div className="food-item-price-row">
-            <p className="food-item-price">${price}</p>
+            <p className="food-item-price">${getDisplayPrice()}</p>
             <button
               className="food-item-details-btn"
               onClick={handleShowDetails}

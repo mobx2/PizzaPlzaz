@@ -1,11 +1,12 @@
 import { createContext, useState } from "react";
-import { food_list } from "../assets/assets";
+import { food_list, menu_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  const [category, setCategory] = useState("All");
+  // Set the first category as default (first item in menu_list)
+  const [category, setCategory] = useState(menu_list[0]?.menu_name || "All");
   const [searchTerm, setSearchTerm] = useState("");
 
   const addToCart = (itemId) => {

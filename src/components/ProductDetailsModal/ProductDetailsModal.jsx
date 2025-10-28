@@ -58,15 +58,17 @@ const ProductDetailsModal = ({ isOpen, onClose, product }) => {
   if (!product) return null;
 
   return (
-    <div 
+    <div
       className={`product-modal-overlay ${isClosing ? "closing" : ""}`}
       onClick={handleClose}
     >
       {/* Backdrop */}
-      <div className={`product-modal-backdrop ${isClosing ? "closing" : ""}`}></div>
+      <div
+        className={`product-modal-backdrop ${isClosing ? "closing" : ""}`}
+      ></div>
 
       {/* Modal Content */}
-      <div 
+      <div
         className={`product-modal-content ${isClosing ? "closing" : ""}`}
         onClick={handleModalClick}
       >
@@ -81,8 +83,8 @@ const ProductDetailsModal = ({ isOpen, onClose, product }) => {
 
         {/* Product Image */}
         <div className="product-modal-image-container">
-          <img 
-            src={product.image} 
+          <img
+            src={product.image}
             alt={product.name}
             className="product-modal-image"
           />
@@ -91,13 +93,31 @@ const ProductDetailsModal = ({ isOpen, onClose, product }) => {
         {/* Product Info */}
         <div className="product-modal-info">
           <h2 className="product-modal-title">{product.name}</h2>
-          
+
           <p className="product-modal-description">
-            {product.description || "Delicious food crafted with care and premium ingredients. Experience the perfect blend of flavors that will satisfy your cravings and leave you wanting more. Each dish is prepared fresh daily using only the finest ingredients sourced from local suppliers. Our chefs bring years of expertise to create memorable culinary experiences that keep our customers coming back for more."}
+            {product.description ||
+              "Delicious food crafted with care and premium ingredients. Experience the perfect blend of flavors that will satisfy your cravings and leave you wanting more. Each dish is prepared fresh daily using only the finest ingredients sourced from local suppliers. Our chefs bring years of expertise to create memorable culinary experiences that keep our customers coming back for more."}
           </p>
 
           <div className="product-modal-price-container">
-            <span className="product-modal-price">${product.price}</span>
+            {product.sizes &&
+            Array.isArray(product.sizes) &&
+            product.sizes.length > 0 ? (
+              <div className="product-modal-sizes">
+                {product.sizes.map((sizeOption, idx) => (
+                  <div key={idx} className="product-modal-size-item">
+                    <span className="product-modal-size-label">
+                      {sizeOption.size.toUpperCase()}:
+                    </span>
+                    <span className="product-modal-size-price">
+                      ${product.price + sizeOption.price}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <span className="product-modal-price">${product.price}</span>
+            )}
           </div>
         </div>
       </div>

@@ -7,7 +7,8 @@ const MenuList = ({ category, setCategory, onItemClick }) => {
   const { setSearchTerm } = useContext(StoreContext);
 
   const handleClick = (item) => {
-    setCategory((prev) => (prev === item.menu_name ? "All" : item.menu_name));
+    // Always set the category to the clicked item (no toggle behavior)
+    setCategory(item.menu_name);
     // Clear search term when selecting a category
     setSearchTerm("");
     if (onItemClick) {

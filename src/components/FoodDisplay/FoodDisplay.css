@@ -139,11 +139,11 @@
     font-size: 24px;
     padding-right: 50px;
   }
-  
+
   .food-display-search {
     height: 40px;
   }
-  
+
   .food-display-search-btn {
     width: 40px;
     height: 40px;
@@ -175,6 +175,72 @@
 
 .food-display-search.active {
   animation: expandSearch 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Sub-Category Filter Row */
+.food-display-sub-filters {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  /* Hide scrollbar for all browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.food-display-sub-filters::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.food-display-sub-filter-btn {
+  background-color: var(--bg-secondary);
+  border: 2px solid transparent;
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.food-display-sub-filter-btn:hover {
+  background-color: var(--shadow);
+  color: var(--text-primary);
+}
+
+.food-display-sub-filter-btn.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(255, 99, 71, 0.3);
+}
+
+/* Mobile adjustments for sub-filters */
+@media (max-width: 768px) {
+  .food-display-sub-filters {
+    gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 6px;
+    /* Maintain hidden scrollbar on mobile */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .food-display-sub-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .food-display-sub-filter-btn {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
 }
 
 /* Flexbox fallback for older browsers */
