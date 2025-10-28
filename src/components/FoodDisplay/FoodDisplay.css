@@ -267,6 +267,113 @@
   margin-top: 30px;
 }
 
+/* Fade in animation for content */
+.food-display-list > * {
+  animation: fadeInContent 0.4s ease-in-out;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading overlay for category transitions */
+.food-display-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: fadeInOverlay 0.3s ease-in;
+}
+
+[data-theme="dark"] .food-display-loading-overlay {
+  background-color: rgba(20, 20, 20, 0.85);
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  50% {
+    transform: scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.food-display-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.food-display-loading-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  animation: logoAnimation 1.5s ease-in-out;
+  filter: drop-shadow(0 4px 12px rgba(255, 99, 71, 0.4));
+}
+
+.food-display-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 99, 71, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Mobile adjustments for loading overlay */
+@media (max-width: 768px) {
+  .food-display-loading-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .food-display-loading-spinner {
+    width: 30px;
+    height: 30px;
+  }
+
+  .food-display-loading-content {
+    gap: 1rem;
+  }
+}
+
 /* CSS Grid for modern browsers */
 @supports (display: grid) {
   .food-display-list {

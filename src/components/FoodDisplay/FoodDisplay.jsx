@@ -1,6 +1,7 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
+import { assets } from "../../assets/assets";
 import FoodItem from "../FoodItem/FoodItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +10,13 @@ const FoodDisplay = ({ category }) => {
   const { food_list, searchTerm, setSearchTerm } = useContext(StoreContext);
   const [showSearch, setShowSearch] = useState(false);
   const [subCategory, setSubCategory] = useState("All");
+  const [isLoading, setIsLoading] = useState(false);
+  const [showContent, setShowContent] = useState(true);
+  const [minHeight, setMinHeight] = useState(null);
   const searchInputRef = useRef(null);
+  const listContainerRef = useRef(null);
+  const prevCategoryRef = useRef(category);
+  const prevSubCategoryRef = useRef("All");
 
   useEffect(() => {
     if (showSearch && searchInputRef.current) {
@@ -21,6 +28,46 @@ const FoodDisplay = ({ category }) => {
   useEffect(() => {
     setSubCategory("All");
   }, [category]);
+
+  // Detect category or sub-category changes to show loading
+  useEffect(() => {
+    const categoryChanged = prevCategoryRef.current !== category;
+    const subCategoryChanged = prevSubCategoryRef.current !== subCategory;
+
+    if (categoryChanged || subCategoryChanged) {
+      // Store current height before hiding content
+      if (listContainerRef.current) {
+        const currentHeight = listContainerRef.current.scrollHeight;
+        setMinHeight(currentHeight);
+      }
+
+      // Start loading immediately
+      setIsLoading(true);
+      setShowContent(false);
+
+      // After 400ms, show the new content
+      const contentTimer = setTimeout(() => {
+        setShowContent(true);
+      }, 400);
+
+      // After 100ms more (500ms total), fade out the loader and remove height constraint
+      const loaderTimer = setTimeout(() => {
+        setIsLoading(false);
+        // Remove min-height after a brief delay to allow new content to settle
+        setTimeout(() => {
+          setMinHeight(null);
+        }, 100);
+      }, 500);
+
+      prevCategoryRef.current = category;
+      prevSubCategoryRef.current = subCategory;
+
+      return () => {
+        clearTimeout(contentTimer);
+        clearTimeout(loaderTimer);
+      };
+    }
+  }, [category, subCategory]);
 
   const handleSearchClick = () => {
     setShowSearch(true);
@@ -121,8 +168,33 @@ const FoodDisplay = ({ category }) => {
         </div>
       )}
 
-      <div className="food-display-list">
-        {filteredProducts.length > 0 ? (
+      <div
+        ref={listContainerRef}
+        className="food-display-list"
+        style={{
+          position: "relative",
+          minHeight: minHeight ? `${minHeight}px` : "auto",
+          transition: minHeight ? "min-height 0.3s ease-out" : "none",
+        }}
+      >
+        {/* Loading overlay for category transitions */}
+        {isLoading && (
+          <div className="food-display-loading-overlay">
+            <div className="food-display-loading-content">
+              <img
+                src={assets.logo}
+                alt="Loading"
+                className="food-display-loading-logo"
+                width="80"
+                height="80"
+              />
+              <div className="food-display-loading-spinner"></div>
+            </div>
+          </div>
+        )}
+
+        {showContent &&
+          filteredProducts.length > 0 &&
           filteredProducts.map((item, index) => (
             <FoodItem
               key={index}
@@ -133,8 +205,8 @@ const FoodDisplay = ({ category }) => {
               image={item.image}
               sizes={item.sizes}
             />
-          ))
-        ) : (
+          ))}
+        {showContent && filteredProducts.length === 0 && (
           <p className="no-results">
             {searchTerm
               ? `No dishes found matching "${searchTerm}"`
