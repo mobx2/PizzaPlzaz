@@ -12,12 +12,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-left">
           <img src={assets.logo} alt="logo" />
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
-            ratione fugiat vitae quisquam dolores sint id, nisi veniam
-            repellendus. Tempore, expedita. At praesentium deserunt minima!
-            Porro iste beatae maxime voluptatem?
-          </p>
+          <p>بيتزا بلازا , أفضل إختيار</p>
           <div className="footer-social-icons">
             <a href="https://www.facebook.com">
               <img src={assets.facebook_icon} alt="facebook" />
@@ -31,7 +26,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-content-center">
-          <h2>COMPANY</h2>
+          <h2>فروعنا</h2>
           <ul>
             <li onClick={() => navigate("/")}>Home</li>
             <li>About Us</li>
@@ -40,10 +35,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-content-right">
-          <h2>GET IN TOUCH</h2>
+          <h2>تواصل معنا</h2>
           <ul>
-            <li>+1-123-456-7890</li>
-            <li>contact@tomato.com</li>
+            <li>+201060044426</li>
+            <li>contact@pizzaplazaeg.com</li>
           </ul>
         </div>
       </div>
