@@ -1,180 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2x2 Mobile Grid - Tailwind CSS</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Flexbox fallback for older browsers (if Tailwind Grid not supported) */
-    @supports not (display: grid) {
-      .cards-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .card-item {
-        flex: 1 1 calc(50% - 0.75rem);
-      }
-      @media (min-width: 768px) {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2x2 Mobile Grid - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Flexbox fallback for older browsers (if Tailwind Grid not supported) */
+      @supports not (display: grid) {
+        .cards-container {
+          display: flex;
+          flex-wrap: wrap;
+        }
         .card-item {
-          flex: 1 1 calc(33.333% - 1rem);
+          flex: 1 1 calc(50% - 0.75rem);
+        }
+        @media (min-width: 768px) {
+          .card-item {
+            flex: 1 1 calc(33.333% - 1rem);
+          }
+        }
+        @media (min-width: 1024px) {
+          .card-item {
+            flex: 1 1 calc(25% - 1.5rem);
+          }
         }
       }
-      @media (min-width: 1024px) {
-        .card-item {
-          flex: 1 1 calc(25% - 1.5rem);
-        }
-      }
-    }
-  </style>
-</head>
-<body class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 min-h-screen p-4 md:p-6 lg:p-8">
-  <div class="max-w-7xl mx-auto">
-    <!-- Header -->
-    <h1 class="text-white text-center text-2xl md:text-4xl font-bold mb-6 md:mb-10">
-      🍕 2x2 Mobile Grid - Tailwind CSS
-    </h1>
-    
-    <!-- Cards Grid Container -->
-    <div class="cards-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-6">
-      
-      <!-- Card 1 -->
-      <div class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
-        <!-- Image Container -->
-        <div class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-pink-400 to-red-500 h-32 md:h-48 lg:h-56 flex items-center justify-center">
-          <span class="text-4xl md:text-6xl lg:text-7xl">🍕</span>
-          <!-- Add to Cart Button -->
-          <button class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
-            <span class="text-green-500 text-lg md:text-2xl font-bold">+</span>
-          </button>
-        </div>
-        
-        <!-- Card Content -->
-        <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
-          <!-- Name and Rating -->
-          <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
-            <h3 class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1">Margherita Pizza</h3>
-            <div class="flex-shrink-0">
-              <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 min-h-screen p-4 md:p-6 lg:p-8"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <h1
+        class="text-white text-center text-2xl md:text-4xl font-bold mb-6 md:mb-10"
+      >
+        🍕 2x2 Mobile Grid - Tailwind CSS
+      </h1>
+
+      <!-- Cards Grid Container -->
+      <div
+        class="cards-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-6"
+      >
+        <!-- Card 1 -->
+        <div
+          class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+        >
+          <!-- Image Container -->
+          <div
+            class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-pink-400 to-red-500 h-32 md:h-48 lg:h-56 flex items-center justify-center"
+          >
+            <span class="text-4xl md:text-6xl lg:text-7xl">🍕</span>
+            <!-- Add to Cart Button -->
+            <button
+              class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+            >
+              <span class="text-green-500 text-lg md:text-2xl font-bold"
+                >+</span
+              >
+            </button>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
+            <!-- Name and Rating -->
+            <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
+              <h3
+                class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1"
+              >
+                Margherita Pizza
+              </h3>
+              <div class="flex-shrink-0">
+                <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+
+            <!-- Description (hidden on mobile for cleaner look) -->
+            <p
+              class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2"
+            >
+              Classic Italian pizza with fresh mozzarella and basil
+            </p>
+
+            <!-- Price -->
+            <div
+              class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto"
+            >
+              12.99 ج.م
             </div>
           </div>
-          
-          <!-- Description (hidden on mobile for cleaner look) -->
-          <p class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2">
-            Classic Italian pizza with fresh mozzarella and basil
-          </p>
-          
-          <!-- Price -->
-          <div class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto">
-            $12.99
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+        >
+          <div
+            class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-yellow-400 to-orange-500 h-32 md:h-48 lg:h-56 flex items-center justify-center"
+          >
+            <span class="text-4xl md:text-6xl lg:text-7xl">🍔</span>
+            <button
+              class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+            >
+              <span class="text-green-500 text-lg md:text-2xl font-bold"
+                >+</span
+              >
+            </button>
+          </div>
+          <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
+            <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
+              <h3
+                class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1"
+              >
+                Cheeseburger
+              </h3>
+              <div class="flex-shrink-0">
+                <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+            <p
+              class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2"
+            >
+              Juicy beef patty with cheddar cheese and special sauce
+            </p>
+            <div
+              class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto"
+            >
+              9.99 ج.م
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+        >
+          <div
+            class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-orange-400 to-red-500 h-32 md:h-48 lg:h-56 flex items-center justify-center"
+          >
+            <span class="text-4xl md:text-6xl lg:text-7xl">🍝</span>
+            <button
+              class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+            >
+              <span class="text-green-500 text-lg md:text-2xl font-bold"
+                >+</span
+              >
+            </button>
+          </div>
+          <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
+            <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
+              <h3
+                class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1"
+              >
+                Spaghetti Carbonara
+              </h3>
+              <div class="flex-shrink-0">
+                <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+            <p
+              class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2"
+            >
+              Creamy pasta with bacon, eggs, and Parmesan cheese
+            </p>
+            <div
+              class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto"
+            >
+              14.99 ج.م
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+        >
+          <div
+            class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-green-400 to-teal-500 h-32 md:h-48 lg:h-56 flex items-center justify-center"
+          >
+            <span class="text-4xl md:text-6xl lg:text-7xl">🍱</span>
+            <button
+              class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+            >
+              <span class="text-green-500 text-lg md:text-2xl font-bold"
+                >+</span
+              >
+            </button>
+          </div>
+          <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
+            <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
+              <h3
+                class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1"
+              >
+                Sushi Platter
+              </h3>
+              <div class="flex-shrink-0">
+                <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+            <p
+              class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2"
+            >
+              Assorted fresh sushi rolls with wasabi and soy sauce
+            </p>
+            <div
+              class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto"
+            >
+              18.99 ج.م
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
-        <div class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-yellow-400 to-orange-500 h-32 md:h-48 lg:h-56 flex items-center justify-center">
-          <span class="text-4xl md:text-6xl lg:text-7xl">🍔</span>
-          <button class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
-            <span class="text-green-500 text-lg md:text-2xl font-bold">+</span>
-          </button>
-        </div>
-        <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
-          <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
-            <h3 class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1">Cheeseburger</h3>
-            <div class="flex-shrink-0">
-              <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
-            </div>
-          </div>
-          <p class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2">
-            Juicy beef patty with cheddar cheese and special sauce
-          </p>
-          <div class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto">
-            $9.99
-          </div>
-        </div>
+      <!-- Info Section -->
+      <div
+        class="mt-8 bg-white/90 backdrop-blur-sm rounded-lg md:rounded-xl p-4 md:p-6"
+      >
+        <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">
+          📱 Tailwind CSS Grid Features
+        </h2>
+        <ul class="space-y-2 text-sm md:text-base text-gray-700">
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span
+              ><strong>Mobile (default):</strong> 2 columns using
+              <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm"
+                >grid-cols-2</code
+              ></span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span
+              ><strong>Tablet (≥768px):</strong> 3 columns using
+              <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm"
+                >md:grid-cols-3</code
+              ></span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span
+              ><strong>Desktop (≥1024px):</strong> 4 columns using
+              <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm"
+                >lg:grid-cols-4</code
+              ></span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span
+              ><strong>Responsive gaps:</strong>
+              <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm"
+                >gap-3 md:gap-5 lg:gap-6</code
+              ></span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span
+              ><strong>Responsive text:</strong>
+              <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm"
+                >text-sm md:text-lg lg:text-xl</code
+              ></span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 font-bold">✓</span>
+            <span
+              ><strong>Flexbox fallback:</strong> For older browsers not
+              supporting CSS Grid</span
+            >
+          </li>
+        </ul>
       </div>
-
-      <!-- Card 3 -->
-      <div class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
-        <div class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-orange-400 to-red-500 h-32 md:h-48 lg:h-56 flex items-center justify-center">
-          <span class="text-4xl md:text-6xl lg:text-7xl">🍝</span>
-          <button class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
-            <span class="text-green-500 text-lg md:text-2xl font-bold">+</span>
-          </button>
-        </div>
-        <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
-          <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
-            <h3 class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1">Spaghetti Carbonara</h3>
-            <div class="flex-shrink-0">
-              <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
-            </div>
-          </div>
-          <p class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2">
-            Creamy pasta with bacon, eggs, and Parmesan cheese
-          </p>
-          <div class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto">
-            $14.99
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="card-item bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
-        <div class="relative overflow-hidden rounded-t-lg md:rounded-t-xl bg-gradient-to-br from-green-400 to-teal-500 h-32 md:h-48 lg:h-56 flex items-center justify-center">
-          <span class="text-4xl md:text-6xl lg:text-7xl">🍱</span>
-          <button class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white rounded-full w-7 h-7 md:w-9 md:h-9 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
-            <span class="text-green-500 text-lg md:text-2xl font-bold">+</span>
-          </button>
-        </div>
-        <div class="p-3 md:p-4 lg:p-5 flex flex-col flex-1">
-          <div class="flex justify-between items-center mb-2 md:mb-3 gap-2">
-            <h3 class="text-sm md:text-lg lg:text-xl font-semibold text-gray-800 leading-tight flex-1">Sushi Platter</h3>
-            <div class="flex-shrink-0">
-              <span class="text-xs md:text-sm">⭐⭐⭐⭐⭐</span>
-            </div>
-          </div>
-          <p class="hidden md:block text-xs lg:text-sm text-gray-600 mb-3 line-clamp-2">
-            Assorted fresh sushi rolls with wasabi and soy sauce
-          </p>
-          <div class="text-purple-600 font-bold text-base md:text-xl lg:text-2xl mt-auto">
-            $18.99
-          </div>
-        </div>
-      </div>
-
     </div>
-
-    <!-- Info Section -->
-    <div class="mt-8 bg-white/90 backdrop-blur-sm rounded-lg md:rounded-xl p-4 md:p-6">
-      <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">📱 Tailwind CSS Grid Features</h2>
-      <ul class="space-y-2 text-sm md:text-base text-gray-700">
-        <li class="flex items-start gap-2">
-          <span class="text-green-500 font-bold">✓</span>
-          <span><strong>Mobile (default):</strong> 2 columns using <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm">grid-cols-2</code></span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-500 font-bold">✓</span>
-          <span><strong>Tablet (≥768px):</strong> 3 columns using <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm">md:grid-cols-3</code></span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-500 font-bold">✓</span>
-          <span><strong>Desktop (≥1024px):</strong> 4 columns using <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm">lg:grid-cols-4</code></span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-500 font-bold">✓</span>
-          <span><strong>Responsive gaps:</strong> <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm">gap-3 md:gap-5 lg:gap-6</code></span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-500 font-bold">✓</span>
-          <span><strong>Responsive text:</strong> <code class="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm">text-sm md:text-lg lg:text-xl</code></span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-green-500 font-bold">✓</span>
-          <span><strong>Flexbox fallback:</strong> For older browsers not supporting CSS Grid</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

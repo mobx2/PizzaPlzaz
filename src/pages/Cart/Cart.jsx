@@ -43,9 +43,9 @@ const Cart = () => {
                   >
                     <img src={item.image} alt="food img" />
                     <p>{item.name}</p>
-                    <p>${item.price}</p>
+                    <p>{item.price} ج.م</p>
                     <p>{cartItems[item._id]}</p>
-                    <p>${item.price * cartItems[item._id]}</p>
+                    <p>{item.price * cartItems[item._id]} ج.م</p>
                     <p
                       className="Remove"
                       onClick={() => removeFromCart(item._id)}
@@ -69,21 +69,21 @@ const Cart = () => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>{getTotalCartAmount()} ج.م</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery Free</p>
-              <p>${getTotalCartAmount() === 0 ? 0 : deliveryFee}</p>
+              <p>{getTotalCartAmount() === 0 ? 0 : deliveryFee} ج.م</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
               <b>
-                $
                 {getTotalCartAmount() === 0
                   ? 0
-                  : getTotalCartAmount() + deliveryFee}
+                  : getTotalCartAmount() + deliveryFee}{" "}
+                ج.م
               </b>
             </div>
           </div>
@@ -98,13 +98,13 @@ const Cart = () => {
           <div>
             <p>If you have a promocode, Enter it here</p>
             <div className="cart-promocode-input">
-              <input 
-                type="text" 
-                placeholder="Promo Code" 
+              <input
+                type="text"
+                placeholder="Promo Code"
                 aria-label="Enter promo code"
                 className="promocode-text-input"
               />
-              <button 
+              <button
                 aria-label="Apply promo code"
                 className="promocode-submit-button"
               >

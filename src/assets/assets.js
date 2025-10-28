@@ -2,14 +2,16 @@ import basket_icon from "./basket_icon.png";
 import logo from "./logo.png";
 import header_img from "./header_img.png";
 import search_icon from "./search_icon.png";
-import menu_1 from "./menu_1.png";
-import menu_2 from "./menu_2.png";
-import menu_3 from "./menu_3.png";
-import menu_4 from "./menu_4.png";
-import menu_5 from "./menu_5.png";
+import menu_1 from "./creap.jpeg";
+import menu_2 from "./pizza.jpeg";
+import menu_3 from "./tawagen.jpeg";
+import menu_4 from "./sandwich.jpeg";
+import menu_5 from "./meals.jpeg";
 import menu_6 from "./menu_6.png";
 import menu_7 from "./menu_7.png";
-import menu_8 from "./menu_8.png";
+import menu_8 from "./burger.jpeg";
+import menu_9 from "./dessert.jpeg";
+import menu_10 from "./pasta.jpeg";
 
 import food_1 from "./food_1.png";
 import food_2 from "./food_2.png";
@@ -86,179 +88,137 @@ export const assets = {
 
 export const menu_list = [
   {
-    menu_name: "Salad",
+    menu_name: "كريب",
     menu_image: menu_1,
   },
   {
-    menu_name: "Rolls",
+    menu_name: "بيتزا",
     menu_image: menu_2,
   },
   {
-    menu_name: "Deserts",
+    menu_name: "طواجن",
     menu_image: menu_3,
   },
   {
-    menu_name: "Sandwich",
+    menu_name: "سندوتشات",
     menu_image: menu_4,
   },
   {
-    menu_name: "Cake",
+    menu_name: "وجبات",
     menu_image: menu_5,
   },
   {
-    menu_name: "Pure Veg",
+    menu_name: "مقبلات",
     menu_image: menu_6,
   },
   {
-    menu_name: "Pasta",
+    menu_name: "مشروبات",
     menu_image: menu_7,
   },
   {
-    menu_name: "Noodles",
+    menu_name: "برجر",
     menu_image: menu_8,
+  },
+  {
+    menu_name: "حلو",
+    menu_image: menu_9,
+  },
+  {
+    menu_name: "مكرونات",
+    menu_image: menu_10,
   },
 ];
 
 export const food_list = [
   {
     _id: "1",
-    name: "Greek salad",
+    name: "كريب كرانشي",
     image: food_1,
     price: 12,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 5 },
-    ],
+    category: "كريب",
   },
   {
     _id: "2",
-    name: "Veg salad",
+    name: "بيتزا كرانشي",
     image: food_2,
     price: 18,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
+    category: "بيتزا",
   },
   {
     _id: "3",
-    name: "Clover Salad",
+    name: "طاجن مشكل لحوم",
     image: food_3,
     price: 16,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 5 },
-    ],
+    category: "طواجن",
   },
   {
     _id: "4",
-    name: "Chicken Salad",
+    name: "سندوتش كرانشي",
     image: food_4,
     price: 24,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
-    type: "meat",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 7 },
-    ],
+    category: "سندوتشات",
   },
   {
     _id: "5",
-    name: "Lasagna Rolls",
+    name: "وجبة سوبر كرانشي",
     image: food_5,
     price: 14,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
+    category: "وجبات",
   },
   {
     _id: "6",
-    name: "Peri Peri Rolls",
+    name: "بطاطس فرسكس جبنه",
     image: food_6,
     price: 12,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
-    type: "meat",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
+    category: "مقبلات",
   },
   {
     _id: "7",
-    name: "Chicken Rolls",
+    name: "بيبسي",
     image: food_7,
     price: 20,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
-    type: "meat",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
+    category: "مشروبات",
   },
   {
     _id: "8",
-    name: "Veg Rolls",
+    name: "دابل برجر",
     image: food_8,
     price: 15,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 5 },
-    ],
+    category: "برجر",
   },
   {
     _id: "9",
-    name: "Ripple Ice Cream",
+    name: "جار",
     image: food_9,
     price: 14,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Deserts",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
+    category: "حلو",
   },
   {
     _id: "10",
-    name: "Fruit Ice Cream",
+    name: "مكرونه مشكل فراخ",
     image: food_10,
     price: 22,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Deserts",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
+    category: "مكرونات",
   },
   {
     _id: "11",
@@ -268,11 +228,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Deserts",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 3 },
-    ],
   },
   {
     _id: "12",
@@ -282,11 +237,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Deserts",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "13",
@@ -296,11 +246,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
-    type: "meat",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "14",
@@ -310,11 +255,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
   },
   {
     _id: "15",
@@ -324,11 +264,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 5 },
-    ],
   },
   {
     _id: "16",
@@ -338,11 +273,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 7 },
-    ],
   },
   {
     _id: "17",
@@ -352,11 +282,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Cake",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "18",
@@ -366,11 +291,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Cake",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "19",
@@ -380,11 +300,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Cake",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
   },
   {
     _id: "20",
@@ -394,11 +309,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Cake",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 5 },
-    ],
   },
   {
     _id: "21",
@@ -408,11 +318,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pure Veg",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "22",
@@ -422,11 +327,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pure Veg",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
   },
   {
     _id: "23",
@@ -436,11 +336,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pure Veg",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 3 },
-    ],
   },
   {
     _id: "24",
@@ -450,11 +345,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pure Veg",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "25",
@@ -464,11 +354,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pasta",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "26",
@@ -478,11 +363,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pasta",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
   },
   {
     _id: "27",
@@ -492,11 +372,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pasta",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 5 },
-    ],
   },
   {
     _id: "28",
@@ -506,11 +381,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pasta",
-    type: "meat",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 7 },
-    ],
   },
   {
     _id: "29",
@@ -520,11 +390,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "30",
@@ -534,11 +399,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 4 },
-    ],
   },
   {
     _id: "31",
@@ -548,11 +408,6 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 6 },
-    ],
   },
   {
     _id: "32",
@@ -562,10 +417,14 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
-    type: "veg",
-    sizes: [
-      { size: "md", price: 0 },
-      { size: "lg", price: 5 },
-    ],
+  },
+  {
+    _id: "33",
+    name: "Cooked Noodles",
+    image: food_32,
+    price: 15,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Noodles",
   },
 ];

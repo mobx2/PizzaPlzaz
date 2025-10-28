@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useTheme } from '../../context/ThemeContext';
-import { assets } from '../../assets/assets';
-import './LoadingScreen.css';
+import React, { useEffect, useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
+import { assets } from "../../assets/assets";
+import "./LoadingScreen.css";
 
 const LoadingScreen = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +16,7 @@ const LoadingScreen = ({ children }) => {
     const timer = setTimeout(() => {
       const elapsedTime = Date.now() - startTime;
       const remainingTime = Math.max(0, minLoadingTime - elapsedTime);
-      
+
       // Ensure the loading screen is shown for at least minLoadingTime
       setTimeout(() => {
         setIsLoading(false);
@@ -30,9 +30,9 @@ const LoadingScreen = ({ children }) => {
     return (
       <div className={`loading-screen ${theme}`}>
         <div className="loading-content">
-          <img 
-            src={assets.logo} 
-            alt="Pizza Plaza Logo" 
+          <img
+            src={assets.logo}
+            alt="Pizza Plaza Logo"
             className="loading-logo"
             width="120"
             height="120"

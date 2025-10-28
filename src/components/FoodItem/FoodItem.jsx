@@ -67,7 +67,7 @@ const FoodItem = ({ id, name, price, description, image, sizes }) => {
 
           {/* Price and Show Details Button on same line */}
           <div className="food-item-price-row">
-            <p className="food-item-price">${getDisplayPrice()}</p>
+            <p className="food-item-price">{getDisplayPrice()} ج.م</p>
             <button
               className="food-item-details-btn"
               onClick={handleShowDetails}

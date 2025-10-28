@@ -110,13 +110,13 @@ const ProductDetailsModal = ({ isOpen, onClose, product }) => {
                       {sizeOption.size.toUpperCase()}:
                     </span>
                     <span className="product-modal-size-price">
-                      ${product.price + sizeOption.price}
+                      {product.price + sizeOption.price} ج.م
                     </span>
                   </div>
                 ))}
               </div>
             ) : (
-              <span className="product-modal-price">${product.price}</span>
+              <span className="product-modal-price">{product.price} ج.م</span>
             )}
           </div>
         </div>
