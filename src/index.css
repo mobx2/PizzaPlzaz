@@ -1,23 +1,29 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-/* Light Theme (Default) */
+/* Light Theme (Default) - Pizza Restaurant Warm Colors */
 :root {
-  --primary: #ff6347;
-  --dark: #262626;
-  --gray: #676767;
+  --primary: #ff6347; /* Tomato Red */
+  --secondary: #ffd700; /* Soft Yellow */
+  --accent: #ff8c42; /* Warm Orange */
+  --dark: #2c1810; /* Warm Dark Brown */
+  --gray: #8b7355; /* Warm Gray */
 
   /* Theme-specific colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #fff4f2;
-  --text-primary: #262626;
-  --text-secondary: #676767;
+  --bg-primary: #fef9f5; /* Warm Cream */
+  --bg-secondary: #f5f0eb; /* Soft Beige */
+  --bg-tertiary: #fff4f2; /* Light Peach */
+  --text-primary: #2c1810; /* Warm Dark Brown */
+  --text-secondary: #8b7355; /* Warm Gray */
   --text-inverse: #ffffff;
-  --border-color: #e0e0e0;
-  --shadow: rgba(0, 0, 0, 0.1);
-  --shadow-hover: rgba(0, 0, 0, 0.15);
-  --toggle-bg: #f0f0f0;
-  --toggle-hover-bg: #e0e0e0;
+  --border-color: #e6d7c7; /* Warm Light Brown */
+  --shadow: rgba(44, 24, 16, 0.1);
+  --shadow-hover: rgba(44, 24, 16, 0.15);
+  --toggle-bg: #f5f0eb;
+  --toggle-hover-bg: #e6d7c7;
   --card-bg: #ffffff;
   --input-bg: #ffffff;
   --hover-bg: #fff4f2;
@@ -58,36 +64,38 @@ button {
   }
 }
 
-/* Dark Theme */
+/* Dark Theme - Pizza Restaurant Warm Dark Colors */
 [data-theme="dark"] {
-  --primary: #ff6347;
-  --dark: #e0e0e0;
-  --gray: #b0b0b0;
+  --primary: #ff6347; /* Tomato Red */
+  --secondary: #ffd700; /* Soft Yellow */
+  --accent: #ff8c42; /* Warm Orange */
+  --dark: #f5f0eb; /* Warm Light */
+  --gray: #c4a484; /* Warm Light Gray */
 
   /* Theme-specific colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-tertiary: #3a3a3a;
-  --text-primary: #e0e0e0;
-  --text-secondary: #b0b0b0;
-  --text-inverse: #1a1a1a;
-  --border-color: #404040;
-  --shadow: rgba(0, 0, 0, 0.3);
-  --shadow-hover: rgba(0, 0, 0, 0.5);
-  --toggle-bg: #2d2d2d;
-  --toggle-hover-bg: #3a3a3a;
-  --card-bg: #2d2d2d;
-  --input-bg: #2d2d2d;
-  --hover-bg: #3a3a3a;
+  --bg-primary: #1a1612; /* Warm Dark Brown */
+  --bg-secondary: #2c2419; /* Darker Warm Brown */
+  --bg-tertiary: #3a2f22; /* Medium Warm Brown */
+  --text-primary: #f5f0eb; /* Warm Light */
+  --text-secondary: #c4a484; /* Warm Light Gray */
+  --text-inverse: #1a1612; /* Warm Dark Brown */
+  --border-color: #4a3f32; /* Warm Border */
+  --shadow: rgba(26, 22, 18, 0.4);
+  --shadow-hover: rgba(26, 22, 18, 0.6);
+  --toggle-bg: #2c2419;
+  --toggle-hover-bg: #3a2f22;
+  --card-bg: #2c2419;
+  --input-bg: #2c2419;
+  --hover-bg: #3a2f22;
   --footer-bg: #0d0d0d;
-  --footer-text: #e0e0e0;
+  --footer-text: #f5f0eb;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Cairo", "Open Sans", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -102,6 +110,214 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Cairo", "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Typography System - Pizza Restaurant Theme */
+
+/* Headings - Bold and Lively */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Changa", "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+}
+
+h5 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+}
+
+h6 {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 500;
+}
+
+/* Body Text - Clean and Readable */
+p {
+  font-family: "Cairo", "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1em;
+}
+
+/* Restaurant Name - Special Styling */
+.restaurant-name {
+  font-family: "Changa", "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+/* Menu Items */
+.menu-item {
+  font-family: "Cairo", "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-primary);
+}
+
+.menu-description {
+  font-family: "Cairo", "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Buttons */
+button,
+.btn {
+  font-family: "Cairo", "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: 0.3px;
+  text-transform: none;
+}
+
+.btn-primary {
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Navigation */
+nav,
+.nav {
+  font-family: "Cairo", "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+/* Price Display */
+.price {
+  font-family: "Changa", "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--primary);
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  font-family: "Cairo", "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+label {
+  font-family: "Cairo", "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--text-primary);
+}
+
+/* Small Text */
+small,
+.small-text {
+  font-family: "Cairo", "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: var(--text-secondary);
+}
+
+/* Links */
+a {
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Responsive Typography Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .restaurant-name {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .restaurant-name {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
 }
 
 .app {

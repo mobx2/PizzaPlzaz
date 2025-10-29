@@ -27,12 +27,41 @@ const Footer = () => {
         </div>
         <div className="footer-content-center">
           <h2>فروعنا</h2>
-          <ul>
-            <li onClick={() => navigate("/")}>Home</li>
-            <li>About Us</li>
-            <li>Delivery</li>
-            <li>Privacy Policy</li>
-          </ul>
+          <div className="branches-buttons">
+            <button
+              className="branch-btn"
+              onClick={() =>
+                window.open(
+                  "https://maps.app.goo.gl/vip1HQhQS82rHxSy8",
+                  "_blank"
+                )
+              }
+            >
+              🏪 فرع أجا الجديد
+            </button>
+            <button
+              className="branch-btn"
+              onClick={() =>
+                window.open(
+                  "https://maps.app.goo.gl/Bz3FfNdSAmQ1ctQn9",
+                  "_blank"
+                )
+              }
+            >
+              🌳 أجا أمام حديقة الطفل
+            </button>
+            <button
+              className="branch-btn"
+              onClick={() =>
+                window.open(
+                  "https://maps.app.goo.gl/cA9eAQLe4SsiEoXv8",
+                  "_blank"
+                )
+              }
+            >
+              🏢 بلازا سمنود
+            </button>
+          </div>
         </div>
         <div className="footer-content-right">
           <h2>تواصل معنا</h2>
