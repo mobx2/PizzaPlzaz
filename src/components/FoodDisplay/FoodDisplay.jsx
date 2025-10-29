@@ -154,7 +154,7 @@ const FoodDisplay = ({ category }) => {
       {/* Sub-Category Filter Row */}
       {category !== "All" && (
         <div className="food-display-sub-filters">
-          {["All", "Meat", "Chicken", "SeaFood", "Mix"].map((subType) => (
+          {["الكل", "لحوم", "دجاج", "سي فود", "ميكس"].map((subType) => (
             <button
               key={subType}
               className={`food-display-sub-filter-btn ${
