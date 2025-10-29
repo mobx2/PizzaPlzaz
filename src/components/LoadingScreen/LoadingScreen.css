@@ -8,14 +8,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
   z-index: 9999;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }
 
-/* Dark mode support - transparent background for both modes */
+/* Dark mode support - subtle background for better visibility */
 [data-theme="dark"] .loading-screen {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
 }
 
 .loading-screen.visible {
@@ -52,6 +54,13 @@
   border-radius: 50%;
   border-top-color: #ff6347; /* Pizza red color */
   animation: spin 1s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 99, 71, 0.3);
+}
+
+/* Dark mode spinner enhancement */
+[data-theme="dark"] .loading-spinner {
+  border-top-color: #ff8c42; /* Warmer orange for dark mode */
+  box-shadow: 0 0 25px rgba(255, 140, 66, 0.4);
 }
 
 @keyframes spin {
