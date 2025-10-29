@@ -5,11 +5,14 @@
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin: 0;
 }
 
 /* Backdrop */
@@ -19,11 +22,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  animation: fadeIn 0.3s ease-out;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.2s ease-out;
   z-index: 1;
+  margin: 0;
+  padding: 0;
 }
 
 /* Modal Content Container */
@@ -35,18 +40,26 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 2;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border: none;
 }
 
-/* Dark mode adjustments */
-[data-theme="dark"] .product-modal-content {
-  background-color: rgba(26, 26, 26, 0.98);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+/* Dark mode adjustments for image */
+[data-theme="dark"] .product-modal-image-container {
+  background-color: transparent;
+}
+
+[data-theme="dark"] .product-modal-image {
+  filter: brightness(0.9);
 }
 
 /* Close Button */
@@ -90,16 +103,31 @@
   width: 100%;
   height: 240px; /* h-60 in Tailwind (15rem = 240px) */
   overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: transparent;
   position: relative;
   flex-shrink: 0;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0;
+  border-radius: 24px 24px 0 0;
 }
 
 .product-modal-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s ease;
+  display: block;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0;
 }
 
 .product-modal-content:hover .product-modal-image {
@@ -212,7 +240,7 @@
 
 @keyframes scaleIn {
   from {
-    transform: scale(0.9);
+    transform: scale(0.95);
     opacity: 0;
   }
   to {
