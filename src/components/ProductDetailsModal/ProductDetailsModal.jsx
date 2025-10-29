@@ -104,10 +104,16 @@ const ProductDetailsModal = ({ isOpen, onClose, product }) => {
             Array.isArray(product.sizes) &&
             product.sizes.length > 0 ? (
               <div className="product-modal-sizes">
+                <h3>الأحجام المتاحة:</h3>
                 {product.sizes.map((sizeOption, idx) => (
                   <div key={idx} className="product-modal-size-item">
                     <span className="product-modal-size-label">
-                      {sizeOption.size.toUpperCase()}:
+                      {sizeOption.size === "md"
+                        ? "متوسط"
+                        : sizeOption.size === "lg"
+                        ? "كبير"
+                        : sizeOption.size.toUpperCase()}
+                      :
                     </span>
                     <span className="product-modal-size-price">
                       {product.price + sizeOption.price} ج.م

@@ -6,7 +6,6 @@
   position: relative;
 }
 
-
 .navbar .logo {
   width: 150px;
 }
@@ -23,7 +22,6 @@
   align-items: center;
   gap: 20px;
 }
-
 
 /* Hotline Number - Visible on all screen sizes */
 .navbar-hotline {

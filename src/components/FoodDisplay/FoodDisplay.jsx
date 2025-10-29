@@ -83,28 +83,40 @@ const FoodDisplay = ({ category }) => {
     const matchesCategory = category === "All" || category === item.category;
 
     let matchesSubCategory = true;
-    if (subCategory !== "All") {
+    if (subCategory !== "الكل") {
       switch (subCategory) {
-        case "Meat":
-          matchesSubCategory = item.type === "meat";
-          break;
-        case "Chicken":
-          matchesSubCategory = item.name.toLowerCase().includes("chicken");
-          break;
-        case "SeaFood":
+        case "لحوم":
           matchesSubCategory =
+            item.subType === "لحوم" ||
+            item.name.toLowerCase().includes("meat") ||
+            item.name.toLowerCase().includes("beef") ||
+            item.name.toLowerCase().includes("lamb");
+          break;
+        case "دجاج":
+          matchesSubCategory =
+            item.subType === "دجاج" ||
+            item.name.toLowerCase().includes("chicken") ||
+            item.name.toLowerCase().includes("دجاج");
+          break;
+        case "سي فود":
+          matchesSubCategory =
+            item.subType === "سي فود" ||
             item.name.toLowerCase().includes("fish") ||
             item.name.toLowerCase().includes("seafood") ||
             item.name.toLowerCase().includes("shrimp") ||
             item.name.toLowerCase().includes("salmon") ||
-            item.name.toLowerCase().includes("tuna");
+            item.name.toLowerCase().includes("tuna") ||
+            item.name.toLowerCase().includes("جمبري") ||
+            item.name.toLowerCase().includes("تونة");
           break;
-        case "Mix":
-          // Mix could be items with multiple ingredients or specific combinations
+        case "ميكس":
           matchesSubCategory =
+            item.subType === "ميكس" ||
             item.name.toLowerCase().includes("mix") ||
             item.name.toLowerCase().includes("combo") ||
-            item.name.toLowerCase().includes("variety");
+            item.name.toLowerCase().includes("variety") ||
+            item.name.toLowerCase().includes("مشكلة") ||
+            item.name.toLowerCase().includes("مارجريتا");
           break;
         default:
           matchesSubCategory = true;

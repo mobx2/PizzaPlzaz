@@ -44,11 +44,11 @@
     overflow-y: auto;
     animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 2; /* Above backdrop and bottom nav */
-    
+
     /* Hide scrollbar for all browsers */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
   /* Dark mode adjustments */

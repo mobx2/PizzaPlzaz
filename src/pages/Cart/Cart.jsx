@@ -33,34 +33,59 @@ const Cart = () => {
         {totalQuantity === 0 ? (
           <p className="NoItems">No Items in cart</p>
         ) : (
-          food_list.map((item, index) => {
-            if (cartItems[item._id] > 0) {
-              return (
-                <React.Fragment key={item._id}>
-                  <div
-                    className="cart-items-title cart-items-item"
-                    key={item._id}
-                  >
-                    <img src={item.image} alt="food img" />
-                    <p>{item.name}</p>
-                    <p>{item.price} ج.م</p>
-                    <p>{cartItems[item._id]}</p>
-                    <p>{item.price * cartItems[item._id]} ج.م</p>
-                    <p
-                      className="Remove"
-                      onClick={() => removeFromCart(item._id)}
-                    >
-                      <img
-                        src={assets.remove_icon_cross}
-                        alt="remove_icon_cross"
-                      />
-                    </p>
-                  </div>
-                  <hr key={`hr-${item._id}-${index}`} />
-                </React.Fragment>
+          food_list
+            .map((item, index) => {
+              // Check if this item exists in cart with any size
+              const cartEntries = Object.entries(cartItems).filter(
+                ([cartKey, quantity]) => {
+                  const [itemId] = cartKey.split("_");
+                  return itemId === item._id && quantity > 0;
+                }
               );
-            }
-          })
+
+              if (cartEntries.length > 0) {
+                return cartEntries.map(([cartKey, quantity]) => {
+                  const [itemId, size] = cartKey.split("_");
+                  let itemPrice = item.price;
+
+                  // Calculate price with size
+                  if (item.sizes && Array.isArray(item.sizes)) {
+                    const sizeOption = item.sizes.find((s) => s.size === size);
+                    if (sizeOption) {
+                      itemPrice += sizeOption.price;
+                    }
+                  }
+
+                  return (
+                    <React.Fragment key={cartKey}>
+                      <div
+                        className="cart-items-title cart-items-item"
+                        key={cartKey}
+                      >
+                        <img src={item.image} alt="food img" />
+                        <p>{item.name}</p>
+                        <p>{itemPrice} ج.م</p>
+                        <p>{quantity}</p>
+                        <p>{itemPrice * quantity} ج.م</p>
+                        <p
+                          className="Remove"
+                          onClick={() => removeFromCart(item._id, size)}
+                        >
+                          <img
+                            src={assets.remove_icon_cross}
+                            alt="remove_icon_cross"
+                          />
+                        </p>
+                      </div>
+                      <hr key={`hr-${cartKey}`} />
+                    </React.Fragment>
+                  );
+                });
+              }
+              return null;
+            })
+            .flat()
+            .filter(Boolean)
         )}
       </div>
       <div className="cart-bottom">

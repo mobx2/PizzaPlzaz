@@ -9,22 +9,24 @@ const StoreContextProvider = (props) => {
   const [category, setCategory] = useState(menu_list[0]?.menu_name || "All");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const addToCart = (itemId) => {
-    if (!cartItems[itemId]) {
-      setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
+  const addToCart = (itemId, selectedSize = "md") => {
+    const cartKey = `${itemId}_${selectedSize}`;
+    if (!cartItems[cartKey]) {
+      setCartItems((prev) => ({ ...prev, [cartKey]: 1 }));
     } else {
-      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+      setCartItems((prev) => ({ ...prev, [cartKey]: prev[cartKey] + 1 }));
     }
   };
 
-  const removeFromCart = (itemId) => {
-    if (cartItems[itemId] === 1) {
+  const removeFromCart = (itemId, selectedSize = "md") => {
+    const cartKey = `${itemId}_${selectedSize}`;
+    if (cartItems[cartKey] === 1) {
       // Remove the item if the quantity becomes zero
       const newCartItems = { ...cartItems };
-      delete newCartItems[itemId];
+      delete newCartItems[cartKey];
       setCartItems(newCartItems);
     } else {
-      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+      setCartItems((prev) => ({ ...prev, [cartKey]: prev[cartKey] - 1 }));
     }
   };
 
@@ -38,10 +40,21 @@ const StoreContextProvider = (props) => {
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
-    for (const item in cartItems) {
-      if (cartItems[item] > 0) {
-        let itemInfo = food_list.find((product) => product._id === item);
-        totalAmount += itemInfo.price * cartItems[item];
+    for (const cartKey in cartItems) {
+      if (cartItems[cartKey] > 0) {
+        const [itemId, size] = cartKey.split("_");
+        let itemInfo = food_list.find((product) => product._id === itemId);
+        if (itemInfo) {
+          let itemPrice = itemInfo.price;
+          // Add size price if sizes are available
+          if (itemInfo.sizes && Array.isArray(itemInfo.sizes)) {
+            const sizeOption = itemInfo.sizes.find((s) => s.size === size);
+            if (sizeOption) {
+              itemPrice += sizeOption.price;
+            }
+          }
+          totalAmount += itemPrice * cartItems[cartKey];
+        }
       }
     }
     return totalAmount;
