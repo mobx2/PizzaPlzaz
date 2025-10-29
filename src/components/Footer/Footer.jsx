@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
+import { FaFacebookF, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   const date = new Date();
@@ -14,14 +15,26 @@ const Footer = () => {
           <img src={assets.logo} alt="logo" />
           <p>بيتزا بلازا , أفضل إختيار</p>
           <div className="footer-social-icons">
-            <a href="https://www.facebook.com">
-              <img src={assets.facebook_icon} alt="facebook" />
+            <a
+              href="https://www.facebook.com/pizzaplazaeg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
             </a>
-            <a href="https://www.twitter.com">
-              <img src={assets.twitter_icon} alt="twitter" />
+            <a
+              href="https://wa.me/201060044426"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp />
             </a>
-            <a href="https://www.linkedin.com">
-              <img src={assets.linkedin_icon} alt="linkedin" />
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn />
             </a>
           </div>
         </div>

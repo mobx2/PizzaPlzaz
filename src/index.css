@@ -111,7 +111,7 @@ body {
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: "Cairo", "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.6;
 }
 
@@ -168,7 +168,7 @@ h6 {
 /* Body Text - Clean and Readable */
 p {
   font-family: "Cairo", "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   line-height: 1.7;
   color: var(--text-secondary);
@@ -188,14 +188,14 @@ p {
 /* Menu Items */
 .menu-item {
   font-family: "Cairo", "Open Sans", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-primary);
 }
 
 .menu-description {
   font-family: "Cairo", "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(0.85rem, 1.8vw, 1rem);
   color: var(--text-secondary);
   line-height: 1.5;
@@ -237,13 +237,13 @@ input,
 textarea,
 select {
   font-family: "Cairo", "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 label {
   font-family: "Cairo", "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(0.9rem, 2vw, 1rem);
   color: var(--text-primary);
 }
@@ -252,7 +252,7 @@ label {
 small,
 .small-text {
   font-family: "Cairo", "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   color: var(--text-secondary);
 }
@@ -260,7 +260,7 @@ small,
 /* Links */
 a {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--primary);
   text-decoration: none;
   transition: color 0.3s ease;
