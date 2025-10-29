@@ -133,7 +133,7 @@ const FoodDisplay = ({ category }) => {
     <div className="food-display" id="food-display">
       <div className="food-display-header">
         <h2 className={showSearch ? "hidden" : ""}>
-          {searchTerm ? `نتائج البحث عن "${searchTerm}"` : "مينيو بلازاز"}
+          {searchTerm ? `نتائج البحث عن "${searchTerm}"` : "مينيو بلازا"}
         </h2>
         <div className={`food-display-search ${showSearch ? "active" : ""}`}>
           <div className="search-input-container">
