@@ -88,27 +88,43 @@ export const assets = {
 
 export const menu_list = [
   {
-    menu_name: "كريب",
-    menu_image: menu_1,
-  },
-  {
     menu_name: "بيتزا",
     menu_image: menu_2,
   },
   {
-    menu_name: "طواجن",
-    menu_image: menu_3,
-  },
-  {
-    menu_name: "سندوتشات",
-    menu_image: menu_4,
+    menu_name: "كريب",
+    menu_image: menu_1,
   },
   {
     menu_name: "وجبات",
     menu_image: menu_5,
   },
   {
-    menu_name: "مقبلات",
+    menu_name: "مكرونة",
+    menu_image: menu_10,
+  },
+  {
+    menu_name: "برجر",
+    menu_image: menu_8,
+  },
+  {
+    menu_name: "كاليزوني",
+    menu_image: menu_3,
+  },
+  {
+    menu_name: "السندوتش",
+    menu_image: menu_4,
+  },
+  {
+    menu_name: "ريزو",
+    menu_image: menu_6,
+  },
+  {
+    menu_name: "بطاطس",
+    menu_image: menu_7,
+  },
+  {
+    menu_name: "سلطات",
     menu_image: menu_6,
   },
   {
@@ -116,16 +132,12 @@ export const menu_list = [
     menu_image: menu_7,
   },
   {
-    menu_name: "برجر",
-    menu_image: menu_8,
-  },
-  {
-    menu_name: "حلو",
+    menu_name: "الحلو",
     menu_image: menu_9,
   },
   {
-    menu_name: "مكرونات",
-    menu_image: menu_10,
+    menu_name: "صوصات",
+    menu_image: menu_6,
   },
 ];
 
