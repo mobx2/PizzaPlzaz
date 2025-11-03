@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
@@ -9,14 +9,14 @@ import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 const FoodDisplay = ({ category }) => {
   const { food_list, searchTerm, setSearchTerm } = useContext(StoreContext);
   const [showSearch, setShowSearch] = useState(false);
-  const [subCategory, setSubCategory] = useState("All");
+  const [subCategory, setSubCategory] = useState("الكل");
   const [isLoading, setIsLoading] = useState(false);
   const [showContent, setShowContent] = useState(true);
   const [minHeight, setMinHeight] = useState(null);
   const searchInputRef = useRef(null);
   const listContainerRef = useRef(null);
   const prevCategoryRef = useRef(category);
-  const prevSubCategoryRef = useRef("All");
+  const prevSubCategoryRef = useRef("الكل");
 
   useEffect(() => {
     if (showSearch && searchInputRef.current) {
@@ -26,7 +26,7 @@ const FoodDisplay = ({ category }) => {
 
   // Reset sub-category when main category changes
   useEffect(() => {
-    setSubCategory("All");
+    setSubCategory("الكل");
   }, [category]);
 
   // Detect category or sub-category changes to show loading
@@ -133,7 +133,11 @@ const FoodDisplay = ({ category }) => {
     <div className="food-display" id="food-display">
       <div className="food-display-header">
         <h2 className={showSearch ? "hidden" : ""}>
-          {searchTerm ? `نتائج البحث عن "${searchTerm}"` : "مينيو بلازا"}
+          {searchTerm
+            ? `نتائج البحث عن "${searchTerm}"`
+            : category === "All"
+            ? "مينيو بلازا"
+            : category}
         </h2>
         <div className={`food-display-search ${showSearch ? "active" : ""}`}>
           <div className="search-input-container">
@@ -162,21 +166,26 @@ const FoodDisplay = ({ category }) => {
       </div>
 
       {/* Sub-Category Filter Row */}
-      {category !== "All" && (
-        <div className="food-display-sub-filters">
-          {["الكل", "لحوم", "دجاج", "سي فود", "ميكس"].map((subType) => (
-            <button
-              key={subType}
-              className={`food-display-sub-filter-btn ${
-                subCategory === subType ? "active" : ""
-              }`}
-              onClick={() => setSubCategory(subType)}
-            >
-              {subType}
-            </button>
-          ))}
-        </div>
-      )}
+      {category !== "All" &&
+        category !== "صوصات" &&
+        category !== "الحلو" &&
+        category !== "مشروبات" &&
+        category !== "سلطات" &&
+        category !== "بطاطس" && (
+          <div className="food-display-sub-filters">
+            {["الكل", "لحوم", "دجاج", "سي فود", "ميكس"].map((subType) => (
+              <button
+                key={subType}
+                className={`food-display-sub-filter-btn ${
+                  subCategory === subType ? "active" : ""
+                }`}
+                onClick={() => setSubCategory(subType)}
+              >
+                {subType}
+              </button>
+            ))}
+          </div>
+        )}
 
       <div
         ref={listContainerRef}

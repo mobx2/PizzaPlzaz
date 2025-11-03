@@ -109,6 +109,30 @@ footer hr {
   color: var(--primary);
 }
 
+.footer-start-agency {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.start-agency-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.start-agency-link:hover {
+  opacity: 0.8;
+}
+
+.start-agency-logo {
+  height: 40px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
 /* Responsive footer styles */
 @media (max-width: 1024px) {
   .footer-content {
@@ -160,5 +184,10 @@ footer hr {
   .branch-btn {
     padding: 6px 12px;
     font-size: 13px;
+  }
+
+  .start-agency-logo {
+    height: 35px;
+    max-width: 150px;
   }
 }

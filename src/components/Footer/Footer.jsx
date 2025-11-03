@@ -1,13 +1,8 @@
-import React from "react";
 import "./Footer.css";
 import { assets } from "../../assets/assets";
-import { useNavigate } from "react-router-dom";
 import { FaFacebookF, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
-  const date = new Date();
-
-  const navigate = useNavigate();
   return (
     <footer id="footer">
       <div className="footer-content">
@@ -85,9 +80,21 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">
-        Copyright &copy; {new Date().getFullYear()} Pizza Plaza
-      </p>
+
+      <div className="footer-start-agency">
+        <a
+          href="https://www.facebook.com/startagencyeg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="start-agency-link"
+        >
+          <img
+            src={assets.start_agency_logo}
+            alt="START Marketing Agency"
+            className="start-agency-logo"
+          />
+        </a>
+      </div>
     </footer>
   );
 };
