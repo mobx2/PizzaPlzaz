@@ -13,38 +13,76 @@ import menu_8 from "./burger.jpeg";
 import menu_9 from "./dessert.jpeg";
 import menu_10 from "./pasta.jpeg";
 
-import food_1 from "./food_1.png";
-import food_2 from "./food_2.png";
-import food_3 from "./food_3.png";
-import food_4 from "./food_4.png";
-import food_5 from "./food_5.png";
-import food_6 from "./food_6.png";
-import food_7 from "./food_7.png";
-import food_8 from "./food_8.png";
-import food_9 from "./food_9.png";
-import food_10 from "./food_10.png";
-import food_11 from "./food_11.png";
-import food_12 from "./food_12.png";
-import food_13 from "./food_13.png";
-import food_14 from "./food_14.png";
-import food_15 from "./food_15.png";
-import food_16 from "./food_16.png";
-import food_17 from "./food_17.png";
-import food_18 from "./food_18.png";
-import food_19 from "./food_19.png";
-import food_20 from "./food_20.png";
-import food_21 from "./food_21.png";
-import food_22 from "./food_22.png";
-import food_23 from "./food_23.png";
-import food_24 from "./food_24.png";
-import food_25 from "./food_25.png";
-import food_26 from "./food_26.png";
-import food_27 from "./food_27.png";
-import food_28 from "./food_28.png";
-import food_29 from "./food_29.png";
-import food_30 from "./food_30.png";
-import food_31 from "./food_31.png";
-import food_32 from "./food_32.png";
+// Pizzas
+
+// ! FallBack
+import fallBack from "./fallBack.jpeg";
+
+import margreta from "./margreta.jpeg";
+import cheeselovers from "./cheeselovers.jpeg";
+import checkinranch from "./checkinranch.jpeg";
+import bbq from "./bbq.jpeg";
+import crunchy from "./crunchy.jpeg";
+import shesh from "./shesh.jpeg";
+import meshakelFerakh from "./meshakelFerakh.jpeg";
+import kofta from "./kofta.jpeg";
+import sogok from "./sogok.jpeg";
+import meshakelLohom from "./meshakelLohom.jpeg";
+import fourSeasons from "./fourSeasons.jpeg";
+import tarb from "./tarb.jpeg";
+import labneWeAssal from "./labneWeAssal.jpeg";
+import seaFood from "./seaFood.jpeg";
+
+// Crepes
+
+// ! FallBack
+import crepesFallBack from "./crepesFallBack.png";
+
+import burgerCreape from "./burgerCreape.jpeg";
+import chillyCrunchy from "./chillyCrunchy.jpeg";
+import creapeCrunchy from "./creapeCrunchy.jpeg";
+import haway from "./haway.jpeg";
+import meeksGrell from "./meeksGrell.jpeg";
+
+// tawagen
+import tagenLohom from "./tagenLohom.jpeg";
+import tagenSogok from "./tagenSogok.jpeg";
+import tagenTarb from "./tagenTarb.jpeg";
+
+// kalezony
+import kalezony from "./kalezony.jpeg";
+
+// Meals
+
+import shawermaFerakhArbay from "./shawermaFerakhArbay.jpeg";
+import shawermaLahmaArbay from "./shawermaLahmaArbay.jpeg";
+import meeksGrellMeal from "./meeksGrellMeal.jpeg";
+
+// Pasta
+import mackAndCheese from "./mackAndCheese.jpeg";
+import alfredo from "./alfredo.jpeg";
+import negresko from "./negresko.jpeg";
+import pastaMeshakelLohom from "./pastaMeshakelLohom.jpeg";
+
+// import food_14 from "./food_14.png";
+// import food_15 from "./food_15.png";
+// import food_16 from "./food_16.png";
+// import food_17 from "./food_17.png";
+// import food_18 from "./food_18.png";
+// import food_19 from "./food_19.png";
+// import food_20 from "./food_20.png";
+// import food_21 from "./food_21.png";
+// import food_22 from "./food_22.png";
+// import food_23 from "./food_23.png";
+// import food_24 from "./food_24.png";
+// import food_25 from "./food_25.png";
+// import food_26 from "./food_26.png";
+// import food_27 from "./food_27.png";
+// import food_28 from "./food_28.png";
+// import food_29 from "./food_29.png";
+// import food_30 from "./food_30.png";
+// import food_31 from "./food_31.png";
+// import food_32 from "./food_32.png";
 
 import add_icon_white from "./add_icon_white.png";
 import add_icon_green from "./add_icon_green.png";
@@ -148,7 +186,7 @@ export const food_list = [
   {
     _id: "c1",
     name: "صاروخ",
-    image: food_1,
+    image: crepesFallBack,
     price: 115,
     description:
       "كريب باللحم المفروم والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -158,7 +196,7 @@ export const food_list = [
   {
     _id: "c2",
     name: "برجر",
-    image: food_1,
+    image: burgerCreape,
     price: 110,
     description: "كريب بالبرجر والجبن. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -167,7 +205,7 @@ export const food_list = [
   {
     _id: "c3",
     name: "كفته",
-    image: food_1,
+    image: crepesFallBack,
     price: 110,
     description:
       "كريب بالكفتة المشوية والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -177,7 +215,7 @@ export const food_list = [
   {
     _id: "c4",
     name: "سجق",
-    image: food_1,
+    image: crepesFallBack,
     price: 100,
     description: "كريب بالسجق الحار والجبن. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -185,8 +223,8 @@ export const food_list = [
   },
   {
     _id: "c5",
-    name: "مفروم",
-    image: food_1,
+    name: "لحمة مفرومه",
+    image: crepesFallBack,
     price: 110,
     description: "كريب باللحم المفروم الطازج. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -195,7 +233,7 @@ export const food_list = [
   {
     _id: "c6",
     name: "شاورما لحمة",
-    image: food_1,
+    image: crepesFallBack,
     price: 125,
     description: "كريب بشاورما اللحم والثوم. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -204,7 +242,7 @@ export const food_list = [
   {
     _id: "c7",
     name: "برجر بلازا",
-    image: food_1,
+    image: crepesFallBack,
     price: 120,
     description:
       "كريب بالبرجر الخاص والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -214,7 +252,7 @@ export const food_list = [
   {
     _id: "c8",
     name: "دونر کباب",
-    image: food_1,
+    image: crepesFallBack,
     price: 135,
     description: "كريب بالدونر كباب المشوي. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -223,7 +261,7 @@ export const food_list = [
   {
     _id: "c9",
     name: "فاهيتا لحم",
-    image: food_1,
+    image: crepesFallBack,
     price: 125,
     description:
       "كريب بفاهيتا اللحم والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -235,7 +273,7 @@ export const food_list = [
   {
     _id: "c10",
     name: "تشكن رانش",
-    image: food_1,
+    image: crepesFallBack,
     price: 125,
     description: "كريب بالدجاج وصلصة الرانش. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -244,7 +282,7 @@ export const food_list = [
   {
     _id: "c11",
     name: "تشيلي كرانشي",
-    image: food_1,
+    image: chillyCrunchy,
     price: 110,
     description: "كريب بالدجاج المقرمش الحار. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -253,7 +291,7 @@ export const food_list = [
   {
     _id: "c12",
     name: "تشكن تندوري",
-    image: food_1,
+    image: crepesFallBack,
     price: 110,
     description: "كريب بالدجاج التندوري. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -262,7 +300,7 @@ export const food_list = [
   {
     _id: "c13",
     name: "كرسبي",
-    image: food_1,
+    image: crepesFallBack,
     price: 110,
     description: "كريب بالدجاج المقرمش. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -271,7 +309,7 @@ export const food_list = [
   {
     _id: "c14",
     name: "بانيه",
-    image: food_1,
+    image: crepesFallBack,
     price: 110,
     description: "كريب بالدجاج البانيه. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -280,7 +318,7 @@ export const food_list = [
   {
     _id: "c15",
     name: "كرانشي",
-    image: food_1,
+    image: creapeCrunchy,
     price: 110,
     description:
       "كريب بالدجاج المقرمش والجبن. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -290,7 +328,7 @@ export const food_list = [
   {
     _id: "c16",
     name: "صدور مشوي",
-    image: food_1,
+    image: crepesFallBack,
     price: 115,
     description: "كريب بصدور الدجاج المشوية. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -299,7 +337,7 @@ export const food_list = [
   {
     _id: "c17",
     name: "كوردن بلو",
-    image: food_1,
+    image: crepesFallBack,
     price: 110,
     description: "كريب بالكوردن بلو والجبن. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -308,7 +346,7 @@ export const food_list = [
   {
     _id: "c18",
     name: "زنجر سوبریم",
-    image: food_1,
+    image: crepesFallBack,
     price: 110,
     description:
       "كريب بالدجاج الزنجر والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -318,7 +356,7 @@ export const food_list = [
   {
     _id: "c19",
     name: "شاورما فراخ",
-    image: food_1,
+    image: crepesFallBack,
     price: 115,
     description: "كريب بشاورما الدجاج والثوم. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -327,7 +365,7 @@ export const food_list = [
   {
     _id: "c20",
     name: "شيش طاووق",
-    image: food_1,
+    image: crepesFallBack,
     price: 115,
     description:
       "كريب بشيش طاووق الدجاج المشوي. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -337,7 +375,7 @@ export const food_list = [
   {
     _id: "c21",
     name: "باربيكيو",
-    image: food_1,
+    image: burgerCreape,
     price: 115,
     description:
       "كريب بالدجاج وصلصة الباربيكيو. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -347,7 +385,7 @@ export const food_list = [
   {
     _id: "c22",
     name: "فاهيتا فراخ",
-    image: food_1,
+    image: burgerCreape,
     price: 115,
     description:
       "كريب بفاهيتا الدجاج والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -359,7 +397,7 @@ export const food_list = [
   {
     _id: "c23",
     name: "جمبري",
-    image: food_1,
+    image: burgerCreape,
     price: 250,
     description:
       "كريب بالجمبري الطازج والثوم. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -369,7 +407,7 @@ export const food_list = [
   {
     _id: "c24",
     name: "سي فود",
-    image: food_1,
+    image: burgerCreape,
     price: 250,
     description:
       "كريب بمشكل المأكولات البحرية. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -381,7 +419,7 @@ export const food_list = [
   {
     _id: "c25",
     name: "میکس جین",
-    image: food_1,
+    image: burgerCreape,
     price: 80,
     description:
       "كريب ميكس باللحوم والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -391,7 +429,7 @@ export const food_list = [
   {
     _id: "c26",
     name: "کریب هاوای",
-    image: food_1,
+    image: haway,
     price: 125,
     description:
       "2 قطعة كوردون، هوت دوج، بيكون، وصوص رانش. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -401,7 +439,7 @@ export const food_list = [
   {
     _id: "c27",
     name: "تشیکن نایجر",
-    image: food_1,
+    image: haway,
     price: 120,
     description: "كريب بالدجاج النايجري. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -410,7 +448,7 @@ export const food_list = [
   {
     _id: "c28",
     name: "میکس فراخ",
-    image: food_1,
+    image: haway,
     price: 125,
     description: "كريب بالدجاج المشكل. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -419,7 +457,7 @@ export const food_list = [
   {
     _id: "c29",
     name: "میکس لحوم",
-    image: food_1,
+    image: haway,
     price: 120,
     description: "كريب باللحوم المشكلة. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -428,7 +466,7 @@ export const food_list = [
   {
     _id: "c30",
     name: "میکس بلازا",
-    image: food_1,
+    image: haway,
     price: 120,
     description:
       "كريب ميكس باللحم والدجاج والخضروات. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -438,7 +476,7 @@ export const food_list = [
   {
     _id: "c31",
     name: "كريب السلطان",
-    image: food_1,
+    image: haway,
     price: 150,
     description:
       "برجر بلازا واسكالوب وكوردن بلو وستيك. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -448,7 +486,7 @@ export const food_list = [
   {
     _id: "c32",
     name: "كريب 999",
-    image: food_1,
+    image: haway,
     price: 125,
     description: "كفتة ودونر وستيك وهوت دوج. يمكن إضافة 50 ج لتحويله إلى كونو",
     category: "كريب",
@@ -457,7 +495,7 @@ export const food_list = [
   {
     _id: "c33",
     name: "كريب 777",
-    image: food_1,
+    image: haway,
     price: 125,
     description:
       "صدور وكوردن بلو وكراتشي وستيك. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -467,7 +505,7 @@ export const food_list = [
   {
     _id: "c34",
     name: "میکس جریل",
-    image: food_1,
+    image: meeksGrell,
     price: 125,
     description:
       "كريب ميكس جريل باللحوم والدجاج. يمكن إضافة 50 ج لتحويله إلى كونو",
@@ -478,7 +516,7 @@ export const food_list = [
   {
     _id: "p1",
     name: "مرجريتا",
-    image: food_2,
+    image: margreta,
     price: 120,
     description:
       "بيتزا إيطالية كلاسيكية بالجبن والطماطم الطازجة. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -492,7 +530,7 @@ export const food_list = [
   {
     _id: "p2",
     name: "عشاق الجبنة",
-    image: food_2,
+    image: cheeselovers,
     price: 130,
     description:
       "بيتزا بالجبن الطازج والجبن الموزاريلا. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -508,7 +546,7 @@ export const food_list = [
   {
     _id: "p3",
     name: "تشكن رانش",
-    image: food_2,
+    image: checkinranch,
     price: 170,
     description:
       "بيتزا بالدجاج وصلصة الرانش والخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -522,7 +560,7 @@ export const food_list = [
   {
     _id: "p4",
     name: "كرانشي",
-    image: food_2,
+    image: crunchy,
     price: 160,
     description:
       "بيتزا بالدجاج المقرمش والجبن. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -535,8 +573,8 @@ export const food_list = [
   },
   {
     _id: "p5",
-    name: "باربيكيو",
-    image: food_2,
+    name: "bbq",
+    image: bbq,
     price: 160,
     description:
       "بيتزا بالدجاج وصلصة الباربيكيو الحلوة. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -550,7 +588,7 @@ export const food_list = [
   {
     _id: "p6",
     name: "شيش طاووق",
-    image: food_2,
+    image: shesh,
     price: 170,
     description:
       "بيتزا بشيش طاووق الدجاج المشوي. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -564,7 +602,7 @@ export const food_list = [
   {
     _id: "p7",
     name: "زنجر سوبریم دجاج",
-    image: food_2,
+    image: fallBack,
     price: 160,
     description:
       "بيتزا بالدجاج الزنجر والخضروات والجبن. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -578,7 +616,7 @@ export const food_list = [
   {
     _id: "p8",
     name: "دجاج سوبريم",
-    image: food_2,
+    image: fallBack,
     price: 165,
     description:
       "بيتزا بالدجاج والخضروات والجبن الموزاريلا. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -592,7 +630,7 @@ export const food_list = [
   {
     _id: "p9",
     name: "مشکل فراخ",
-    image: food_2,
+    image: meshakelFerakh,
     price: 180,
     description:
       "بيتزا بالدجاج المشكل والخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -606,7 +644,7 @@ export const food_list = [
   {
     _id: "p10",
     name: "شاورما فراخ",
-    image: food_2,
+    image: fallBack,
     price: 165,
     description:
       "بيتزا بشاورما الدجاج والثوم. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -622,7 +660,7 @@ export const food_list = [
   {
     _id: "p11",
     name: "كفتة",
-    image: food_2,
+    image: kofta,
     price: 165,
     description:
       "بيتزا بالكفتة المشوية والجبن. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -636,7 +674,7 @@ export const food_list = [
   {
     _id: "p12",
     name: "سحق",
-    image: food_2,
+    image: sogok,
     price: 155,
     description:
       "بيتزا بالسجق الحار والجبن. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -650,7 +688,7 @@ export const food_list = [
   {
     _id: "p13",
     name: "شاورما لحمة",
-    image: food_2,
+    image: fallBack,
     price: 175,
     description:
       "بيتزا بشاورما اللحم والثوم. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -664,7 +702,7 @@ export const food_list = [
   {
     _id: "p14",
     name: "دونر کباب",
-    image: food_2,
+    image: fallBack,
     price: 190,
     description:
       "بيتزا بالدونر كباب المشوي. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -678,7 +716,7 @@ export const food_list = [
   {
     _id: "p15",
     name: "هوت دوج",
-    image: food_2,
+    image: fallBack,
     price: 155,
     description:
       "بيتزا بالهوت دوج والجبن. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -692,7 +730,7 @@ export const food_list = [
   {
     _id: "p16",
     name: "لحم مفروم",
-    image: food_2,
+    image: fallBack,
     price: 165,
     description:
       "بيتزا باللحم المفروم الطازج والجبن. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -706,8 +744,22 @@ export const food_list = [
   {
     _id: "p17",
     name: "مشكل لحوم",
-    image: food_2,
+    image: meshakelLohom,
     price: 170,
+    description:
+      "بيتزا باللحوم المشكلة والخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
+    category: "بيتزا",
+    sizes: [
+      { size: "md", price: 0 },
+      { size: "lg", price: 20 },
+    ],
+    subType: "لحوم",
+  },
+  {
+    _id: "p17",
+    name: "طرب",
+    image: tarb,
+    price: 190,
     description:
       "بيتزا باللحوم المشكلة والخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
     category: "بيتزا",
@@ -722,7 +774,7 @@ export const food_list = [
   {
     _id: "p18",
     name: "الفصول الأربعة",
-    image: food_2,
+    image: fourSeasons,
     price: 185,
     description:
       "بيتزا بأربعة أقسام: لحم، دجاج، تونة، وخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -736,7 +788,7 @@ export const food_list = [
   {
     _id: "p19",
     name: "میکس بلازا",
-    image: food_2,
+    image: fallBack,
     price: 165,
     description:
       "بيتزا مشكلة باللحم والدجاج والخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -747,12 +799,22 @@ export const food_list = [
     ],
     subType: "ميكس",
   },
+  {
+    _id: "p19",
+    name: "لبنة بالعسل",
+    image: labneWeAssal,
+    price: 165,
+    description:
+      "بيتزا مشكلة باللحم والدجاج والخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
+    category: "بيتزا",
+    subType: "ميكس",
+  },
 
   // بيتزا - سي فود (Seafood Pizzas)
   {
     _id: "p20",
     name: "تونه",
-    image: food_2,
+    image: seaFood,
     price: 185,
     description:
       "بيتزا بالتونة الطازجة والبصل والزيتون. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -766,7 +828,7 @@ export const food_list = [
   {
     _id: "p21",
     name: "جمبري",
-    image: food_2,
+    image: seaFood,
     price: 320,
     description:
       "بيتزا بالجمبري الطازج والثوم والجبن. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -780,7 +842,7 @@ export const food_list = [
   {
     _id: "p22",
     name: "سي فود",
-    image: food_2,
+    image: seaFood,
     price: 320,
     description:
       "بيتزا بمشكل المأكولات البحرية. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
@@ -795,7 +857,7 @@ export const food_list = [
   {
     _id: "t1",
     name: "طاجن ميكس لحوم",
-    image: food_3,
+    image: tagenLohom,
     price: 110,
     description: "طاجن باللحوم المشكلة والخضروات",
     category: "وجبات",
@@ -804,7 +866,7 @@ export const food_list = [
   {
     _id: "t2",
     name: "طاجن سجق",
-    image: food_3,
+    image: tagenSogok,
     price: 100,
     description: "طاجن بالسجق الحار والجبن",
     category: "وجبات",
@@ -813,7 +875,7 @@ export const food_list = [
   {
     _id: "t3",
     name: "طاجن طرب",
-    image: food_3,
+    image: tagenTarb,
     price: 160,
     description: "طاجن طرب باللحوم والخضروات",
     category: "وجبات",
@@ -824,7 +886,7 @@ export const food_list = [
   {
     _id: "cal1",
     name: "كاليزوني کفتة",
-    image: food_3,
+    image: kalezony,
     price: 135,
     description:
       "كاليزوني بالكفتة المشوية والجبن. يمكن إضافة 40 ج لحشو الأطراف",
@@ -834,7 +896,7 @@ export const food_list = [
   {
     _id: "cal2",
     name: "كاليزوني دونر کباب",
-    image: food_3,
+    image: kalezony,
     price: 165,
     description: "كاليزوني بالدونر كباب المشوي. يمكن إضافة 40 ج لحشو الأطراف",
     category: "كاليزوني",
@@ -843,7 +905,7 @@ export const food_list = [
   {
     _id: "cal3",
     name: "كاليزوني کرانشی",
-    image: food_3,
+    image: kalezony,
     price: 140,
     description:
       "كاليزوني بالدجاج المقرمش والجبن. يمكن إضافة 40 ج لحشو الأطراف",
@@ -853,7 +915,7 @@ export const food_list = [
   {
     _id: "cal4",
     name: "كاليزوني شيش طاووق",
-    image: food_3,
+    image: kalezony,
     price: 150,
     description: "كاليزوني بشيش طاووق الدجاج. يمكن إضافة 40 ج لحشو الأطراف",
     category: "كاليزوني",
@@ -862,7 +924,7 @@ export const food_list = [
   {
     _id: "cal5",
     name: "كاليزوني مشكل لحوم",
-    image: food_3,
+    image: kalezony,
     price: 140,
     description:
       "كاليزوني باللحوم المشكلة والخضروات. يمكن إضافة 40 ج لحشو الأطراف",
@@ -872,7 +934,7 @@ export const food_list = [
   {
     _id: "cal6",
     name: "كاليزوني مشكل فراخ",
-    image: food_3,
+    image: kalezony,
     price: 140,
     description:
       "كاليزوني بالدجاج المشكل والخضروات. يمكن إضافة 40 ج لحشو الأطراف",
@@ -883,7 +945,7 @@ export const food_list = [
   {
     _id: "s1",
     name: "كرسبي",
-    image: food_4,
+    image: crepesFallBack,
     price: 80,
     description: "سندوتش بالدجاج المقرمش والخضروات",
     category: "السندوتش",
@@ -896,7 +958,7 @@ export const food_list = [
   {
     _id: "s2",
     name: "بانيه",
-    image: food_4,
+    image: crepesFallBack,
     price: 80,
     description: "سندوتش بالدجاج البانيه والخضروات",
     category: "السندوتش",
@@ -909,7 +971,7 @@ export const food_list = [
   {
     _id: "s3",
     name: "كرانشي",
-    image: food_4,
+    image: crepesFallBack,
     price: 85,
     description: "سندوتش بالدجاج المقرمش والجبن",
     category: "السندوتش",
@@ -922,7 +984,7 @@ export const food_list = [
   {
     _id: "s4",
     name: "تشيلي كرانشي",
-    image: food_4,
+    image: crepesFallBack,
     price: 85,
     description: "سندوتش بالدجاج المقرمش الحار",
     category: "السندوتش",
@@ -935,7 +997,7 @@ export const food_list = [
   {
     _id: "s5",
     name: "تشكن فاهيتا",
-    image: food_4,
+    image: crepesFallBack,
     price: 80,
     description: "سندوتش بفاهيتا الدجاج والخضروات",
     category: "السندوتش",
@@ -948,7 +1010,7 @@ export const food_list = [
   {
     _id: "s6",
     name: "كوردن بلو",
-    image: food_4,
+    image: crepesFallBack,
     price: 80,
     description: "سندوتش بالكوردن بلو والجبن",
     category: "السندوتش",
@@ -961,7 +1023,7 @@ export const food_list = [
   {
     _id: "s7",
     name: "زنجر سوبریم",
-    image: food_4,
+    image: crepesFallBack,
     price: 85,
     description: "سندوتش بالدجاج الزنجر والخضروات",
     category: "السندوتش",
@@ -974,7 +1036,7 @@ export const food_list = [
   {
     _id: "s8",
     name: "شاورما فراخ",
-    image: food_4,
+    image: crepesFallBack,
     price: 85,
     description: "سندوتش بشاورما الدجاج والثوم",
     category: "السندوتش",
@@ -987,7 +1049,7 @@ export const food_list = [
   {
     _id: "s9",
     name: "شاورما لحم",
-    image: food_4,
+    image: crepesFallBack,
     price: 95,
     description: "سندوتش بشاورما اللحم والثوم",
     category: "السندوتش",
@@ -1000,7 +1062,7 @@ export const food_list = [
   {
     _id: "s10",
     name: "صدور مشوي",
-    image: food_4,
+    image: crepesFallBack,
     price: 85,
     description: "سندوتش بصدور الدجاج المشوية",
     category: "السندوتش",
@@ -1013,7 +1075,7 @@ export const food_list = [
   {
     _id: "s11",
     name: "شيش طاووق",
-    image: food_4,
+    image: crepesFallBack,
     price: 85,
     description: "سندوتش بشيش طاووق الدجاج",
     category: "السندوتش",
@@ -1026,7 +1088,7 @@ export const food_list = [
   {
     _id: "s12",
     name: "ستيك شيش",
-    image: food_4,
+    image: crepesFallBack,
     price: 75,
     description: "سندوتش بالستيك المشوي",
     category: "السندوتش",
@@ -1039,7 +1101,7 @@ export const food_list = [
   {
     _id: "s13",
     name: "بطاطس محمره",
-    image: food_4,
+    image: crepesFallBack,
     price: 55,
     description: "سندوتش بالبطاطس المحمرة",
     category: "السندوتش",
@@ -1052,7 +1114,7 @@ export const food_list = [
   {
     _id: "s14",
     name: "بطاطس فرسکس",
-    image: food_4,
+    image: crepesFallBack,
     price: 55,
     description: "سندوتش بالبطاطس الفرسكس",
     category: "السندوتش",
@@ -1065,7 +1127,7 @@ export const food_list = [
   {
     _id: "s15",
     name: "كفته مشوي",
-    image: food_4,
+    image: crepesFallBack,
     price: 80,
     description: "سندوتش بالكفتة المشوية",
     category: "السندوتش",
@@ -1078,7 +1140,7 @@ export const food_list = [
   {
     _id: "s16",
     name: "دونر کباب",
-    image: food_4,
+    image: crepesFallBack,
     price: 110,
     description: "سندوتش بالدونر كباب المشوي",
     category: "السندوتش",
@@ -1091,7 +1153,7 @@ export const food_list = [
   {
     _id: "s17",
     name: "سجق",
-    image: food_4,
+    image: crepesFallBack,
     price: 70,
     description: "سندوتش بالسجق الحار",
     category: "السندوتش",
@@ -1104,7 +1166,7 @@ export const food_list = [
   {
     _id: "s18",
     name: "كبدة اسكندراني",
-    image: food_4,
+    image: crepesFallBack,
     price: 70,
     description: "سندوتش بالكبدة الإسكندرانية",
     category: "السندوتش",
@@ -1117,7 +1179,7 @@ export const food_list = [
   {
     _id: "s19",
     name: "هوت دوج",
-    image: food_4,
+    image: crepesFallBack,
     price: 70,
     description: "سندوتش بالهوت دوج",
     category: "السندوتش",
@@ -1131,7 +1193,7 @@ export const food_list = [
   {
     _id: "m1",
     name: "وجبة سوبر كرانشي",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 170,
     description: "وجبة كاملة بالدجاج المقرمش والبطاطس",
     category: "وجبات",
@@ -1140,7 +1202,7 @@ export const food_list = [
   {
     _id: "m2",
     name: "وجبة صدور مشوي",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 175,
     description: "وجبة كاملة بصدور الدجاج المشوية",
     category: "وجبات",
@@ -1149,7 +1211,7 @@ export const food_list = [
   {
     _id: "m3",
     name: "وجبة شيش طاووق",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 175,
     description: "وجبة كاملة بشيش طاووق الدجاج",
     category: "وجبات",
@@ -1158,7 +1220,7 @@ export const food_list = [
   {
     _id: "m4",
     name: "وجبة كفتة مشوي",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 175,
     description: "وجبة كاملة بالكفتة المشوية",
     category: "وجبات",
@@ -1167,7 +1229,7 @@ export const food_list = [
   {
     _id: "m5",
     name: "وجبة ميكس جريل",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 200,
     description: "وجبة كاملة بمشكل الجريل",
     category: "وجبات",
@@ -1176,7 +1238,7 @@ export const food_list = [
   {
     _id: "m6",
     name: "وجبة ستيك",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 200,
     description: "وجبة كاملة بالستيك المشوي",
     category: "وجبات",
@@ -1185,7 +1247,7 @@ export const food_list = [
   {
     _id: "m7",
     name: "وجبة دونر كباب",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 200,
     description: "وجبة كاملة بالدونر كباب",
     category: "وجبات",
@@ -1194,7 +1256,7 @@ export const food_list = [
   {
     _id: "m8",
     name: "وجبة شاورما لحم عربي",
-    image: food_5,
+    image: shawermaLahmaArbay,
     price: 175,
     description: "وجبة كاملة بشاورما اللحم العربي",
     category: "وجبات",
@@ -1203,7 +1265,7 @@ export const food_list = [
   {
     _id: "m9",
     name: "وجبة شاورما فراخ عربي",
-    image: food_5,
+    image: shawermaFerakhArbay,
     price: 200,
     description: "وجبة كاملة بشاورما الدجاج العربي",
     category: "وجبات",
@@ -1212,7 +1274,7 @@ export const food_list = [
   {
     _id: "m10",
     name: "وجبة سي فود",
-    image: food_5,
+    image: meeksGrellMeal,
     price: 280,
     description: "وجبة كاملة بمشكل المأكولات البحرية",
     category: "وجبات",
@@ -1222,7 +1284,7 @@ export const food_list = [
   {
     _id: "pot1",
     name: "بطاطس محمره",
-    image: food_6,
+    image: fallBack,
     price: 35,
     description: "بطاطس محمرة",
     category: "بطاطس",
@@ -1230,7 +1292,7 @@ export const food_list = [
   {
     _id: "pot2",
     name: "بطاطس فرسکس",
-    image: food_6,
+    image: fallBack,
     price: 45,
     description: "بطاطس فرسکس",
     category: "بطاطس",
@@ -1238,7 +1300,7 @@ export const food_list = [
   {
     _id: "pot3",
     name: "بطاطس بالجبنة عادية",
-    image: food_6,
+    image: fallBack,
     price: 60,
     description: "بطاطس بالجبنة عادية",
     category: "بطاطس",
@@ -1246,7 +1308,7 @@ export const food_list = [
   {
     _id: "pot4",
     name: "بطاطس بالجبنة فريسکس",
-    image: food_6,
+    image: fallBack,
     price: 65,
     description: "بطاطس بالجبنة فريسکس",
     category: "بطاطس",
@@ -1254,7 +1316,7 @@ export const food_list = [
   {
     _id: "pot5",
     name: "طاسة بطاطس",
-    image: food_6,
+    image: fallBack,
     price: 70,
     description: "طاسة بطاطس",
     category: "بطاطس",
@@ -1262,7 +1324,7 @@ export const food_list = [
   {
     _id: "pot6",
     name: "دونر فرايز",
-    image: food_6,
+    image: fallBack,
     price: 85,
     description: "بطاطس بالدونر",
     category: "بطاطس",
@@ -1270,7 +1332,7 @@ export const food_list = [
   {
     _id: "pot7",
     name: "كرانشي فرايز",
-    image: food_6,
+    image: fallBack,
     price: 85,
     description: "بطاطس كرانشي",
     category: "بطاطس",
@@ -1279,7 +1341,7 @@ export const food_list = [
   {
     _id: "dr1",
     name: "مياه معدنية",
-    image: food_7,
+    image: fallBack,
     price: 10,
     description: "مياه معدنية طبيعية",
     category: "مشروبات",
@@ -1287,7 +1349,7 @@ export const food_list = [
   {
     _id: "dr2",
     name: "كانز",
-    image: food_7,
+    image: fallBack,
     price: 15,
     description: "مشروبات غازية معلبة",
     category: "مشروبات",
@@ -1295,7 +1357,7 @@ export const food_list = [
   {
     _id: "dr3",
     name: "كولا ماشين",
-    image: food_7,
+    image: fallBack,
     price: 15,
     description: "كولا من الماكينة",
     category: "مشروبات",
@@ -1308,7 +1370,7 @@ export const food_list = [
   {
     _id: "dr4",
     name: "في كولا",
-    image: food_7,
+    image: fallBack,
     price: 20,
     description: "مشروب كولا",
     category: "مشروبات",
@@ -1316,7 +1378,7 @@ export const food_list = [
   {
     _id: "dr5",
     name: "لتر بيبسي",
-    image: food_7,
+    image: fallBack,
     price: 35,
     description: "بيبسي لتر",
     category: "مشروبات",
@@ -1324,7 +1386,7 @@ export const food_list = [
   {
     _id: "dr6",
     name: "عصير سن توب",
-    image: food_7,
+    image: fallBack,
     price: 15,
     description: "عصير سن توب",
     category: "مشروبات",
@@ -1333,7 +1395,7 @@ export const food_list = [
   {
     _id: "b1",
     name: "انجوس برجر ربع كيلو",
-    image: food_8,
+    image: menu_8,
     price: 110,
     description: "برجر أنجوس 250 جرام بالخضروات والجبن",
     category: "برجر",
@@ -1342,7 +1404,7 @@ export const food_list = [
   {
     _id: "b2",
     name: "برجر بلازا",
-    image: food_8,
+    image: menu_8,
     price: 110,
     description: "برجر بلازا الخاص بالخضروات والجبن",
     category: "برجر",
@@ -1351,7 +1413,7 @@ export const food_list = [
   {
     _id: "b3",
     name: "تشكن برجر",
-    image: food_8,
+    image: menu_8,
     price: 90,
     description: "برجر بالدجاج والخضروات",
     category: "برجر",
@@ -1360,7 +1422,7 @@ export const food_list = [
   {
     _id: "b4",
     name: "كلاسيك برجر",
-    image: food_8,
+    image: menu_8,
     price: 85,
     description: "برجر كلاسيكي باللحم والخضروات",
     category: "برجر",
@@ -1369,7 +1431,7 @@ export const food_list = [
   {
     _id: "b5",
     name: "تشيز برجر",
-    image: food_8,
+    image: menu_8,
     price: 90,
     description: "برجر بالجبن والخضروات",
     category: "برجر",
@@ -1378,7 +1440,7 @@ export const food_list = [
   {
     _id: "b6",
     name: "دبل تشيز برجر",
-    image: food_8,
+    image: menu_8,
     price: 95,
     description: "برجر بطبقتين من الجبن والخضروات",
     category: "برجر",
@@ -1387,7 +1449,7 @@ export const food_list = [
   {
     _id: "b7",
     name: "دبل بدجر",
-    image: food_8,
+    image: menu_8,
     price: 125,
     description: "برجر بقطعتين من اللحم والخضروات",
     category: "برجر",
@@ -1396,7 +1458,7 @@ export const food_list = [
   {
     _id: "b8",
     name: "تريبل برجر",
-    image: food_8,
+    image: menu_8,
     price: 160,
     description: "برجر بثلاث قطع من اللحم والخضروات",
     category: "برجر",
@@ -1405,7 +1467,7 @@ export const food_list = [
   {
     _id: "b9",
     name: "تركي برجر",
-    image: food_8,
+    image: menu_8,
     price: 100,
     description: "برجر باللحم التركي والخضروات",
     category: "برجر",
@@ -1416,7 +1478,7 @@ export const food_list = [
   {
     _id: "dessert1",
     name: "وافل نوتيلا",
-    image: food_9,
+    image: menu_9,
     price: 80,
     description: "وافل بصلصة النوتيلا",
     category: "الحلو",
@@ -1424,7 +1486,7 @@ export const food_list = [
   {
     _id: "dessert2",
     name: "وافل باستتيو",
-    image: food_9,
+    image: menu_9,
     price: 70,
     description: "وافل بصلصة الباستتيو",
     category: "الحلو",
@@ -1432,7 +1494,7 @@ export const food_list = [
   {
     _id: "dessert3",
     name: "وافل کندر",
-    image: food_9,
+    image: menu_9,
     price: 60,
     description: "وافل بصلصة الكندر",
     category: "الحلو",
@@ -1440,7 +1502,7 @@ export const food_list = [
   {
     _id: "dessert4",
     name: "وافل وايت شوكلت",
-    image: food_9,
+    image: menu_9,
     price: 60,
     description: "وافل بالشوكولاتة البيضاء",
     category: "الحلو",
@@ -1448,7 +1510,7 @@ export const food_list = [
   {
     _id: "dessert5",
     name: "وافل لوتس",
-    image: food_9,
+    image: menu_9,
     price: 60,
     description: "وافل بصلصة اللوتس",
     category: "الحلو",
@@ -1456,7 +1518,7 @@ export const food_list = [
   {
     _id: "dessert6",
     name: "وافل ميكس",
-    image: food_9,
+    image: menu_9,
     price: 70,
     description: "وافل ميكس بالصلصات المختلفة",
     category: "الحلو",
@@ -1464,7 +1526,7 @@ export const food_list = [
   {
     _id: "dessert7",
     name: "وافل فور سيزون",
-    image: food_9,
+    image: menu_9,
     price: 70,
     description: "وافل الفصول الأربعة",
     category: "الحلو",
@@ -1472,7 +1534,7 @@ export const food_list = [
   {
     _id: "dessert8",
     name: "قشطوطة",
-    image: food_9,
+    image: menu_9,
     price: 45,
     description: "قشطوطة كريمي",
     category: "الحلو",
@@ -1481,7 +1543,7 @@ export const food_list = [
   {
     _id: "dessert9",
     name: "بان كيك نوتيلا",
-    image: food_9,
+    image: menu_9,
     price: 80,
     description: "بان كيك بصلصة النوتيلا",
     category: "الحلو",
@@ -1489,7 +1551,7 @@ export const food_list = [
   {
     _id: "dessert10",
     name: "بان كيك باستنبو",
-    image: food_9,
+    image: menu_9,
     price: 70,
     description: "بان كيك بصلصة الباستنبو",
     category: "الحلو",
@@ -1497,7 +1559,7 @@ export const food_list = [
   {
     _id: "dessert11",
     name: "بان كيك کندر",
-    image: food_9,
+    image: menu_9,
     price: 60,
     description: "بان كيك بصلصة الكندر",
     category: "الحلو",
@@ -1505,7 +1567,7 @@ export const food_list = [
   {
     _id: "dessert12",
     name: "بان كيك لوتس",
-    image: food_9,
+    image: menu_9,
     price: 60,
     description: "بان كيك بصلصة اللوتس",
     category: "الحلو",
@@ -1513,7 +1575,7 @@ export const food_list = [
   {
     _id: "dessert13",
     name: "بان كيك ميكس",
-    image: food_9,
+    image: menu_9,
     price: 70,
     description: "بان كيك ميكس بالصلصات المختلفة",
     category: "الحلو",
@@ -1522,7 +1584,7 @@ export const food_list = [
   {
     _id: "dessert14",
     name: "توتشي نوتيلا",
-    image: food_9,
+    image: menu_9,
     price: 90,
     description: "توتشي بصلصة النوتيلا",
     category: "الحلو",
@@ -1530,7 +1592,7 @@ export const food_list = [
   {
     _id: "dessert15",
     name: "نوتشي باستتيو",
-    image: food_9,
+    image: menu_9,
     price: 100,
     description: "توتشي بصلصة الباستتيو",
     category: "الحلو",
@@ -1538,7 +1600,7 @@ export const food_list = [
   {
     _id: "dessert16",
     name: "نوتشي کندر",
-    image: food_9,
+    image: menu_9,
     price: 90,
     description: "توتشي بصلصة الكندر",
     category: "الحلو",
@@ -1546,7 +1608,7 @@ export const food_list = [
   {
     _id: "dessert17",
     name: "نوتشي وايت شوكلت",
-    image: food_9,
+    image: menu_9,
     price: 90,
     description: "توتشي بالشوكولاتة البيضاء",
     category: "الحلو",
@@ -1554,7 +1616,7 @@ export const food_list = [
   {
     _id: "dessert18",
     name: "نوتشي ميكس",
-    image: food_9,
+    image: menu_9,
     price: 100,
     description: "توتشي ميكس بالصلصات المختلفة",
     category: "الحلو",
@@ -1563,7 +1625,7 @@ export const food_list = [
   {
     _id: "dessert19",
     name: "ارز ب اللبن",
-    image: food_9,
+    image: menu_9,
     price: 25,
     description: "أرز باللبن",
     category: "الحلو",
@@ -1571,7 +1633,7 @@ export const food_list = [
   {
     _id: "dessert20",
     name: "جيلي",
-    image: food_9,
+    image: menu_9,
     price: 25,
     description: "جيلي بالفواكه",
     category: "الحلو",
@@ -1579,7 +1641,7 @@ export const food_list = [
   {
     _id: "dessert21",
     name: "كريم كراميل",
-    image: food_9,
+    image: menu_9,
     price: 25,
     description: "كريم كراميل",
     category: "الحلو",
@@ -1587,7 +1649,7 @@ export const food_list = [
   {
     _id: "dessert22",
     name: "کاستر",
-    image: food_9,
+    image: menu_9,
     price: 25,
     description: "كاسترد",
     category: "الحلو",
@@ -1595,7 +1657,7 @@ export const food_list = [
   {
     _id: "dessert23",
     name: "بفترول",
-    image: food_9,
+    image: menu_9,
     price: 25,
     description: "بروفيتيرول",
     category: "الحلو",
@@ -1603,7 +1665,7 @@ export const food_list = [
   {
     _id: "dessert24",
     name: "ترايفل",
-    image: food_9,
+    image: menu_9,
     price: 30,
     description: "ترايفل",
     category: "الحلو",
@@ -1612,7 +1674,7 @@ export const food_list = [
   {
     _id: "dessert25",
     name: "كنافة مانجو",
-    image: food_9,
+    image: menu_9,
     price: 30,
     description: "كنافة بالمانجو",
     category: "الحلو",
@@ -1620,7 +1682,7 @@ export const food_list = [
   {
     _id: "dessert26",
     name: "جار",
-    image: food_9,
+    image: menu_9,
     price: 35,
     description: "جار الحلوى",
     category: "الحلو",
@@ -1628,7 +1690,7 @@ export const food_list = [
   {
     _id: "dessert27",
     name: "روشية",
-    image: food_9,
+    image: menu_9,
     price: 45,
     description: "روشية",
     category: "الحلو",
@@ -1637,7 +1699,7 @@ export const food_list = [
   {
     _id: "dessert28",
     name: "اندر",
-    image: food_9,
+    image: menu_9,
     price: 20,
     description: "إكلير",
     category: "الحلو",
@@ -1645,7 +1707,7 @@ export const food_list = [
   {
     _id: "dessert29",
     name: "ميلفيه",
-    image: food_9,
+    image: menu_9,
     price: 35,
     description: "ميلفيه",
     category: "الحلو",
@@ -1653,7 +1715,7 @@ export const food_list = [
   {
     _id: "dessert30",
     name: "دونانس",
-    image: food_9,
+    image: menu_9,
     price: 35,
     description: "دوناتس",
     category: "الحلو",
@@ -1661,7 +1723,7 @@ export const food_list = [
   {
     _id: "dessert31",
     name: "تشيز كيك",
-    image: food_9,
+    image: menu_9,
     price: 45,
     description: "تشيز كيك",
     category: "الحلو",
@@ -1669,7 +1731,7 @@ export const food_list = [
   {
     _id: "dessert32",
     name: "مولتن كيك",
-    image: food_9,
+    image: menu_9,
     price: 65,
     description: "مولتن كيك",
     category: "الحلو",
@@ -1678,7 +1740,7 @@ export const food_list = [
   {
     _id: "pasta1",
     name: "ماك اند تشيز",
-    image: food_10,
+    image: mackAndCheese,
     price: 90,
     description: "مكرونة بالجبن الموزاريلا والجبن الكريمي",
     category: "مكرونة",
@@ -1687,7 +1749,7 @@ export const food_list = [
   {
     _id: "pasta2",
     name: "الفريدو",
-    image: food_10,
+    image: alfredo,
     price: 90,
     description: "مكرونة بصلصة الفريدو الكريمية",
     category: "مكرونة",
@@ -1696,7 +1758,7 @@ export const food_list = [
   {
     _id: "pasta3",
     name: "نجرسكو",
-    image: food_10,
+    image: negresko,
     price: 100,
     description: "مكرونة بصلصة نجرسكو الإيطالية",
     category: "مكرونة",
@@ -1705,7 +1767,7 @@ export const food_list = [
   {
     _id: "pasta4",
     name: "تشكن رانش",
-    image: food_10,
+    image: negresko,
     price: 100,
     description: "مكرونة بالدجاج وصلصة الرانش",
     category: "مكرونة",
@@ -1714,7 +1776,7 @@ export const food_list = [
   {
     _id: "pasta5",
     name: "لحم مفروم",
-    image: food_10,
+    image: negresko,
     price: 90,
     description: "مكرونة باللحم المفروم وصلصة الطماطم",
     category: "مكرونة",
@@ -1723,7 +1785,7 @@ export const food_list = [
   {
     _id: "pasta6",
     name: "مشكل لحوم",
-    image: food_10,
+    image: pastaMeshakelLohom,
     price: 95,
     description: "مكرونة باللحوم المشكلة والخضروات",
     category: "مكرونة",
@@ -1732,7 +1794,7 @@ export const food_list = [
   {
     _id: "pasta7",
     name: "مشكل فراخ",
-    image: food_10,
+    image: negresko,
     price: 95,
     description: "مكرونة بالدجاج المشكل والخضروات",
     category: "مكرونة",
@@ -1741,7 +1803,7 @@ export const food_list = [
   {
     _id: "pasta8",
     name: "دونر کباب",
-    image: food_10,
+    image: negresko,
     price: 110,
     description: "مكرونة بالدونر كباب المشوي",
     category: "مكرونة",
@@ -1750,7 +1812,7 @@ export const food_list = [
   {
     _id: "pasta9",
     name: "سي فود",
-    image: food_10,
+    image: negresko,
     price: 170,
     description: "مكرونة بمشكل المأكولات البحرية",
     category: "مكرونة",
@@ -1760,7 +1822,7 @@ export const food_list = [
   {
     _id: "salad1",
     name: "سلطة خضراء",
-    image: food_21,
+    image: fallBack,
     price: 20,
     description: "سلطة خضراء طازجة",
     category: "سلطات",
@@ -1768,7 +1830,7 @@ export const food_list = [
   {
     _id: "salad2",
     name: "سلطة كلوسلو",
-    image: food_22,
+    image: fallBack,
     price: 25,
     description: "سلطة كلوسلو",
     category: "سلطات",
@@ -1776,7 +1838,7 @@ export const food_list = [
   {
     _id: "salad3",
     name: "سلطة فراخ",
-    image: food_23,
+    image: fallBack,
     price: 30,
     description: "سلطة بالدجاج",
     category: "سلطات",
@@ -1785,7 +1847,7 @@ export const food_list = [
   {
     _id: "r1",
     name: "بانيه",
-    image: food_29,
+    image: fallBack,
     price: 75,
     description: "ريزو بالدجاج البانيه والأرز",
     category: "ريزو",
@@ -1794,7 +1856,7 @@ export const food_list = [
   {
     _id: "r2",
     name: "كرانشي",
-    image: food_29,
+    image: fallBack,
     price: 85,
     description: "ريزو بالدجاج المقرمش والأرز",
     category: "ريزو",
@@ -1803,7 +1865,7 @@ export const food_list = [
   {
     _id: "r3",
     name: "مشكل فراخ",
-    image: food_29,
+    image: fallBack,
     price: 85,
     description: "ريزو بالدجاج المشكل والأرز",
     category: "ريزو",
@@ -1812,7 +1874,7 @@ export const food_list = [
   {
     _id: "r4",
     name: "شيش طاووق",
-    image: food_29,
+    image: fallBack,
     price: 90,
     description: "ريزو بشيش طاووق الدجاج والأرز",
     category: "ريزو",
@@ -1821,7 +1883,7 @@ export const food_list = [
   {
     _id: "r5",
     name: "مشكل لحوم",
-    image: food_29,
+    image: fallBack,
     price: 85,
     description: "ريزو باللحوم المشكلة والأرز",
     category: "ريزو",
@@ -1830,7 +1892,7 @@ export const food_list = [
   {
     _id: "r6",
     name: "أرز مبهر",
-    image: food_29,
+    image: fallBack,
     price: 45,
     description: "أرز مبهر بالتوابل والبهارات",
     category: "ريزو",
@@ -1839,7 +1901,7 @@ export const food_list = [
   {
     _id: "r7",
     name: "كفته",
-    image: food_29,
+    image: fallBack,
     price: 80,
     description: "ريزو بالكفتة المشوية والأرز",
     category: "ريزو",
@@ -1849,7 +1911,7 @@ export const food_list = [
   {
     _id: "add1",
     name: "مخلل",
-    image: food_1,
+    image: fallBack,
     price: 7,
     description: "مخلل",
     category: "سلطات",
@@ -1857,7 +1919,7 @@ export const food_list = [
   {
     _id: "add2",
     name: "ثومية بالخبز",
-    image: food_1,
+    image: fallBack,
     price: 25,
     description: "ثومية بالخبز",
     category: "صوصات",
@@ -1865,7 +1927,7 @@ export const food_list = [
   {
     _id: "add3",
     name: "طبق جبنة مقلية",
-    image: food_1,
+    image: fallBack,
     price: 50,
     description: "طبق جبنة مقلية",
     category: "بطاطس",
@@ -1873,7 +1935,7 @@ export const food_list = [
   {
     _id: "add4",
     name: "حلقات بصل",
-    image: food_1,
+    image: fallBack,
     price: 25,
     description: "حلقات بصل",
     category: "بطاطس",
@@ -1882,7 +1944,7 @@ export const food_list = [
   {
     _id: "sauce1",
     name: "صوص باربيكيو",
-    image: food_1,
+    image: fallBack,
     price: 20,
     description: "صوص باربيكيو",
     category: "صوصات",
@@ -1890,7 +1952,7 @@ export const food_list = [
   {
     _id: "sauce2",
     name: "صوص جبنة",
-    image: food_1,
+    image: fallBack,
     price: 35,
     description: "صوص جبنة",
     category: "صوصات",
@@ -1898,7 +1960,7 @@ export const food_list = [
   {
     _id: "sauce3",
     name: "صوص رانش",
-    image: food_1,
+    image: fallBack,
     price: 30,
     description: "صوص رانش",
     category: "صوصات",
@@ -1906,7 +1968,7 @@ export const food_list = [
   {
     _id: "sauce4",
     name: "صوص مايونيز",
-    image: food_1,
+    image: fallBack,
     price: 25,
     description: "صوص مايونيز",
     category: "صوصات",
@@ -1914,7 +1976,7 @@ export const food_list = [
   {
     _id: "sauce5",
     name: "صوص حار",
-    image: food_1,
+    image: fallBack,
     price: 25,
     description: "صوص حار",
     category: "صوصات",
