@@ -96,6 +96,9 @@ const FloatingActionButton = () => {
           }}
         />
       </Fab>
+      <p>
+      تواصل معنا
+      </p>
     </Stack>
   );
 };
