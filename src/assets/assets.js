@@ -198,7 +198,7 @@ export const menu_list = [
   },
   {
     menu_name: "كاليزوني",
-    menu_image: menu_3,
+    menu_image: kalezony,
   },
   {
     menu_name: "السندوتش",
