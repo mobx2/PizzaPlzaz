@@ -96,7 +96,7 @@ const FloatingActionButton = () => {
           }}
         />
       </Fab>
-      <p className="text-slate-50">
+      <p className="text-slate-50 px-8 py-6 bg-stone-900">
       تواصل معنا
       </p>
     </Stack>
