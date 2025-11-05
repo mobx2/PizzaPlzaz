@@ -24,13 +24,13 @@ const Footer = () => {
             >
               <FaWhatsapp />
             </a>
-            <a
+            {/* <a
               href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedinIn />
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="footer-content-center">

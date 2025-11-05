@@ -1,13 +1,13 @@
 import basket_icon from "./basket_icon.png";
 import logo from "./logo.png";
-import header_img from "./header_img.png";
+import header_img from "./panner.jpeg";
 import search_icon from "./search_icon.png";
 import menu_1 from "./creap.jpeg";
 import menu_2 from "./pizza.jpeg";
 import menu_3 from "./tawagen.jpeg";
 import menu_4 from "./sandwich.jpeg";
 import menu_5 from "./meals.jpeg";
-import menu_6 from "./menu_6.png";
+import menu_6 from "./rezoMenu.jpeg";
 import menu_7 from "./menu_7.png";
 import menu_8 from "./burger.jpeg";
 import menu_9 from "./dessert.jpeg";
@@ -63,6 +63,26 @@ import mackAndCheese from "./mackAndCheese.jpeg";
 import alfredo from "./alfredo.jpeg";
 import negresko from "./negresko.jpeg";
 import pastaMeshakelLohom from "./pastaMeshakelLohom.jpeg";
+
+// rezo
+
+import reazoKofta from "./rezokofta.jpeg";
+import rezoCrunchy from "./rezoMenu.jpeg";
+import rozzMebahr from "./rozzMebahr.jpeg";
+import rezoSodor from "./rezoSodor.jpeg";
+import rezoPaneh from "./rezoPaneh.jpeg";
+
+// souse
+
+import souseSpicy from "./souseSpicy.jpeg";
+import sousShedar from "./sousShedar.jpeg";
+import bbqSous from "./bbqSous.jpeg";
+import tomyahSous from "./tomyahSous.jpeg";
+import runchSous from "./runchSous.jpeg";
+
+// halaweyat
+
+import kashtota from "./kashtota.jpeg";
 
 // import food_14 from "./food_14.png";
 // import food_15 from "./food_15.png";
@@ -177,7 +197,7 @@ export const menu_list = [
   },
   {
     menu_name: "صوصات",
-    menu_image: menu_6,
+    menu_image: souseSpicy,
   },
 ];
 
@@ -1485,10 +1505,10 @@ export const food_list = [
   },
   {
     _id: "dessert2",
-    name: "وافل باستتيو",
+    name: "وافل بيستاشيو",
     image: menu_9,
     price: 70,
-    description: "وافل بصلصة الباستتيو",
+    description: "وافل بصلصة بيستاشيو",
     category: "الحلو",
   },
   {
@@ -1534,7 +1554,7 @@ export const food_list = [
   {
     _id: "dessert8",
     name: "قشطوطة",
-    image: menu_9,
+    image: kashtota,
     price: 45,
     description: "قشطوطة كريمي",
     category: "الحلو",
@@ -1580,47 +1600,7 @@ export const food_list = [
     description: "بان كيك ميكس بالصلصات المختلفة",
     category: "الحلو",
   },
-  // توتشي (Tootchi)
-  {
-    _id: "dessert14",
-    name: "توتشي نوتيلا",
-    image: menu_9,
-    price: 90,
-    description: "توتشي بصلصة النوتيلا",
-    category: "الحلو",
-  },
-  {
-    _id: "dessert15",
-    name: "نوتشي باستتيو",
-    image: menu_9,
-    price: 100,
-    description: "توتشي بصلصة الباستتيو",
-    category: "الحلو",
-  },
-  {
-    _id: "dessert16",
-    name: "نوتشي کندر",
-    image: menu_9,
-    price: 90,
-    description: "توتشي بصلصة الكندر",
-    category: "الحلو",
-  },
-  {
-    _id: "dessert17",
-    name: "نوتشي وايت شوكلت",
-    image: menu_9,
-    price: 90,
-    description: "توتشي بالشوكولاتة البيضاء",
-    category: "الحلو",
-  },
-  {
-    _id: "dessert18",
-    name: "نوتشي ميكس",
-    image: menu_9,
-    price: 100,
-    description: "توتشي ميكس بالصلصات المختلفة",
-    category: "الحلو",
-  },
+
   // الحلويات التقليدية
   {
     _id: "dessert19",
@@ -1698,7 +1678,7 @@ export const food_list = [
   // الكيك (Cakes)
   {
     _id: "dessert28",
-    name: "اندر",
+    name: " كندر",
     image: menu_9,
     price: 20,
     description: "إكلير",
@@ -1847,7 +1827,7 @@ export const food_list = [
   {
     _id: "r1",
     name: "بانيه",
-    image: fallBack,
+    image: rezoPaneh,
     price: 75,
     description: "ريزو بالدجاج البانيه والأرز",
     category: "ريزو",
@@ -1856,7 +1836,7 @@ export const food_list = [
   {
     _id: "r2",
     name: "كرانشي",
-    image: fallBack,
+    image: rezoCrunchy,
     price: 85,
     description: "ريزو بالدجاج المقرمش والأرز",
     category: "ريزو",
@@ -1865,7 +1845,7 @@ export const food_list = [
   {
     _id: "r3",
     name: "مشكل فراخ",
-    image: fallBack,
+    image: rezoSodor,
     price: 85,
     description: "ريزو بالدجاج المشكل والأرز",
     category: "ريزو",
@@ -1874,7 +1854,7 @@ export const food_list = [
   {
     _id: "r4",
     name: "شيش طاووق",
-    image: fallBack,
+    image: rezoSodor,
     price: 90,
     description: "ريزو بشيش طاووق الدجاج والأرز",
     category: "ريزو",
@@ -1883,7 +1863,7 @@ export const food_list = [
   {
     _id: "r5",
     name: "مشكل لحوم",
-    image: fallBack,
+    image: reazoKofta,
     price: 85,
     description: "ريزو باللحوم المشكلة والأرز",
     category: "ريزو",
@@ -1892,7 +1872,7 @@ export const food_list = [
   {
     _id: "r6",
     name: "أرز مبهر",
-    image: fallBack,
+    image: rozzMebahr,
     price: 45,
     description: "أرز مبهر بالتوابل والبهارات",
     category: "ريزو",
@@ -1901,9 +1881,18 @@ export const food_list = [
   {
     _id: "r7",
     name: "كفته",
-    image: fallBack,
+    image: reazoKofta,
     price: 80,
     description: "ريزو بالكفتة المشوية والأرز",
+    category: "ريزو",
+    subType: "لحوم",
+  },
+  {
+    _id: "r8",
+    name: "دونر كباب",
+    image: reazoKofta,
+    price: 100,
+    description: "ريزو بقطع الدونر والأرز",
     category: "ريزو",
     subType: "لحوم",
   },
@@ -1918,8 +1907,8 @@ export const food_list = [
   },
   {
     _id: "add2",
-    name: "ثومية بالخبز",
-    image: fallBack,
+    name: "ثومية",
+    image: tomyahSous,
     price: 25,
     description: "ثومية بالخبز",
     category: "صوصات",
@@ -1944,7 +1933,7 @@ export const food_list = [
   {
     _id: "sauce1",
     name: "صوص باربيكيو",
-    image: fallBack,
+    image: bbqSous,
     price: 20,
     description: "صوص باربيكيو",
     category: "صوصات",
@@ -1952,7 +1941,7 @@ export const food_list = [
   {
     _id: "sauce2",
     name: "صوص جبنة",
-    image: fallBack,
+    image: sousShedar,
     price: 35,
     description: "صوص جبنة",
     category: "صوصات",
@@ -1960,7 +1949,7 @@ export const food_list = [
   {
     _id: "sauce3",
     name: "صوص رانش",
-    image: fallBack,
+    image: runchSous,
     price: 30,
     description: "صوص رانش",
     category: "صوصات",
@@ -1968,7 +1957,7 @@ export const food_list = [
   {
     _id: "sauce4",
     name: "صوص مايونيز",
-    image: fallBack,
+    image: tomyahSous,
     price: 25,
     description: "صوص مايونيز",
     category: "صوصات",
@@ -1976,7 +1965,7 @@ export const food_list = [
   {
     _id: "sauce5",
     name: "صوص حار",
-    image: fallBack,
+    image: souseSpicy,
     price: 25,
     description: "صوص حار",
     category: "صوصات",
