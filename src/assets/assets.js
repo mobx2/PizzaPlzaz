@@ -702,7 +702,7 @@ export const food_list = [
   },
   {
     _id: "p12",
-    name: "سحق",
+    name: "سجق",
     image: sogok,
     price: 155,
     description:
