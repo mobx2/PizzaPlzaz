@@ -8,10 +8,12 @@ import menu_3 from "./tawagen.jpeg";
 import menu_4 from "./sandwich.jpeg";
 import menu_5 from "./meals.jpeg";
 import menu_6 from "./rezoMenu.jpeg";
-import menu_7 from "./menu_7.png";
+import menu_7 from "./batates.jpeg";
 import menu_8 from "./burger.jpeg";
 import menu_9 from "./dessert.jpeg";
 import menu_10 from "./pasta.jpeg";
+import menu_11 from "./mashrobat.jpeg";
+import menu_12 from "./salata.jpeg";
 
 // Pizzas
 
@@ -43,6 +45,14 @@ import chillyCrunchy from "./chillyCrunchy.jpeg";
 import creapeCrunchy from "./creapeCrunchy.jpeg";
 import haway from "./haway.jpeg";
 import meeksGrell from "./meeksGrell.jpeg";
+
+// shandawech
+
+import sanwichSesh from "./sanwichSesh.jpeg";
+import sandwichKofta from "./sandwichKofta.jpeg";
+import sanwdichShawermaLahma from "./sanwdichShawermaLahma.jpeg";
+import sandawichShawermaFerakh from "./sandawichShawermaFerakh.jpeg";
+import sandawichDonar from "./sandawichDonar.jpeg";
 
 // tawagen
 import tagenLohom from "./tagenLohom.jpeg";
@@ -88,6 +98,20 @@ import rozBelabn from "./rozBelabn.jpeg";
 import gelly from "./gelly.jpeg";
 import creemCramel from "./creemCramel.jpeg";
 import jar from "./jar.jpeg";
+
+// batates
+
+import batatesDonar from "./batatesDonar.jpeg";
+import crunchyFries from "./crunchyFries.jpeg";
+import batatesGebna from "./batatesGebna.jpeg";
+import sticks from "./sticks.jpeg";
+import basal from "./basal.jpeg";
+
+// salatat
+
+import salataKhadra from "./salataKhadra.jpeg";
+import kloslo from "./kloslo.jpeg";
+import salataFerakh from "./salataFerakh.jpeg";
 
 // import food_14 from "./food_14.png";
 // import food_15 from "./food_15.png";
@@ -190,11 +214,11 @@ export const menu_list = [
   },
   {
     menu_name: "سلطات",
-    menu_image: menu_6,
+    menu_image: menu_12,
   },
   {
     menu_name: "مشروبات",
-    menu_image: menu_7,
+    menu_image: menu_11,
   },
   {
     menu_name: "الحلو",
@@ -970,7 +994,7 @@ export const food_list = [
   {
     _id: "s1",
     name: "كرسبي",
-    image: crepesFallBack,
+    image: menu_4,
     price: 80,
     description: "سندوتش بالدجاج المقرمش والخضروات",
     category: "السندوتش",
@@ -983,7 +1007,7 @@ export const food_list = [
   {
     _id: "s2",
     name: "بانيه",
-    image: crepesFallBack,
+    image: menu_4,
     price: 80,
     description: "سندوتش بالدجاج البانيه والخضروات",
     category: "السندوتش",
@@ -996,7 +1020,7 @@ export const food_list = [
   {
     _id: "s3",
     name: "كرانشي",
-    image: crepesFallBack,
+    image: menu_4,
     price: 85,
     description: "سندوتش بالدجاج المقرمش والجبن",
     category: "السندوتش",
@@ -1009,7 +1033,7 @@ export const food_list = [
   {
     _id: "s4",
     name: "تشيلي كرانشي",
-    image: crepesFallBack,
+    image: menu_4,
     price: 85,
     description: "سندوتش بالدجاج المقرمش الحار",
     category: "السندوتش",
@@ -1022,7 +1046,7 @@ export const food_list = [
   {
     _id: "s5",
     name: "تشكن فاهيتا",
-    image: crepesFallBack,
+    image: menu_4,
     price: 80,
     description: "سندوتش بفاهيتا الدجاج والخضروات",
     category: "السندوتش",
@@ -1035,7 +1059,7 @@ export const food_list = [
   {
     _id: "s6",
     name: "كوردن بلو",
-    image: crepesFallBack,
+    image: menu_4,
     price: 80,
     description: "سندوتش بالكوردن بلو والجبن",
     category: "السندوتش",
@@ -1048,7 +1072,7 @@ export const food_list = [
   {
     _id: "s7",
     name: "زنجر سوبریم",
-    image: crepesFallBack,
+    image: menu_4,
     price: 85,
     description: "سندوتش بالدجاج الزنجر والخضروات",
     category: "السندوتش",
@@ -1061,7 +1085,7 @@ export const food_list = [
   {
     _id: "s8",
     name: "شاورما فراخ",
-    image: crepesFallBack,
+    image: sandawichShawermaFerakh,
     price: 85,
     description: "سندوتش بشاورما الدجاج والثوم",
     category: "السندوتش",
@@ -1074,7 +1098,7 @@ export const food_list = [
   {
     _id: "s9",
     name: "شاورما لحم",
-    image: crepesFallBack,
+    image: sanwdichShawermaLahma,
     price: 95,
     description: "سندوتش بشاورما اللحم والثوم",
     category: "السندوتش",
@@ -1087,7 +1111,7 @@ export const food_list = [
   {
     _id: "s10",
     name: "صدور مشوي",
-    image: crepesFallBack,
+    image: menu_4,
     price: 85,
     description: "سندوتش بصدور الدجاج المشوية",
     category: "السندوتش",
@@ -1100,7 +1124,7 @@ export const food_list = [
   {
     _id: "s11",
     name: "شيش طاووق",
-    image: crepesFallBack,
+    image: sanwichSesh,
     price: 85,
     description: "سندوتش بشيش طاووق الدجاج",
     category: "السندوتش",
@@ -1113,7 +1137,7 @@ export const food_list = [
   {
     _id: "s12",
     name: "ستيك شيش",
-    image: crepesFallBack,
+    image: menu_4,
     price: 75,
     description: "سندوتش بالستيك المشوي",
     category: "السندوتش",
@@ -1126,7 +1150,7 @@ export const food_list = [
   {
     _id: "s13",
     name: "بطاطس محمره",
-    image: crepesFallBack,
+    image: menu_4,
     price: 55,
     description: "سندوتش بالبطاطس المحمرة",
     category: "السندوتش",
@@ -1139,7 +1163,7 @@ export const food_list = [
   {
     _id: "s14",
     name: "بطاطس فرسکس",
-    image: crepesFallBack,
+    image: menu_4,
     price: 55,
     description: "سندوتش بالبطاطس الفرسكس",
     category: "السندوتش",
@@ -1152,7 +1176,7 @@ export const food_list = [
   {
     _id: "s15",
     name: "كفته مشوي",
-    image: crepesFallBack,
+    image: sandwichKofta,
     price: 80,
     description: "سندوتش بالكفتة المشوية",
     category: "السندوتش",
@@ -1165,7 +1189,7 @@ export const food_list = [
   {
     _id: "s16",
     name: "دونر کباب",
-    image: crepesFallBack,
+    image: sandawichDonar,
     price: 110,
     description: "سندوتش بالدونر كباب المشوي",
     category: "السندوتش",
@@ -1178,7 +1202,7 @@ export const food_list = [
   {
     _id: "s17",
     name: "سجق",
-    image: crepesFallBack,
+    image: menu_4,
     price: 70,
     description: "سندوتش بالسجق الحار",
     category: "السندوتش",
@@ -1191,7 +1215,7 @@ export const food_list = [
   {
     _id: "s18",
     name: "كبدة اسكندراني",
-    image: crepesFallBack,
+    image: menu_4,
     price: 70,
     description: "سندوتش بالكبدة الإسكندرانية",
     category: "السندوتش",
@@ -1204,7 +1228,7 @@ export const food_list = [
   {
     _id: "s19",
     name: "هوت دوج",
-    image: crepesFallBack,
+    image: menu_4,
     price: 70,
     description: "سندوتش بالهوت دوج",
     category: "السندوتش",
@@ -1309,7 +1333,7 @@ export const food_list = [
   {
     _id: "pot1",
     name: "بطاطس محمره",
-    image: fallBack,
+    image: menu_7,
     price: 35,
     description: "بطاطس محمرة",
     category: "بطاطس",
@@ -1317,7 +1341,7 @@ export const food_list = [
   {
     _id: "pot2",
     name: "بطاطس فرسکس",
-    image: fallBack,
+    image: menu_7,
     price: 45,
     description: "بطاطس فرسکس",
     category: "بطاطس",
@@ -1325,7 +1349,7 @@ export const food_list = [
   {
     _id: "pot3",
     name: "بطاطس بالجبنة عادية",
-    image: fallBack,
+    image: batatesGebna,
     price: 60,
     description: "بطاطس بالجبنة عادية",
     category: "بطاطس",
@@ -1333,7 +1357,7 @@ export const food_list = [
   {
     _id: "pot4",
     name: "بطاطس بالجبنة فريسکس",
-    image: fallBack,
+    image: batatesGebna,
     price: 65,
     description: "بطاطس بالجبنة فريسکس",
     category: "بطاطس",
@@ -1341,7 +1365,7 @@ export const food_list = [
   {
     _id: "pot5",
     name: "طاسة بطاطس",
-    image: fallBack,
+    image: batatesGebna,
     price: 70,
     description: "طاسة بطاطس",
     category: "بطاطس",
@@ -1349,7 +1373,7 @@ export const food_list = [
   {
     _id: "pot6",
     name: "دونر فرايز",
-    image: fallBack,
+    image: batatesDonar,
     price: 85,
     description: "بطاطس بالدونر",
     category: "بطاطس",
@@ -1357,7 +1381,7 @@ export const food_list = [
   {
     _id: "pot7",
     name: "كرانشي فرايز",
-    image: fallBack,
+    image: crunchyFries,
     price: 85,
     description: "بطاطس كرانشي",
     category: "بطاطس",
@@ -1807,7 +1831,7 @@ export const food_list = [
   {
     _id: "salad1",
     name: "سلطة خضراء",
-    image: fallBack,
+    image: salataKhadra,
     price: 20,
     description: "سلطة خضراء طازجة",
     category: "سلطات",
@@ -1815,7 +1839,7 @@ export const food_list = [
   {
     _id: "salad2",
     name: "سلطة كلوسلو",
-    image: fallBack,
+    image: kloslo,
     price: 25,
     description: "سلطة كلوسلو",
     category: "سلطات",
@@ -1823,7 +1847,7 @@ export const food_list = [
   {
     _id: "salad3",
     name: "سلطة فراخ",
-    image: fallBack,
+    image: menu_12,
     price: 30,
     description: "سلطة بالدجاج",
     category: "سلطات",
@@ -1905,7 +1929,7 @@ export const food_list = [
   {
     _id: "add1",
     name: "مخلل",
-    image: fallBack,
+    image: salataFerakh,
     price: 7,
     description: "مخلل",
     category: "سلطات",
@@ -1921,7 +1945,7 @@ export const food_list = [
   {
     _id: "add3",
     name: "طبق جبنة مقلية",
-    image: fallBack,
+    image: sticks,
     price: 50,
     description: "طبق جبنة مقلية",
     category: "بطاطس",
@@ -1929,7 +1953,7 @@ export const food_list = [
   {
     _id: "add4",
     name: "حلقات بصل",
-    image: fallBack,
+    image: basal,
     price: 25,
     description: "حلقات بصل",
     category: "بطاطس",
