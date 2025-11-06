@@ -113,6 +113,14 @@ import salataKhadra from "./salataKhadra.jpeg";
 import kloslo from "./kloslo.jpeg";
 import salataFerakh from "./salataFerakh.jpeg";
 
+// mashrobat
+import mayah from "./mayah.jpeg";
+import pepsi from "./pepsi.jpeg";
+import vCola from "./vCola.jpeg";
+import papsiLetr from "./papsiLetr.jpeg";
+import sunTop from "./sunTop.jpeg";
+import cocacola from "./cocacola.jpeg";
+
 // import food_14 from "./food_14.png";
 // import food_15 from "./food_15.png";
 // import food_16 from "./food_16.png";
@@ -1390,7 +1398,7 @@ export const food_list = [
   {
     _id: "dr1",
     name: "مياه معدنية",
-    image: fallBack,
+    image: mayah,
     price: 10,
     description: "مياه معدنية طبيعية",
     category: "مشروبات",
@@ -1398,7 +1406,7 @@ export const food_list = [
   {
     _id: "dr2",
     name: "كانز",
-    image: fallBack,
+    image: pepsi,
     price: 15,
     description: "مشروبات غازية معلبة",
     category: "مشروبات",
@@ -1406,7 +1414,7 @@ export const food_list = [
   {
     _id: "dr3",
     name: "كولا ماشين",
-    image: fallBack,
+    image: cocacola,
     price: 15,
     description: "كولا من الماكينة",
     category: "مشروبات",
@@ -1419,7 +1427,7 @@ export const food_list = [
   {
     _id: "dr4",
     name: "في كولا",
-    image: fallBack,
+    image: vCola,
     price: 20,
     description: "مشروب كولا",
     category: "مشروبات",
@@ -1427,7 +1435,7 @@ export const food_list = [
   {
     _id: "dr5",
     name: "لتر بيبسي",
-    image: fallBack,
+    image: papsiLetr,
     price: 35,
     description: "بيبسي لتر",
     category: "مشروبات",
@@ -1435,7 +1443,7 @@ export const food_list = [
   {
     _id: "dr6",
     name: "عصير سن توب",
-    image: fallBack,
+    image: sunTop,
     price: 15,
     description: "عصير سن توب",
     category: "مشروبات",
@@ -1692,7 +1700,7 @@ export const food_list = [
     _id: "dessert26",
     name: "جار",
     image: jar,
-    price: 35,
+    price: 50,
     description: "جار الحلوى",
     category: "الحلو",
   },
