@@ -114,12 +114,13 @@ import kloslo from "./kloslo.jpeg";
 import salataFerakh from "./salataFerakh.jpeg";
 
 // mashrobat
+
 import mayah from "./mayah.jpeg";
 import pepsi from "./pepsi.jpeg";
+import cocacola from "./cocacola.jpeg";
 import vCola from "./vCola.jpeg";
 import papsiLetr from "./papsiLetr.jpeg";
 import sunTop from "./sunTop.jpeg";
-import cocacola from "./cocacola.jpeg";
 
 // import food_14 from "./food_14.png";
 // import food_15 from "./food_15.png";
@@ -206,7 +207,7 @@ export const menu_list = [
   },
   {
     menu_name: "كاليزوني",
-    menu_image: menu_3,
+    menu_image: kalezony,
   },
   {
     menu_name: "السندوتش",
@@ -730,7 +731,7 @@ export const food_list = [
   },
   {
     _id: "p12",
-    name: "سحق",
+    name: "سجق",
     image: sogok,
     price: 155,
     description:

@@ -96,6 +96,9 @@ const FloatingActionButton = () => {
           }}
         />
       </Fab>
+      <p className="tawasal">
+      تواصل معنا
+      </p>
     </Stack>
   );
 };
