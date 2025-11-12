@@ -72,7 +72,7 @@ const FoodItem = ({ id, name, price, description, image, sizes }) => {
               className="food-item-details-btn"
               onClick={handleShowDetails}
             >
-              {isMobile ? "عرض" : "عرض التفاصيل"}
+              {isMobile ? "عرض" : "عرض"}
             </button>
           </div>
         </div>
