@@ -74,7 +74,7 @@ const Footer = () => {
         <div className="footer-content-right">
           <h2>تواصل معنا</h2>
           <ul>
-            <li>+201060044426</li>
+            <li>+2017485</li>
             <li>contact@pizzaplazaeg.com</li>
           </ul>
         </div>
