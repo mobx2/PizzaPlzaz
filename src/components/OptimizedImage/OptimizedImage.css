@@ -1,0 +1,148 @@
+.optimized-image-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+/* Aspect ratio container */
+.optimized-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Blur placeholder */
+.optimized-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px);
+    transform: scale(1.1);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.optimized-image-placeholder.hidden {
+    opacity: 0;
+}
+
+/* Main image */
+.optimized-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.optimized-image.loaded {
+    opacity: 1;
+}
+
+/* Skeleton loader */
+.skeleton-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            #f0f0f0 0%,
+            #e0e0e0 20%,
+            #f0f0f0 40%,
+            #f0f0f0 100%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Loading spinner */
+.image-loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #ff6b6b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Error state */
+.image-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* No layout shift - maintain aspect ratio */
+.aspect-ratio-16-9 {
+    padding-bottom: 56.25%;
+    /* 16:9 */
+}
+
+.aspect-ratio-4-3 {
+    padding-bottom: 75%;
+    /* 4:3 */
+}
+
+.aspect-ratio-1-1 {
+    padding-bottom: 100%;
+    /* 1:1 */
+}
+
+.aspect-ratio-3-2 {
+    padding-bottom: 66.67%;
+    /* 3:2 */
+}

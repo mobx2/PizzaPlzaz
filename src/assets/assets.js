@@ -862,8 +862,7 @@ export const food_list = [
     name: "لبنة بالعسل",
     image: labneWeAssal,
     price: 165,
-    description:
-      "بيتزا مشكلة باللحم والدجاج والخضروات. يمكن إضافة 40 ج لحشو الأطراف بالجبنة (وسط) أو 50 ج (كبير)",
+    description: "بيتزا باللبنة والعسل",
     category: "بيتزا",
     subType: "ميكس",
   },

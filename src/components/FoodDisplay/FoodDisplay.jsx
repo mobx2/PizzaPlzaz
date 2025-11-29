@@ -136,8 +136,8 @@ const FoodDisplay = ({ category }) => {
           {searchTerm
             ? `نتائج البحث عن "${searchTerm}"`
             : category === "All"
-            ? "مينيو بلازا"
-            : category}
+              ? "مينيو بلازا"
+              : category}
         </h2>
         <div className={`food-display-search ${showSearch ? "active" : ""}`}>
           <div className="search-input-container">
@@ -176,9 +176,8 @@ const FoodDisplay = ({ category }) => {
             {["الكل", "لحوم", "دجاج", "سي فود", "ميكس"].map((subType) => (
               <button
                 key={subType}
-                className={`food-display-sub-filter-btn ${
-                  subCategory === subType ? "active" : ""
-                }`}
+                className={`food-display-sub-filter-btn ${subCategory === subType ? "active" : ""
+                  }`}
                 onClick={() => setSubCategory(subType)}
               >
                 {subType}
@@ -206,6 +205,7 @@ const FoodDisplay = ({ category }) => {
                 className="food-display-loading-logo"
                 width="80"
                 height="80"
+                loading="eager"
               />
               <div className="food-display-loading-spinner"></div>
             </div>
