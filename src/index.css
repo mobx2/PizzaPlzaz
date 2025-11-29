@@ -395,3 +395,31 @@ a {
     opacity: 1;
   }
 }
+
+/* ===========================================
+   BLOCK TRANSLATION - SIMPLE VERSION
+   =========================================== */
+
+/* Hide Google Translate UI elements */
+.skiptranslate,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#google_translate_element,
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Force Arabic - Prevent translation changes */
+html,
+body {
+  direction: rtl !important;
+}
+
+body.translated-ltr,
+body.translated-rtl {
+  direction: rtl !important;
+}
