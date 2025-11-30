@@ -96,4 +96,9 @@ const FoodItem = ({ id, name, price, description, image, sizes }) => {
   );
 };
 
-export default FoodItem;
+export default React.memo(FoodItem, (prevProps, nextProps) => {
+  return (
+    prevProps._id === nextProps._id &&
+    prevProps.cartItemCount === nextProps.cartItemCount
+  );
+});

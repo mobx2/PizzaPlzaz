@@ -7,25 +7,24 @@ const AppLoading = ({ children }) => {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    // Hide body overflow during loading
     document.body.style.overflow = "hidden";
 
-    // Start fade out after 2 seconds
-    const fadeTimer = setTimeout(() => {
-      setIsFadingOut(true);
-    }, 2000);
+    // Wait for DOM ready + critical resources
+    if (document.readyState === "complete") {
+      startFadeOut();
+    } else {
+      window.addEventListener("load", startFadeOut);
+      return () => window.removeEventListener("load", startFadeOut);
+    }
 
-    // Completely remove loader after fade animation completes
-    const removeTimer = setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.overflow = "auto";
-    }, 2500); // 2000ms delay + 500ms fade duration
-
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(removeTimer);
-      document.body.style.overflow = "auto";
-    };
+    function startFadeOut() {
+      // Small delay to show logo (reduced from 2s to 300ms)
+      setTimeout(() => setIsFadingOut(true), 300);
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.overflow = "auto";
+      }, 800);
+    }
   }, []);
 
   if (!isLoading) {

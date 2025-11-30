@@ -9,42 +9,27 @@ import LoginPopup from "./components/LoginPopup/LoginPopup";
 import AppLoading from "./components/AppLoading/AppLoading";
 // import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
 import FloatingActionButton from "./components/FloatingActionButton/FloatingActionButton";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { CacheProvider } from "@emotion/react";
-import createRtlCache from "./theme/rtl";
 
-// Create rtl cache
-const rtlCache = createRtlCache();
 // import NavExtras from "./components/NavExtras/NavExtras";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
 
-  // Create RTL theme
-  const theme = createTheme({
-    direction: "rtl",
-    // You can add other theme customizations here
-  });
-
   return (
     <AppLoading>
-      <CacheProvider value={rtlCache}>
-        <ThemeProvider theme={theme}>
-          {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
-          <div className="app">
-            <Navbar setShowLogin={setShowLogin} />
-            {/* <NavExtras /> */}
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/order" element={<PlaceOrder />} />
-            </Routes>
-          </div>
-          <Footer />
-          {/* <ScrollToTop /> */}
-          <FloatingActionButton />
-        </ThemeProvider>
-      </CacheProvider>
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
+      <div className="app">
+        <Navbar setShowLogin={setShowLogin} />
+        {/* <NavExtras /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<PlaceOrder />} />
+        </Routes>
+      </div>
+      <Footer />
+      {/* <ScrollToTop /> */}
+      <FloatingActionButton />
     </AppLoading>
   );
 };

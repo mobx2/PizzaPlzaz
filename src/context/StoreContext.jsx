@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useMemo } from "react";
 import { food_list, menu_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
@@ -30,15 +30,15 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  const getTotalQuantity = () => {
+  const cartItemsCount = useMemo(() => {
     let totalQuantity = 0;
     for (const itemId in cartItems) {
       totalQuantity += cartItems[itemId];
     }
     return totalQuantity;
-  };
+  }, [cartItems]);
 
-  const getTotalCartAmount = () => {
+  const totalAmount = useMemo(() => {
     let totalAmount = 0;
     for (const cartKey in cartItems) {
       if (cartItems[cartKey] > 0) {
@@ -58,7 +58,10 @@ const StoreContextProvider = (props) => {
       }
     }
     return totalAmount;
-  };
+  }, [cartItems, food_list]);
+
+  const getTotalQuantity = () => cartItemsCount;
+  const getTotalCartAmount = () => totalAmount;
 
   const contextValue = {
     food_list,

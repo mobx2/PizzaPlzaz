@@ -1,13 +1,16 @@
-import { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useState, useRef, useEffect, useMemo } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
 import FoodItem from "../FoodItem/FoodItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useDebounce } from "../../hooks/useDebounce";
 
 const FoodDisplay = ({ category }) => {
   const { food_list, searchTerm, setSearchTerm } = useContext(StoreContext);
+  const [searchInput, setSearchInput] = useState("");
+  const debouncedSearch = useDebounce(searchInput, 300);
   const [showSearch, setShowSearch] = useState(false);
   const [subCategory, setSubCategory] = useState("الكل");
   const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +26,11 @@ const FoodDisplay = ({ category }) => {
       searchInputRef.current.focus();
     }
   }, [showSearch]);
+
+  // Update search term when debounced input changes
+  useEffect(() => {
+    setSearchTerm(debouncedSearch);
+  }, [debouncedSearch, setSearchTerm]);
 
   // Reset sub-category when main category changes
   useEffect(() => {
@@ -74,60 +82,63 @@ const FoodDisplay = ({ category }) => {
   };
 
   const handleClearSearch = () => {
+    setSearchInput("");
     setSearchTerm("");
     setShowSearch(false);
   };
 
   // Filter products based on category, sub-category (type), and search term
-  const filteredProducts = food_list.filter((item) => {
-    const matchesCategory = category === "All" || category === item.category;
+  const filteredProducts = useMemo(() => {
+    return food_list.filter((item) => {
+      const matchesCategory = category === "All" || category === item.category;
 
-    let matchesSubCategory = true;
-    if (subCategory !== "الكل") {
-      switch (subCategory) {
-        case "لحوم":
-          matchesSubCategory =
-            item.subType === "لحوم" ||
-            item.name.toLowerCase().includes("meat") ||
-            item.name.toLowerCase().includes("beef") ||
-            item.name.toLowerCase().includes("lamb");
-          break;
-        case "دجاج":
-          matchesSubCategory =
-            item.subType === "دجاج" ||
-            item.name.toLowerCase().includes("chicken") ||
-            item.name.toLowerCase().includes("دجاج");
-          break;
-        case "سي فود":
-          matchesSubCategory =
-            item.subType === "سي فود" ||
-            item.name.toLowerCase().includes("fish") ||
-            item.name.toLowerCase().includes("seafood") ||
-            item.name.toLowerCase().includes("shrimp") ||
-            item.name.toLowerCase().includes("salmon") ||
-            item.name.toLowerCase().includes("tuna") ||
-            item.name.toLowerCase().includes("جمبري") ||
-            item.name.toLowerCase().includes("تونة");
-          break;
-        case "ميكس":
-          matchesSubCategory =
-            item.subType === "ميكس" ||
-            item.name.toLowerCase().includes("mix") ||
-            item.name.toLowerCase().includes("combo") ||
-            item.name.toLowerCase().includes("variety") ||
-            item.name.toLowerCase().includes("مشكلة") ||
-            item.name.toLowerCase().includes("مارجريتا");
-          break;
-        default:
-          matchesSubCategory = true;
+      let matchesSubCategory = true;
+      if (subCategory !== "الكل") {
+        switch (subCategory) {
+          case "لحوم":
+            matchesSubCategory =
+              item.subType === "لحوم" ||
+              item.name.toLowerCase().includes("meat") ||
+              item.name.toLowerCase().includes("beef") ||
+              item.name.toLowerCase().includes("lamb");
+            break;
+          case "دجاج":
+            matchesSubCategory =
+              item.subType === "دجاج" ||
+              item.name.toLowerCase().includes("chicken") ||
+              item.name.toLowerCase().includes("دجاج");
+            break;
+          case "سي فود":
+            matchesSubCategory =
+              item.subType === "سي فود" ||
+              item.name.toLowerCase().includes("fish") ||
+              item.name.toLowerCase().includes("seafood") ||
+              item.name.toLowerCase().includes("shrimp") ||
+              item.name.toLowerCase().includes("salmon") ||
+              item.name.toLowerCase().includes("tuna") ||
+              item.name.toLowerCase().includes("جمبري") ||
+              item.name.toLowerCase().includes("تونة");
+            break;
+          case "ميكس":
+            matchesSubCategory =
+              item.subType === "ميكس" ||
+              item.name.toLowerCase().includes("mix") ||
+              item.name.toLowerCase().includes("combo") ||
+              item.name.toLowerCase().includes("variety") ||
+              item.name.toLowerCase().includes("مشكلة") ||
+              item.name.toLowerCase().includes("مارجريتا");
+            break;
+          default:
+            matchesSubCategory = true;
+        }
       }
-    }
 
-    const matchesSearch =
-      searchTerm === "" ||
-      item.name.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSubCategory && matchesSearch;
-  });
+      const matchesSearch =
+        searchTerm === "" ||
+        item.name.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesCategory && matchesSubCategory && matchesSearch;
+    });
+  }, [food_list, category, subCategory, searchTerm]);
 
   return (
     <div className="food-display" id="food-display">
@@ -136,8 +147,8 @@ const FoodDisplay = ({ category }) => {
           {searchTerm
             ? `نتائج البحث عن "${searchTerm}"`
             : category === "All"
-              ? "مينيو بلازا"
-              : category}
+            ? "مينيو بلازا"
+            : category}
         </h2>
         <div className={`food-display-search ${showSearch ? "active" : ""}`}>
           <div className="search-input-container">
@@ -146,8 +157,8 @@ const FoodDisplay = ({ category }) => {
               type={showSearch ? "text" : "password"}
               className="food-display-search-input"
               placeholder={showSearch ? "Search for dishes..." : ""}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
               style={{ color: showSearch ? "inherit" : "transparent" }}
             />
           </div>
@@ -176,8 +187,9 @@ const FoodDisplay = ({ category }) => {
             {["الكل", "لحوم", "دجاج", "سي فود", "ميكس"].map((subType) => (
               <button
                 key={subType}
-                className={`food-display-sub-filter-btn ${subCategory === subType ? "active" : ""
-                  }`}
+                className={`food-display-sub-filter-btn ${
+                  subCategory === subType ? "active" : ""
+                }`}
                 onClick={() => setSubCategory(subType)}
               >
                 {subType}
